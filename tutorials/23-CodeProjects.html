@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Code Projects &#8212; Introductory Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Advanced Python" href="24-AdvancedPython.html" />
+    <link rel="prev" title="Code Testing" href="22-CodeTesting.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Introductory Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+<li class="navbar-special">
+<p class="margin-caption">Tutorials</p>
+</li>
+  <li class="">
+    <a href="00-Introduction.html">Introduction to Python</a>
+  </li>
+  <li class="">
+    <a href="01-Tools.html">Tools</a>
+  </li>
+  <li class="">
+    <a href="02-JupyterNotebooks.html">Jupyter Notebooks</a>
+  </li>
+  <li class="">
+    <a href="03-Variables.html">Variables</a>
+  </li>
+  <li class="">
+    <a href="04-Operators.html">Operators</a>
+  </li>
+  <li class="">
+    <a href="05-Conditionals.html">Conditionals</a>
+  </li>
+  <li class="">
+    <a href="06-DataTypes.html">Collections</a>
+  </li>
+  <li class="">
+    <a href="07-Loops.html">Control Flow - Loops</a>
+  </li>
+  <li class="">
+    <a href="08-Encodings.html">Encodings & Dictionaries</a>
+  </li>
+  <li class="">
+    <a href="09-FunctionsI.html">Functions I</a>
+  </li>
+  <li class="">
+    <a href="10-Algorithms.html">Algorithms</a>
+  </li>
+  <li class="">
+    <a href="11-FunctionsII.html">Functions II</a>
+  </li>
+  <li class="">
+    <a href="12-Debugging.html">Debugging</a>
+  </li>
+  <li class="">
+    <a href="13-Objects.html">Objects</a>
+  </li>
+  <li class="">
+    <a href="14-Classes.html">Classes</a>
+  </li>
+  <li class="">
+    <a href="15-Namespaces.html">Namespaces</a>
+  </li>
+  <li class="">
+    <a href="16-CommandLine.html">Command Line & Scripts</a>
+  </li>
+  <li class="">
+    <a href="17-APIs.html">The Plan</a>
+  </li>
+  <li class="">
+    <a href="18-OpenSource.html">Open Source</a>
+  </li>
+  <li class="">
+    <a href="19-ScientificComputing.html">Scientific Computing</a>
+  </li>
+  <li class="">
+    <a href="20-Documentation.html">Documentation</a>
+  </li>
+  <li class="">
+    <a href="21-CodeStyle.html">Code Style</a>
+  </li>
+  <li class="">
+    <a href="22-CodeTesting.html">Code Testing</a>
+  </li>
+  <li class="active">
+    <a href="">Code Projects</a>
+  </li>
+  <li class="">
+    <a href="24-AdvancedPython.html">Advanced Python</a>
+  </li>
+  <li class="">
+    <a href="25-WrapUp.html">Wrap Up</a>
+  </li>
+  <li class="">
+    <a href="A1-Syntax.html">Python Syntax</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/tutorials/23-CodeProjects.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#project-check-in" class="nav-link">Project Check-In</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#modular-design" class="nav-link">Modular Design</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#minimal-viable-product" class="nav-link">Minimal Viable Product</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#rapid-prototyping" class="nav-link">Rapid Prototyping</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#some-examples" class="nav-link">Some examples</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#project-organization" class="nav-link">Project Organization</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#organizing-code" class="nav-link">Organizing Code</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#project-workflow" class="nav-link">Project Workflow</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#code-review" class="nav-link">Code Review</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#refactoring" class="nav-link">Refactoring</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#refactoring-example-chatbot" class="nav-link">Refactoring Example: Chatbot</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#clicker-question-1" class="nav-link">Clicker Question #1</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#refactored-example-chatbot" class="nav-link">Refactored Example: Chatbot</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#project-notes" class="nav-link">Project Notes</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="code-projects">
+<h1>Code Projects<a class="headerlink" href="#code-projects" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>modular design</p></li>
+<li><p>minimal viable product</p></li>
+<li><p>rapid prototyping</p></li>
+<li><p>project organization</p></li>
+<li><p>refactoring</p></li>
+</ul>
+<div class="section" id="project-check-in">
+<h2>Project Check-In<a class="headerlink" href="#project-check-in" title="Permalink to this headline">¶</a></h2>
+<p>Do you have an idea of what you want to do for your project?</p>
+<ul class="simple">
+<li><p>A) Absolutely no Idea</p></li>
+<li><p>B) Some idea, but not sure</p></li>
+<li><p>C) Sort of</p></li>
+<li><p>D) Fairly good idea</p></li>
+<li><p>E) I know exactly what I want to do</p></li>
+</ul>
+<p>How much code do you have written for your project?</p>
+<ul class="simple">
+<li><p>A) None</p></li>
+<li><p>B) A little or some pseudocode</p></li>
+<li><p>C) Some</p></li>
+<li><p>D) A lot</p></li>
+<li><p>E) Most (I’m mostly or completely done)</p></li>
+</ul>
+<p>How confident do you feel about what you need to do to finish the project?</p>
+<ul class="simple">
+<li><p>A) I have no idea what to do from here</p></li>
+<li><p>B) I have some idea of how to finish the project</p></li>
+<li><p>C) I have a reasonable idea of what to do from here</p></li>
+<li><p>D) I have a very good idea of what to do</p></li>
+<li><p>E) I completely know / am basically finished</p></li>
+</ul>
+<div class="section" id="modular-design">
+<h3>Modular Design<a class="headerlink" href="#modular-design" title="Permalink to this headline">¶</a></h3>
+<div class="alert alert-success">
+Modular design, like modular programming, is the approach of designing and building things as independent modules. 
+</div></div>
+<div class="section" id="minimal-viable-product">
+<h3>Minimal Viable Product<a class="headerlink" href="#minimal-viable-product" title="Permalink to this headline">¶</a></h3>
+<div class="alert alert-success">
+A 'minimal viable product' is a product that contains the minimum amount of implemented features to use the code product - no more, no less.</div></div>
+<div class="section" id="rapid-prototyping">
+<h3>Rapid Prototyping<a class="headerlink" href="#rapid-prototyping" title="Permalink to this headline">¶</a></h3>
+<div class="alert alert-success">
+Rapid prototyping is an approach for developing things in which you work on minimal prototypes and iterate on them quickly. 
+</div><div class="section" id="some-examples">
+<h4>Some examples<a class="headerlink" href="#some-examples" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Chatbot: start and end a chat</p></li>
+<li><p>Data Analysis: read a dataset in, make a basic plot</p></li>
+<li><p>Car Inventory: object with method that adds a car to the Inventory</p></li>
+<li><p>Artificial Agents: simple bot moves around randomly</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="project-organization">
+<h2>Project Organization<a class="headerlink" href="#project-organization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="organizing-code">
+<h3>Organizing Code<a class="headerlink" href="#organizing-code" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Notebooks</strong>: good for interactive development</p>
+<ul>
+<li><p>For when seeing the inputs and outputs of code running needs to be seen start to finish</p></li>
+<li><p>file ends in <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Modules</strong>: for storing mature Python code, that you can import</p>
+<ul>
+<li><p>you don’t <em>use</em> the functions in there, just define them</p></li>
+<li><p>file ends in <code class="docutils literal notranslate"><span class="pre">.py</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Scripts</strong>: a Python file for executing a particular task</p>
+<ul>
+<li><p>this takes an input and does something start to finish</p></li>
+<li><p>file ends in <code class="docutils literal notranslate"><span class="pre">.py</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="project-workflow">
+<h3>Project Workflow<a class="headerlink" href="#project-workflow" title="Permalink to this headline">¶</a></h3>
+<p>Typical project workflow:</p>
+<ul class="simple">
+<li><p>Develop code interactively in a Jupyter notebook/text editor</p></li>
+<li><p>As functions &amp; classes become mature, move them to Python files that you then <code class="docutils literal notranslate"><span class="pre">import</span></code></p>
+<ul>
+<li><p>As you do so, go back through them to check for code style, add documentation, and write some code tests</p></li>
+</ul>
+</li>
+<li><p>At the end of a project, (maybe) write a standalone script that runs the project</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="code-review">
+<h2>Code Review<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+Code reviews is a process for systematically reviewing someone else's code. 
+</div><p>This is what you’ll have the chance to do in coding lab this week!</p>
+</div>
+<div class="section" id="refactoring">
+<h2>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+Refactoring is the process of restructuring existing computer code, without changing its external behaviour. 
+</div><p>Think of this as restructuring and final edits on your essay.</p>
+<p><strong>Nesting Functions</strong> - If you have a whole bunch of functions, if statements, and for/while loops together within a single function, you probably want (need?) to refactor.</p>
+<p>Clean functions accomplish a <strong>single task</strong>!</p>
+<p><strong>DRY</strong>: Don’t Repeat Yourself</p>
+<div class="section" id="refactoring-example-chatbot">
+<h3>Refactoring Example: Chatbot<a class="headerlink" href="#refactoring-example-chatbot" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="clicker-question-1">
+<h4>Clicker Question #1<a class="headerlink" href="#clicker-question-1" title="Permalink to this headline">¶</a></h4>
+<p>How many “things” does this function accomplish?</p>
+<p>A) 0  |  B) 1 | C) 2 | D) 3 | E) 4+</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> 
+
+<span class="k">def</span> <span class="nf">have_a_chat</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Main function to run our chatbot.&quot;&quot;&quot;</span>
+    
+    <span class="n">chat</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">while</span> <span class="n">chat</span><span class="p">:</span>
+
+        <span class="c1"># Get a message from the user</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;INPUT :</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">out_msg</span> <span class="o">=</span> <span class="kc">None</span>
+        
+        <span class="c1"># Check if the input is a question</span>
+        <span class="n">input_string</span> <span class="o">=</span> <span class="n">msg</span>
+        <span class="k">if</span> <span class="s1">&#39;?&#39;</span> <span class="ow">in</span> <span class="n">input_string</span><span class="p">:</span>
+            <span class="n">question</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">question</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Check for an end msg </span>
+        <span class="k">if</span> <span class="s1">&#39;quit&#39;</span> <span class="ow">in</span> <span class="n">input_string</span><span class="p">:</span>
+            <span class="n">out_msg</span> <span class="o">=</span> <span class="s1">&#39;Bye!&#39;</span>
+            <span class="n">chat</span> <span class="o">=</span> <span class="kc">False</span>
+            
+        <span class="c1"># If we don&#39;t have an output yet, but the input was a question, </span>
+        <span class="c1"># return msg related to it being a question</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">out_msg</span> <span class="ow">and</span> <span class="n">question</span><span class="p">:</span>
+            <span class="n">out_msg</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m too shy to answer questions. What do you want to talk about?&quot;</span>
+
+        <span class="c1"># Catch-all to say something if msg not caught &amp; processed so far</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">out_msg</span><span class="p">:</span>
+            <span class="n">out_msg</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;Good.&#39;</span><span class="p">,</span> <span class="s1">&#39;Okay&#39;</span><span class="p">,</span> <span class="s1">&#39;Huh?&#39;</span><span class="p">,</span> <span class="s1">&#39;Yeah!&#39;</span><span class="p">,</span> <span class="s1">&#39;Thanks!&#39;</span><span class="p">])</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OUTPUT:&#39;</span><span class="p">,</span> <span class="n">out_msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">have_a_chat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>INPUT :	hi
+OUTPUT: Huh?
+INPUT :	who are you?
+OUTPUT: I&#39;m too shy to answer questions. What do you want to talk about?
+INPUT :	ok
+OUTPUT: Okay
+INPUT :	huh?
+OUTPUT: I&#39;m too shy to answer questions. What do you want to talk about?
+INPUT :	quit
+OUTPUT: Bye!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="refactored-example-chatbot">
+<h3>Refactored Example: Chatbot<a class="headerlink" href="#refactored-example-chatbot" title="Permalink to this headline">¶</a></h3>
+<p>What this function does:</p>
+<ol class="simple">
+<li><p>takes an input</p></li>
+<li><p>checks if input is a question</p></li>
+<li><p>checks if input is supposed to end the chat</p></li>
+<li><p>return appropriate response if question, end chat, or other</p></li>
+</ol>
+<p>That’s four different things! Functions should do a single thing…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_input</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;ask user for an input message&quot;&quot;&quot;</span>
+    
+    <span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;INPUT :</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">out_msg</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="k">return</span> <span class="n">msg</span><span class="p">,</span> <span class="n">out_msg</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_question</span><span class="p">(</span><span class="n">input_string</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;determine if input from user is a question&quot;&quot;&quot;</span>
+    
+    <span class="k">if</span> <span class="s1">&#39;?&#39;</span> <span class="ow">in</span> <span class="n">input_string</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">end_chat</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;identify if user says &#39;quit&#39; in input and end chat&quot;&quot;&quot;</span>
+    
+    <span class="k">if</span> <span class="s1">&#39;quit&#39;</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;Bye&#39;</span>
+        <span class="n">chat</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">chat</span> <span class="o">=</span> <span class="kc">True</span>
+        
+    <span class="k">return</span> <span class="n">output</span><span class="p">,</span> <span class="n">chat</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">return_message</span><span class="p">(</span><span class="n">out_msg</span><span class="p">,</span> <span class="n">question</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;generic responses for the chatbot to return&quot;&quot;&quot;</span>
+        
+    <span class="c1"># If we don&#39;t have an output yet, but the input was a question, </span>
+    <span class="c1"># return msg related to it being a question</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">out_msg</span> <span class="ow">and</span> <span class="n">question</span><span class="p">:</span>
+        <span class="n">out_msg</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m too shy to answer questions. What do you want to talk about?&quot;</span>
+
+    <span class="c1"># Catch-all to say something if msg not caught &amp; processed so far</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">out_msg</span><span class="p">:</span>
+        <span class="n">out_msg</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;Good.&#39;</span><span class="p">,</span> <span class="s1">&#39;Okay&#39;</span><span class="p">,</span> <span class="s1">&#39;Huh?&#39;</span><span class="p">,</span> <span class="s1">&#39;Yeah!&#39;</span><span class="p">,</span> <span class="s1">&#39;Thanks!&#39;</span><span class="p">])</span>
+        
+    <span class="k">return</span> <span class="n">out_msg</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">have_a_chat</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Main function to run our chatbot.&quot;&quot;&quot;</span>
+    
+    <span class="n">chat</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">while</span> <span class="n">chat</span><span class="p">:</span>
+
+        <span class="c1"># Get input message from the user</span>
+        <span class="n">msg</span><span class="p">,</span> <span class="n">out_msg</span> <span class="o">=</span> <span class="n">get_input</span><span class="p">()</span>
+        
+        <span class="c1"># Check if the input is a question</span>
+        <span class="n">question</span> <span class="o">=</span> <span class="n">is_question</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+         
+        <span class="c1"># Check for an end msg </span>
+        <span class="n">out_msg</span><span class="p">,</span> <span class="n">chat</span> <span class="o">=</span> <span class="n">end_chat</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+       
+        <span class="c1"># specify what to return</span>
+        <span class="n">out_msg</span> <span class="o">=</span> <span class="n">return_message</span><span class="p">(</span><span class="n">out_msg</span> <span class="o">=</span> <span class="n">out_msg</span><span class="p">,</span> <span class="n">question</span> <span class="o">=</span> <span class="n">question</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OUTPUT:&#39;</span><span class="p">,</span> <span class="n">out_msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">have_a_chat</span><span class="p">()</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>INPUT :	hi
+OUTPUT: Thanks!
+INPUT :	how are you?
+OUTPUT: I&#39;m too shy to answer questions. What do you want to talk about?
+INPUT :	python
+OUTPUT: Thanks!
+INPUT :	quit
+OUTPUT: Bye
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="project-notes">
+<h2>Project Notes<a class="headerlink" href="#project-notes" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Write some code</p></li>
+<li><p>Test to make sure it works</p></li>
+<li><p>Check code style (naming, spacing, etc.)</p></li>
+<li><p>Add documentation</p></li>
+<li><p>Move to module (if necessary)</p></li>
+<li><p>Add unit tests</p></li>
+</ol>
+<p>Note on <code class="docutils literal notranslate"><span class="pre">imports</span></code>: If you want to be able to use modules (imports) within a module/script, be sure to import it at the top.</p>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="22-CodeTesting.html" title="previous page">Code Testing</a>
+    <a class='right-next' id="next-link" href="24-AdvancedPython.html" title="next page">Advanced Python</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Donoghue & Shannon Ellis<br/>
+        
+            &copy; Copyright 2020-.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

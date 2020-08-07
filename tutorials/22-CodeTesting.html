@@ -1,0 +1,717 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Code Testing &#8212; Introductory Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Code Projects" href="23-CodeProjects.html" />
+    <link rel="prev" title="Code Style" href="21-CodeStyle.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Introductory Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+<li class="navbar-special">
+<p class="margin-caption">Tutorials</p>
+</li>
+  <li class="">
+    <a href="00-Introduction.html">Introduction to Python</a>
+  </li>
+  <li class="">
+    <a href="01-Tools.html">Tools</a>
+  </li>
+  <li class="">
+    <a href="02-JupyterNotebooks.html">Jupyter Notebooks</a>
+  </li>
+  <li class="">
+    <a href="03-Variables.html">Variables</a>
+  </li>
+  <li class="">
+    <a href="04-Operators.html">Operators</a>
+  </li>
+  <li class="">
+    <a href="05-Conditionals.html">Conditionals</a>
+  </li>
+  <li class="">
+    <a href="06-DataTypes.html">Collections</a>
+  </li>
+  <li class="">
+    <a href="07-Loops.html">Control Flow - Loops</a>
+  </li>
+  <li class="">
+    <a href="08-Encodings.html">Encodings & Dictionaries</a>
+  </li>
+  <li class="">
+    <a href="09-FunctionsI.html">Functions I</a>
+  </li>
+  <li class="">
+    <a href="10-Algorithms.html">Algorithms</a>
+  </li>
+  <li class="">
+    <a href="11-FunctionsII.html">Functions II</a>
+  </li>
+  <li class="">
+    <a href="12-Debugging.html">Debugging</a>
+  </li>
+  <li class="">
+    <a href="13-Objects.html">Objects</a>
+  </li>
+  <li class="">
+    <a href="14-Classes.html">Classes</a>
+  </li>
+  <li class="">
+    <a href="15-Namespaces.html">Namespaces</a>
+  </li>
+  <li class="">
+    <a href="16-CommandLine.html">Command Line & Scripts</a>
+  </li>
+  <li class="">
+    <a href="17-APIs.html">The Plan</a>
+  </li>
+  <li class="">
+    <a href="18-OpenSource.html">Open Source</a>
+  </li>
+  <li class="">
+    <a href="19-ScientificComputing.html">Scientific Computing</a>
+  </li>
+  <li class="">
+    <a href="20-Documentation.html">Documentation</a>
+  </li>
+  <li class="">
+    <a href="21-CodeStyle.html">Code Style</a>
+  </li>
+  <li class="active">
+    <a href="">Code Testing</a>
+  </li>
+  <li class="">
+    <a href="23-CodeProjects.html">Code Projects</a>
+  </li>
+  <li class="">
+    <a href="24-AdvancedPython.html">Advanced Python</a>
+  </li>
+  <li class="">
+    <a href="25-WrapUp.html">Wrap Up</a>
+  </li>
+  <li class="">
+    <a href="A1-Syntax.html">Python Syntax</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/tutorials/22-CodeTesting.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#clicker-question-1" class="nav-link">Clicker Question #1</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#clicker-question-asserts" class="nav-link">Clicker Question - Asserts</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id1" class="nav-link">Code Testing</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#how-to-write-tests" class="nav-link">How to Write Tests</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#why-write-tests" class="nav-link">Why Write Tests</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#the-best-laziest-argument-for-writing-tests" class="nav-link">The Best (Laziest) Argument for Writing Tests</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#example-test-code" class="nav-link">Example Test Code</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clicker-question-2" class="nav-link">Clicker Question #2</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#pytest" class="nav-link">PyTest</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#levels-of-code-testing" class="nav-link">Levels of Code Testing:</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#test-driven-development" class="nav-link">Test Driven Development</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id2" class="nav-link">Test Driven Development</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#test-coverage" class="nav-link">Test Coverage</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="code-testing">
+<h1>Code Testing<a class="headerlink" href="#code-testing" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>smoke tests</p></li>
+<li><p>unit tests</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pytest</span></code></p></li>
+</ul>
+<div class="section" id="clicker-question-1">
+<h2>Clicker Question #1<a class="headerlink" href="#clicker-question-1" title="Permalink to this headline">¶</a></h2>
+<p>Given the following code, which assert will fail?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extend</span><span class="p">(</span><span class="n">input_arg</span><span class="p">):</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">input_arg</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">input_arg</span><span class="p">:</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># test here</span>
+<span class="n">extend</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">isinstance(extend([1,</span> <span class="pre">2]),</span> <span class="pre">list)</span></code></p></li>
+<li><p>B) <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">extend([1,</span> <span class="pre">2])</span> <span class="pre">==</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">2]</span></code></p></li>
+<li><p>C) <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">extend((1,</span> <span class="pre">2))</span> <span class="pre">==</span> <span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">2)</span></code></p></li>
+<li><p>D) <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">extend(['a',</span> <span class="pre">'b',</span> <span class="pre">'c'])</span> <span class="pre">==</span> <span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c',</span> <span class="pre">'a',</span> <span class="pre">'b',</span> <span class="pre">'c']</span></code></p></li>
+<li><p>E) <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">extend([])</span> <span class="pre">==</span> <span class="pre">[]</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="clicker-question-asserts">
+<h2>Clicker Question - Asserts<a class="headerlink" href="#clicker-question-asserts" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check that extend returns a list</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">extend</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span> <span class="nb">list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check that an input list returns the expected result</span>
+<span class="k">assert</span> <span class="n">extend</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if the function works on tuples</span>
+<span class="k">assert</span> <span class="n">extend</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-6-c510c0c20682&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Check if the function works on tuples</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">assert</span> <span class="n">extend</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-1-a3ca5f93bd43&gt;</span> in <span class="ni">extend</span><span class="nt">(input_arg)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">extend</span><span class="p">(</span><span class="n">input_arg</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">output</span> <span class="o">=</span> <span class="n">input_arg</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">input_arg</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">output</span>
+
+<span class="ne">AttributeError</span>: &#39;tuple&#39; object has no attribute &#39;copy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check that a different input list (different lengths / contents) returns expected result</span>
+<span class="k">assert</span> <span class="n">extend</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check that an empty list executes, executing an empty list</span>
+<span class="k">assert</span> <span class="n">extend</span><span class="p">([])</span> <span class="o">==</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Code Testing<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+Code tests is code that runs and checks other code, to make sure it does what it is expected to do. 
+</div></div>
+<div class="section" id="how-to-write-tests">
+<h2>How to Write Tests<a class="headerlink" href="#how-to-write-tests" title="Permalink to this headline">¶</a></h2>
+<p>Given a function or class you want to test:</p>
+<ul class="simple">
+<li><p>You need to have an expectation for what it should do</p></li>
+<li><p>Write out some example cases, with known answers</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">assert</span></code> to check that your example cases do run as expected</p></li>
+<li><p>Collect these examples into test functions, stored in test files</p></li>
+</ul>
+</div>
+<div class="section" id="why-write-tests">
+<h2>Why Write Tests<a class="headerlink" href="#why-write-tests" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To ensure code does what it is supposed to</p></li>
+<li><p>To have a system for checking things when you change things in the code</p></li>
+</ul>
+</div>
+<div class="section" id="the-best-laziest-argument-for-writing-tests">
+<h2>The Best (Laziest) Argument for Writing Tests<a class="headerlink" href="#the-best-laziest-argument-for-writing-tests" title="Permalink to this headline">¶</a></h2>
+<p>Whenever you write new code, you will find yourself using little snippets of code to check it.</p>
+<p>Collect these snippets into a test function, and you get re-runnable tests for free.</p>
+</div>
+<div class="section" id="example-test-code">
+<h2>Example Test Code<a class="headerlink" href="#example-test-code" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="mf">2.7</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span> <span class="o">==</span> <span class="mf">3.9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Tests for the `add` function.&quot;&quot;&quot;</span>
+    
+    <span class="c1"># Test adding positve numbers</span>
+    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span>
+    
+    <span class="c1"># Test adding negative numbers</span>
+    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">4</span>
+    
+    <span class="c1"># Test adding floats</span>
+    <span class="c1"># assert add(2.7, 1.2) == 3.9</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mf">2.7</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">),</span> <span class="mf">3.9</span><span class="p">)</span>
+    
+    <span class="c1"># Test adding with 0</span>
+    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run our test function</span>
+<span class="n">test_add</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-2">
+<h3>Clicker Question #2<a class="headerlink" href="#clicker-question-2" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Given the following function:</span>
+<span class="k">def</span> <span class="nf">divide_list</span><span class="p">(</span><span class="n">in_list</span><span class="p">):</span>    
+    <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">el1</span><span class="p">,</span> <span class="n">el2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">in_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">in_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">el1</span> <span class="o">/</span> <span class="n">el2</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">divide_list</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-27-c91f35be7f5f&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">divide_list</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="nn">&lt;ipython-input-18-1f783ab343a3&gt;</span> in <span class="ni">divide_list</span><span class="nt">(in_list)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">for</span> <span class="n">el1</span><span class="p">,</span> <span class="n">el2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">in_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">in_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>         <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">el1</span> <span class="o">/</span> <span class="n">el2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">return</span> <span class="n">output</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># And the following test function:</span>
+<span class="k">def</span> <span class="nf">test_divide_list</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">divide_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span> <span class="nb">list</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">divide_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test_divide_list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) These tests will pass, and this function is well tested</p></li>
+<li><p>B) These tests will pass, but this function needs more tests</p></li>
+<li><p>C) These tests will fail, but they cover the needed cases</p></li>
+<li><p>D) These tests will fail, and we should also have more tests</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="pytest">
+<h2>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-info">
+<b><a href = 'https://docs.pytest.org/en/latest/'> PyTest </a></b> is a module that for writing and running test code. It is available from Anaconda and datahub.
+</div></div>
+<div class="section" id="levels-of-code-testing">
+<h2>Levels of Code Testing:<a class="headerlink" href="#levels-of-code-testing" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Smoke Tests</p></li>
+<li><p><strong>Unit Tests</strong></p></li>
+<li><p>Integration Tests</p></li>
+<li><p>System Tests</p></li>
+</ul>
+</div>
+<div class="section" id="test-driven-development">
+<h2>Test Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+In software development, <b>test-driven development</b> is an approach in which you write tests first -  and then write code to pass the tests. 
+</div><div class="section" id="id2">
+<h3>Test Driven Development<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Ensures you go into writing code with a good plan / outline</p></li>
+<li><p>Ensures that you have a test suite, as you can not decide to neglect test code after the fact</p></li>
+<li><p>Note: when you complete (or at least write) assignments for this class, you are effectively doing test-driven development</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="test-coverage">
+<h2>Test Coverage<a class="headerlink" href="#test-coverage" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+<b>Test coverage</b> is the proportion of a software project that is run by the test suite. 
+</div></div>
+</div>
+<div class="section" id="writing-good-code">
+<h1>Writing Good Code<a class="headerlink" href="#writing-good-code" title="Permalink to this headline">¶</a></h1>
+<p>All in all, write code that is:</p>
+<ul class="simple">
+<li><p>Documented</p></li>
+<li><p>Well organized (follows a style guide)</p></li>
+<li><p>Tested</p></li>
+</ul>
+<p>And you will have understandable, maintainable, and trustable code.</p>
+<p>Why We Write Tests:</p>
+<ul class="simple">
+<li><p>ensure does does what it’s supposed to</p></li>
+<li><p>system for checking things when you change / make updates in the future</p></li>
+</ul>
+<p>Tests, when run, help identify code that will give an error if something has gone wrong.</p>
+<div class="section" id="four-general-types">
+<h2>Four general types<a class="headerlink" href="#four-general-types" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><strong>Smoke tests</strong> - preliminary tests to basic functionality; checks if something runs (but not necessarily if it does the right thing) (sanity check)</p></li>
+<li><p><strong>Unit tests</strong> - test functions &amp; objects to ensure that they code is behaving as expected</p></li>
+<li><p><strong>Integration tests</strong> - tests functions, classes &amp; modules interacting</p></li>
+<li><p><strong>System tests</strong> - tests end-to-end behavior</p></li>
+</ol>
+</div>
+<div class="section" id="not-tests-but-related">
+<h2>Not tests, but related<a class="headerlink" href="#not-tests-but-related" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>asserts - make a statement of fact about code</p></li>
+<li><p>static checks - check your code as you go that it behaves as expected</p></li>
+<li><p>argument validation - checks to see if the input given to a function</p></li>
+</ul>
+</div>
+<div class="section" id="unit-tests">
+<h2>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>one test for each “piece” of your code (each function, each class, each module, etc)</p></li>
+<li><p>passes silently if true</p></li>
+<li><p>error if it fails</p></li>
+<li><p>consider “edge cases”</p></li>
+<li><p>help you resist the urge to assume computers will act how you think it will work</p></li>
+<li><p>functions used with pytest start with <code class="docutils literal notranslate"><span class="pre">test_</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2><code class="docutils literal notranslate"><span class="pre">pytest</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>check if error raised when expected to be raised</p></li>
+<li><p>autorun all of your tests</p></li>
+<li><p>formal testing to your code/projects</p></li>
+</ul>
+<div class="section" id="executing-pytest">
+<h3>Executing <code class="docutils literal notranslate"><span class="pre">pytest</span></code><a class="headerlink" href="#executing-pytest" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Look for any file called <code class="docutils literal notranslate"><span class="pre">test_...</span></code></p></li>
+<li><p>If everything works, silently moves along.</p></li>
+<li><p>For anything that fails, will alert you.</p></li>
+</ol>
+<p><strong>Available from Anaconda and on datahub</strong></p>
+</div>
+<div class="section" id="clicker-question-3">
+<h3>Clicker Question #3<a class="headerlink" href="#clicker-question-3" title="Permalink to this headline">¶</a></h3>
+<p>Write a test function that checks the following piece of code:</p>
+<ul class="simple">
+<li><p>A) I did it!</p></li>
+<li><p>B) I think I did it!</p></li>
+<li><p>C) I’m lost.</p></li>
+</ul>
+<p>Thought process:</p>
+<ol class="simple">
+<li><p>Define test function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">test_...</span></code></p></li>
+<li><p>make <code class="docutils literal notranslate"><span class="pre">assert</span></code>ion within the test function</p>
+<ul class="simple">
+<li><p>check that function sums the list (which was our expectation)</p></li>
+<li><p>check that the input was a list (either in function or test function)</p></li>
+<li><p>check the output is expected output / expected type</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_list</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;add all values in a list - return sum&quot;&quot;&quot;</span>
+    
+    <span class="n">output</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="n">val</span>
+        
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### YOUR TEST</span>
+<span class="k">def</span> <span class="nf">test_sum_list</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">sum_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">==</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test_sum_list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### POSSIBLE TEST</span>
+<span class="k">def</span> <span class="nf">test_sum_list</span><span class="p">():</span>
+    
+    <span class="c1"># write multiple asserts</span>
+    <span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">sum_list</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sum_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]),</span> <span class="nb">int</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">sum_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="mi">10</span>
+    
+<span class="n">test_sum_list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="21-CodeStyle.html" title="previous page">Code Style</a>
+    <a class='right-next' id="next-link" href="23-CodeProjects.html" title="next page">Code Projects</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Donoghue & Shannon Ellis<br/>
+        
+            &copy; Copyright 2020-.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

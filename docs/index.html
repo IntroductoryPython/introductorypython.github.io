@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Introductory Python &#8212; Introductory Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to Python" href="../tutorials/00-Introduction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Introductory Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+<li class="navbar-special">
+<p class="margin-caption">Tutorials</p>
+</li>
+  <li class="">
+    <a href="../tutorials/00-Introduction.html">Introduction to Python</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/01-Tools.html">Tools</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/02-JupyterNotebooks.html">Jupyter Notebooks</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/03-Variables.html">Variables</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/04-Operators.html">Operators</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/05-Conditionals.html">Conditionals</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/06-DataTypes.html">Collections</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/07-Loops.html">Control Flow - Loops</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/08-Encodings.html">Encodings & Dictionaries</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/09-FunctionsI.html">Functions I</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/10-Algorithms.html">Algorithms</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/11-FunctionsII.html">Functions II</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/12-Debugging.html">Debugging</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/13-Objects.html">Objects</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/14-Classes.html">Classes</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/15-Namespaces.html">Namespaces</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/16-CommandLine.html">Command Line & Scripts</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/17-APIs.html">The Plan</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/18-OpenSource.html">Open Source</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/19-ScientificComputing.html">Scientific Computing</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/20-Documentation.html">Documentation</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/21-CodeStyle.html">Code Style</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/22-CodeTesting.html">Code Testing</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/23-CodeProjects.html">Code Projects</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/24-AdvancedPython.html">Advanced Python</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/25-WrapUp.html">Wrap Up</a>
+  </li>
+  <li class="">
+    <a href="../tutorials/A1-Syntax.html">Python Syntax</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/docs/index.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#overview" class="nav-link">Overview</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#content" class="nav-link">Content</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#license-acknowledgments" class="nav-link">License & Acknowledgments</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introductory-python">
+<h1>Introductory Python<a class="headerlink" href="#introductory-python" title="Permalink to this headline">¶</a></h1>
+<p>Introductory Python is a ….</p>
+<p>This website is a public version of the Introduction to Python course, taught under the course code ‘COGS 18’ at UC San Diego.</p>
+<p><em>If you are in the COGS18 class at UC San Diego, this website is <strong>not</strong> the same as course materials for the class.</em></p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The goal and focus of Introductory Python is as hands-on course for learning Python. It is focused on the practical elements of doing data science - meaning on working with real data and problems.</p>
+</div>
+<div class="section" id="content">
+<h2>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h2>
+<p>This set of online materials are an openly available version of the materials from the class version, that are available to anyone outside of the official course.</p>
+<p>All the materials are available through the table of contents on the left.</p>
+<p>Currently, available materials include:</p>
+<ul class="simple">
+<li><p><strong>Tutorials</strong>, which are quick introductions to key topics for learning Python</p></li>
+<li><p><strong>Demo Assignments</strong>, which are openly available versions of some of the course assignments that can be worked through to practice applying these ideas</p></li>
+</ul>
+</div>
+<div class="section" id="license-acknowledgments">
+<h2>License &amp; Acknowledgments<a class="headerlink" href="#license-acknowledgments" title="Permalink to this headline">¶</a></h2>
+<p>The materials on this website are openly available under a
+<a class="reference external" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> license.</p>
+<p>Introduction to Python, as well as this website, was created by
+<a class="reference external" href="https://tomdonoghue.github.io/">Tom Donoghue</a>, and is currently primarily taught &amp; developed by
+<a class="reference external" href="http://www.shanellis.com/">Shannon Ellis</a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='right-next' id="next-link" href="../tutorials/00-Introduction.html" title="next page">Introduction to Python</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Donoghue & Shannon Ellis<br/>
+        
+            &copy; Copyright 2020-.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

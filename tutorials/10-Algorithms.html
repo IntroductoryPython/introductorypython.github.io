@@ -1,0 +1,774 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Algorithms &#8212; Introductory Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Functions II" href="11-FunctionsII.html" />
+    <link rel="prev" title="Functions I" href="09-FunctionsI.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Introductory Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+<li class="navbar-special">
+<p class="margin-caption">Tutorials</p>
+</li>
+  <li class="">
+    <a href="00-Introduction.html">Introduction to Python</a>
+  </li>
+  <li class="">
+    <a href="01-Tools.html">Tools</a>
+  </li>
+  <li class="">
+    <a href="02-JupyterNotebooks.html">Jupyter Notebooks</a>
+  </li>
+  <li class="">
+    <a href="03-Variables.html">Variables</a>
+  </li>
+  <li class="">
+    <a href="04-Operators.html">Operators</a>
+  </li>
+  <li class="">
+    <a href="05-Conditionals.html">Conditionals</a>
+  </li>
+  <li class="">
+    <a href="06-DataTypes.html">Collections</a>
+  </li>
+  <li class="">
+    <a href="07-Loops.html">Control Flow - Loops</a>
+  </li>
+  <li class="">
+    <a href="08-Encodings.html">Encodings & Dictionaries</a>
+  </li>
+  <li class="">
+    <a href="09-FunctionsI.html">Functions I</a>
+  </li>
+  <li class="active">
+    <a href="">Algorithms</a>
+  </li>
+  <li class="">
+    <a href="11-FunctionsII.html">Functions II</a>
+  </li>
+  <li class="">
+    <a href="12-Debugging.html">Debugging</a>
+  </li>
+  <li class="">
+    <a href="13-Objects.html">Objects</a>
+  </li>
+  <li class="">
+    <a href="14-Classes.html">Classes</a>
+  </li>
+  <li class="">
+    <a href="15-Namespaces.html">Namespaces</a>
+  </li>
+  <li class="">
+    <a href="16-CommandLine.html">Command Line & Scripts</a>
+  </li>
+  <li class="">
+    <a href="17-APIs.html">The Plan</a>
+  </li>
+  <li class="">
+    <a href="18-OpenSource.html">Open Source</a>
+  </li>
+  <li class="">
+    <a href="19-ScientificComputing.html">Scientific Computing</a>
+  </li>
+  <li class="">
+    <a href="20-Documentation.html">Documentation</a>
+  </li>
+  <li class="">
+    <a href="21-CodeStyle.html">Code Style</a>
+  </li>
+  <li class="">
+    <a href="22-CodeTesting.html">Code Testing</a>
+  </li>
+  <li class="">
+    <a href="23-CodeProjects.html">Code Projects</a>
+  </li>
+  <li class="">
+    <a href="24-AdvancedPython.html">Advanced Python</a>
+  </li>
+  <li class="">
+    <a href="25-WrapUp.html">Wrap Up</a>
+  </li>
+  <li class="">
+    <a href="A1-Syntax.html">Python Syntax</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/tutorials/10-Algorithms.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id1" class="nav-link">Algorithms</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#algorithm-example-making-a-sandwich" class="nav-link">Algorithm Example: Making a Sandwich</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clicker-question-1" class="nav-link">Clicker Question #1</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#algorithm-for-making-a-ham-cheese-sandwich" class="nav-link">Algorithm for making a ham & cheese sandwich</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#algorithm-example-sorting" class="nav-link">Algorithm Example: Sorting</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clicker-question-2" class="nav-link">Clicker Question #2</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#sort-array" class="nav-link">sort_array</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#using-sort-array" class="nav-link">Using sort_array</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clicker-question-3" class="nav-link">Clicker Question #3</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#how-python-evaluates-strings" class="nav-link">How Python evaluates strings</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#clicker-question-4" class="nav-link">Clicker Question #4</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#how-python-evaluates-booleans" class="nav-link">How Python evaluates Booleans</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#clicker-question-5" class="nav-link">Clicker Question #5</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#sidenote-sorted" class="nav-link">SideNote: sorted</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#algorithmic-complexity" class="nav-link">Algorithmic Complexity</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id2" class="nav-link">Algorithmic Complexity</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#properties-of-our-sorting-algorithm" class="nav-link">Properties of our sorting algorithm</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#computability" class="nav-link">Computability</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#variable-type-checking" class="nav-link">Variable Type Checking</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="algorithms">
+<h1>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h1>
+<p>What are the sorts of things that we should do with computers? What are things that are easy to compute? Hard to compute? Impossible to compute?</p>
+<div class="section" id="id1">
+<h2>Algorithms<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+An <b>algorithm</b> is a formal description of how to complete a procedure, typically taking inputs and returns some output.
+</div><p>If you can write the steps down, you can write an algorithm.</p>
+<p>Algorithms are computable.</p>
+<p>Computers cannot read between the lines. They are very literal.</p>
+</div>
+<div class="section" id="algorithm-example-making-a-sandwich">
+<h2>Algorithm Example: Making a Sandwich<a class="headerlink" href="#algorithm-example-making-a-sandwich" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="clicker-question-1">
+<h3>Clicker Question #1<a class="headerlink" href="#clicker-question-1" title="Permalink to this headline">¶</a></h3>
+<p>Can you write an algorithm to make a ham and cheese sandwich.</p>
+<ul class="simple">
+<li><p>A) Yes</p></li>
+<li><p>B) No</p></li>
+<li><p>C) I don’t know</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="algorithm-for-making-a-ham-cheese-sandwich">
+<h2>Algorithm for making a ham &amp; cheese sandwich<a class="headerlink" href="#algorithm-for-making-a-ham-cheese-sandwich" title="Permalink to this headline">¶</a></h2>
+<p>Humans are pretty good at making sandwiches. Computers may struggle a bit.</p>
+</div>
+<div class="section" id="algorithm-example-sorting">
+<h2>Algorithm Example: Sorting<a class="headerlink" href="#algorithm-example-sorting" title="Permalink to this headline">¶</a></h2>
+<p>Given a list of numbers, how can we sort it into the correct order?</p>
+<p>Y’all Google is <em>really</em> good at sorting.</p>
+<ul class="simple">
+<li><p>ranking: rate a site as how related</p></li>
+<li><p>sort: given a list of good sites, determine order to present to user</p></li>
+</ul>
+<p>…and do this on all the things</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a list of numbers</span>
+<span class="n">list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-2">
+<h3>Clicker Question #2<a class="headerlink" href="#clicker-question-2" title="Permalink to this headline">¶</a></h3>
+<p><strong>array</strong>: a collection of items, where each item can be accessed by its index.</p>
+<p>Can you write an algorithm to sort an array?</p>
+<ul class="simple">
+<li><p>A) Yes</p></li>
+<li><p>B) No</p></li>
+<li><p>C) I don’t know</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="sort-array">
+<h2><code class="docutils literal notranslate"><span class="pre">sort_array</span></code><a class="headerlink" href="#sort-array" title="Permalink to this headline">¶</a></h2>
+<p>A version of a <strong>selection sort</strong>:</p>
+<ul class="simple">
+<li><p>loop through current list</p></li>
+<li><p>find lowest item</p></li>
+<li><p>put that at the front of your sorted list</p></li>
+<li><p>remove lowest item from current list</p></li>
+<li><p>wash, rinse, repeat</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sort_array</span><span class="p">(</span><span class="n">array_to_sort</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A function to sort an array.&quot;&quot;&quot;</span>
+
+    <span class="n">is_sorted</span> <span class="o">=</span> <span class="kc">False</span>    <span class="c1"># Keeps track of when we are done sorting</span>
+    <span class="n">sorted_array</span> <span class="o">=</span> <span class="p">[]</span>    <span class="c1"># A new list that we will use to </span>
+     
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">is_sorted</span><span class="p">:</span>
+
+        <span class="n">lowest</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">array_to_sort</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">lowest</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>         <span class="c1"># If not defined (first element) set the current element as lowest</span>
+                <span class="n">lowest</span> <span class="o">=</span> <span class="n">item</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="o">&lt;</span> <span class="n">lowest</span><span class="p">:</span>
+                <span class="n">lowest</span> <span class="o">=</span> <span class="n">item</span>
+        
+        <span class="c1"># these next two lines use new methods</span>
+        <span class="n">sorted_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lowest</span><span class="p">)</span>    <span class="c1"># Add the lowest value to our sorted array output</span>
+        <span class="n">array_to_sort</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">lowest</span><span class="p">)</span>   <span class="c1"># Drop the now sorted value from the original array</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">array_to_sort</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>    <span class="c1"># When `array_to_sort` is empty, we are done sorting</span>
+            <span class="n">is_sorted</span> <span class="o">=</span> <span class="kc">True</span>
+    
+    <span class="k">return</span> <span class="n">sorted_array</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-sort-array">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">sort_array</span></code><a class="headerlink" href="#using-sort-array" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort an array of integers</span>
+<span class="n">unsorted_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">sorted_array</span> <span class="o">=</span> <span class="n">sort_array</span><span class="p">(</span><span class="n">unsorted_array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[7, 12, 12, 19, 25]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort an array of floats</span>
+<span class="n">unsorted_array</span> <span class="o">=</span> <span class="p">[</span><span class="mf">21.3</span><span class="p">,</span> <span class="mf">56.7</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">99.9</span><span class="p">]</span>
+<span class="n">sorted_array</span> <span class="o">=</span> <span class="n">sort_array</span><span class="p">(</span><span class="n">unsorted_array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[2.3, 2.9, 21.3, 56.7, 99.9]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-3">
+<h3>Clicker Question #3<a class="headerlink" href="#clicker-question-3" title="Permalink to this headline">¶</a></h3>
+<p>Using our <code class="docutils literal notranslate"><span class="pre">sort_array</span></code> function from above, what will the following code snippet print out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span> 
+<span class="n">sort_array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) [‘a’, ‘c’, ‘b’]</p></li>
+<li><p>B) [‘a’, ‘b’, ‘c’]</p></li>
+<li><p>C) [97, 98, 99]</p></li>
+<li><p>D) None</p></li>
+<li><p>E) This code will fail</p></li>
+</ul>
+</div>
+<div class="section" id="how-python-evaluates-strings">
+<h3>How Python evaluates strings<a class="headerlink" href="#how-python-evaluates-strings" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="o">&lt;</span> <span class="s1">&#39;b&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>97
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>98
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-4">
+<h4>Clicker Question #4<a class="headerlink" href="#clicker-question-4" title="Permalink to this headline">¶</a></h4>
+<p>Using our <code class="docutils literal notranslate"><span class="pre">sort_array</span></code> function from above, what will the following code snippet print out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="n">sort_array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[False, True, True]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) [False, True, True]</p></li>
+<li><p>B) [True, False, True]</p></li>
+<li><p>C) [0, 1, 1]</p></li>
+<li><p>D) [True, True, False]</p></li>
+<li><p>E) This code will fail</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="how-python-evaluates-booleans">
+<h3>How Python evaluates Booleans<a class="headerlink" href="#how-python-evaluates-booleans" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="o">&lt;</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;0b1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;0b0&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-5">
+<h4>Clicker Question #5<a class="headerlink" href="#clicker-question-5" title="Permalink to this headline">¶</a></h4>
+<p>Using our <code class="docutils literal notranslate"><span class="pre">sort_array</span></code> function from above, what will the following code snippet print out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="n">sort_array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[[1, 2], [1, 4]]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) [[1, 4], [1, 2]]</p></li>
+<li><p>B) [1, 1, 2, 4]</p></li>
+<li><p>C) [[1, 2], [1, 4]]</p></li>
+<li><p>D) None</p></li>
+<li><p>E) This code will fail</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="sidenote-sorted">
+<h2>SideNote: <code class="docutils literal notranslate"><span class="pre">sorted</span></code><a class="headerlink" href="#sidenote-sorted" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort a list, with `sorted`</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[4, 6, 7]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># what about a list of strings?</span>
+<span class="nb">sorted</span><span class="p">([</span><span class="s1">&#39;asdf&#39;</span><span class="p">,</span><span class="s1">&#39;abcd&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;abcd&#39;, &#39;asdf&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort different data types</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+[False, True, True]
+[[1, 2], [1, 4]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="algorithmic-complexity">
+<h2>Algorithmic Complexity<a class="headerlink" href="#algorithmic-complexity" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+The complexity of an algorithm characterizes the relationship between the input size and the number of steps of an algorithm.
+</div></div>
+<div class="section" id="id2">
+<h2>Algorithmic Complexity<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Things we might care about:</p>
+<ul class="simple">
+<li><p>The number of steps it takes to complete our algorithm</p>
+<ul>
+<li><p>Usually defined in relation of the size of the input</p></li>
+</ul>
+</li>
+<li><p>The amount of memory it will take to run our algorithm</p></li>
+</ul>
+</div>
+<div class="section" id="properties-of-our-sorting-algorithm">
+<h2>Properties of our sorting algorithm<a class="headerlink" href="#properties-of-our-sorting-algorithm" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>It will require <span class="math notranslate nohighlight">\(n^2\)</span> steps, where <span class="math notranslate nohighlight">\(n\)</span> is the length of the list</p></li>
+<li><p>It will require ~double the memory of the original list</p></li>
+</ul>
+</div>
+<div class="section" id="computability">
+<h2>Computability<a class="headerlink" href="#computability" title="Permalink to this headline">¶</a></h2>
+<p>Things that computers can do are things that we can write down an algorithm to do.</p>
+<p>Things that we can write an algorithm to do are things that we can define a specific set of steps to complete.</p>
+</div>
+<div class="section" id="variable-type-checking">
+<h2>Variable Type Checking<a class="headerlink" href="#variable-type-checking" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note</strong>: The rest of the noteook includes notes to answer a student’s in class question. You are not expected to know this, but you are free to learn and use the information!</p>
+<p>To check on an input variable’s type, you can use the following approach:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">classinfo</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> takes two parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">object</span></code> : variable/object to be checked</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">classinfo</span></code> : class, type, or tuple of classes and types</p></li>
+</ul>
+<p>For example, using the <code class="docutils literal notranslate"><span class="pre">string_manipulator</span></code> function from earlier, note that I’ve added the following two lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: please provide a string as input&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This checks to see if the input is anything other than a string. If it is, the function prints a warning.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">string_manipulator</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: please provide a string as input&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span> <span class="ow">or</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
+                <span class="n">char</span> <span class="o">=</span> <span class="s1">&#39;z&#39;</span> 
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="n">char</span>
+    
+        <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># use function with a string</span>
+<span class="n">string_manipulator</span><span class="p">(</span><span class="s1">&#39;hello!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># print warning if not a string</span>
+<span class="n">string_manipulator</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, sometimes, you want it to raise an error rather than just print something. Here we use <code class="docutils literal notranslate"><span class="pre">raise</span></code> instead of print. In this case, an error will be returned (with our specified message) to the user if the wrong variable type is provided:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">string_manipulator</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Please provide a string as input&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span> <span class="ow">or</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
+                <span class="n">char</span> <span class="o">=</span> <span class="s1">&#39;z&#39;</span> 
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="n">char</span>
+    
+        <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># raise error instead of print message</span>
+<span class="n">string_manipulator</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="09-FunctionsI.html" title="previous page">Functions I</a>
+    <a class='right-next' id="next-link" href="11-FunctionsII.html" title="next page">Functions II</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Donoghue & Shannon Ellis<br/>
+        
+            &copy; Copyright 2020-.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

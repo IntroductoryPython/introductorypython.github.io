@@ -1,0 +1,1149 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Classes &#8212; Introductory Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Namespaces" href="15-Namespaces.html" />
+    <link rel="prev" title="Objects" href="13-Objects.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Introductory Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+<li class="navbar-special">
+<p class="margin-caption">Tutorials</p>
+</li>
+  <li class="">
+    <a href="00-Introduction.html">Introduction to Python</a>
+  </li>
+  <li class="">
+    <a href="01-Tools.html">Tools</a>
+  </li>
+  <li class="">
+    <a href="02-JupyterNotebooks.html">Jupyter Notebooks</a>
+  </li>
+  <li class="">
+    <a href="03-Variables.html">Variables</a>
+  </li>
+  <li class="">
+    <a href="04-Operators.html">Operators</a>
+  </li>
+  <li class="">
+    <a href="05-Conditionals.html">Conditionals</a>
+  </li>
+  <li class="">
+    <a href="06-DataTypes.html">Collections</a>
+  </li>
+  <li class="">
+    <a href="07-Loops.html">Control Flow - Loops</a>
+  </li>
+  <li class="">
+    <a href="08-Encodings.html">Encodings & Dictionaries</a>
+  </li>
+  <li class="">
+    <a href="09-FunctionsI.html">Functions I</a>
+  </li>
+  <li class="">
+    <a href="10-Algorithms.html">Algorithms</a>
+  </li>
+  <li class="">
+    <a href="11-FunctionsII.html">Functions II</a>
+  </li>
+  <li class="">
+    <a href="12-Debugging.html">Debugging</a>
+  </li>
+  <li class="">
+    <a href="13-Objects.html">Objects</a>
+  </li>
+  <li class="active">
+    <a href="">Classes</a>
+  </li>
+  <li class="">
+    <a href="15-Namespaces.html">Namespaces</a>
+  </li>
+  <li class="">
+    <a href="16-CommandLine.html">Command Line & Scripts</a>
+  </li>
+  <li class="">
+    <a href="17-APIs.html">The Plan</a>
+  </li>
+  <li class="">
+    <a href="18-OpenSource.html">Open Source</a>
+  </li>
+  <li class="">
+    <a href="19-ScientificComputing.html">Scientific Computing</a>
+  </li>
+  <li class="">
+    <a href="20-Documentation.html">Documentation</a>
+  </li>
+  <li class="">
+    <a href="21-CodeStyle.html">Code Style</a>
+  </li>
+  <li class="">
+    <a href="22-CodeTesting.html">Code Testing</a>
+  </li>
+  <li class="">
+    <a href="23-CodeProjects.html">Code Projects</a>
+  </li>
+  <li class="">
+    <a href="24-AdvancedPython.html">Advanced Python</a>
+  </li>
+  <li class="">
+    <a href="25-WrapUp.html">Wrap Up</a>
+  </li>
+  <li class="">
+    <a href="A1-Syntax.html">Python Syntax</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/tutorials/14-Classes.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#objects-review" class="nav-link">Objects Review</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id1" class="nav-link">Classes</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#example-class-dog" class="nav-link">Example Class: Dog</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clicker-question-1" class="nav-link">Clicker Question #1</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#using-our-dog-objects" class="nav-link">Using our Dog Objects</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#instances-self" class="nav-link">Instances & self</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clicker-question-2" class="nav-link">Clicker Question #2</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#instance-attributes" class="nav-link">Instance Attributes</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clicker-question-3" class="nav-link">Clicker Question #3</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#example-class-dog-revisited" class="nav-link">Example Class: Dog Revisited</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clicker-question-4" class="nav-link">Clicker Question #4</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#class-example-cat" class="nav-link">Class example: Cat</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#instances-examples" class="nav-link">Instances Examples</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clicker-question-5" class="nav-link">Clicker Question #5</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clicker-question-6" class="nav-link">Clicker Question #6</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#class-inheritance" class="nav-link">Class Inheritance</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clicker-question-7" class="nav-link">Clicker Question #7</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clicker-question-8" class="nav-link">Clicker Question #8</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#classes-review" class="nav-link">Classes Review</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#everything-in-python-is-an-object" class="nav-link">Everything in Python is an Object!</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#data-variables-are-objects" class="nav-link">Data variables are objects</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#functions-are-objects" class="nav-link">Functions are objects</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#class-definitions-instances-are-objects" class="nav-link">Class definitions & instances are objects</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#object-oriented-programming" class="nav-link">Object-Oriented Programming</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span></code></p>
+<ul>
+<li><p>attributes</p></li>
+<li><p>methods</p></li>
+</ul>
+</li>
+<li><p>instances</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code></p></li>
+</ul>
+</li>
+<li><p>objects</p></li>
+</ul>
+<div class="section" id="objects-review">
+<h2>Objects Review<a class="headerlink" href="#objects-review" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Objects are a way to combine associated data (attributes) and procedures (methods) to do upon that data with a systematic organization</p></li>
+<li><p>So how do we define objects?</p>
+<ul>
+<li><p>people have built &amp; defined objects (i.e. dates and datetime)</p></li>
+<li><p>defining your own</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>Classes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+<b>Classes</b> define objects. The <code>class</code> keyword opens a code block for instructions on how to create objects of a particular type.
+</div><p>Think of classes as the <em>blueprint</em> for creating and defining objects and their properties (methods, attributes, etc.). They keep related things together and organized.</p>
+</div>
+<div class="section" id="example-class-dog">
+<h2>Example Class: Dog<a class="headerlink" href="#example-class-dog" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a class with `class`. </span>
+<span class="c1"># By convention, class definitions use CapWords (Pascal)</span>
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">():</span>
+    
+    <span class="c1"># Class attributes for objects of type Dog</span>
+    <span class="n">sound</span> <span class="o">=</span> <span class="s1">&#39;Woof&#39;</span>
+    
+    <span class="c1"># Class methods for objects of type Dog</span>
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sound</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A reminder:</p>
+<ul class="simple">
+<li><p><strong>attributes</strong> maintain the object’s state; they lookup information about an object</p></li>
+<li><p><strong>methods</strong> alter the object’s state; they run a function on an object</p></li>
+</ul>
+<p><strong><code class="docutils literal notranslate"><span class="pre">class</span></code></strong> notes:</p>
+<ul class="simple">
+<li><p>classes tend to use <strong>CapWords</strong> convention (Pascal Case)</p>
+<ul>
+<li><p>instead of snake_case (functions and variable names)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">()</span></code> after <code class="docutils literal notranslate"><span class="pre">Dog</span></code> indicate that this is callable</p>
+<ul>
+<li><p>like functions, Classes must be executed before they take effect</p></li>
+</ul>
+</li>
+<li><p>can define <strong>attributes</strong> &amp; <strong>methods</strong> within <code class="docutils literal notranslate"><span class="pre">class</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code> is a special parameter for use by an object</p>
+<ul>
+<li><p>refers to the thing (object) itself</p></li>
+</ul>
+</li>
+<li><p>like functions, a new namespace is created within a Class</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize a dog object</span>
+<span class="n">george</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># george, has &#39;sound&#39; attribute(s) from Dog()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">george</span><span class="o">.</span><span class="n">sound</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Woof
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># george, has &#39;Dog&#39; method(s)</span>
+<span class="c1"># remember we used `self`</span>
+<span class="n">george</span><span class="o">.</span><span class="n">speak</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Woof
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-1">
+<h3>Clicker Question #1<a class="headerlink" href="#clicker-question-1" title="Permalink to this headline">¶</a></h3>
+<p>Which of the following statements is true about the example we’ve been using?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">():</span>
+    
+    <span class="n">sound</span> <span class="o">=</span> <span class="s1">&#39;Woof&#39;</span>
+    
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sound</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) <code class="docutils literal notranslate"><span class="pre">Dog</span></code> is a Class, <code class="docutils literal notranslate"><span class="pre">sound</span></code> is an attribute, and <code class="docutils literal notranslate"><span class="pre">speak</span></code> is a method.</p></li>
+<li><p>B) <code class="docutils literal notranslate"><span class="pre">Dog</span></code> is a function, <code class="docutils literal notranslate"><span class="pre">sound</span></code> is an attribute, and <code class="docutils literal notranslate"><span class="pre">speak</span></code> is a method.</p></li>
+<li><p>C) <code class="docutils literal notranslate"><span class="pre">Dog</span></code> is a Class, <code class="docutils literal notranslate"><span class="pre">sound</span></code> is a method, and <code class="docutils literal notranslate"><span class="pre">speak</span></code> is an attribute.</p></li>
+<li><p>D) <code class="docutils literal notranslate"><span class="pre">Dog</span></code> is a function, <code class="docutils literal notranslate"><span class="pre">sound</span></code> is an method, and <code class="docutils literal notranslate"><span class="pre">speak</span></code> is an attribute.</p></li>
+</ul>
+</div>
+<div class="section" id="using-our-dog-objects">
+<h3>Using our Dog Objects<a class="headerlink" href="#using-our-dog-objects" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize a group of dogs</span>
+<span class="n">pack_of_dogs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Dog</span><span class="p">(),</span> <span class="n">Dog</span><span class="p">(),</span> <span class="n">Dog</span><span class="p">(),</span> <span class="n">Dog</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># take a look at this</span>
+<span class="n">pack_of_dogs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.Dog at 0x10d9b2b38&gt;,
+ &lt;__main__.Dog at 0x10d9b2b70&gt;,
+ &lt;__main__.Dog at 0x10d9b2ba8&gt;,
+ &lt;__main__.Dog at 0x10d9b2be0&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># take a look at this</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">pack_of_dogs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>__main__.Dog
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">dog</span> <span class="ow">in</span> <span class="n">pack_of_dogs</span><span class="p">:</span>
+    <span class="n">dog</span><span class="o">.</span><span class="n">speak</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Woof
+Woof
+Woof
+Woof
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="instances-self">
+<h2>Instances &amp; self<a class="headerlink" href="#instances-self" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+An <b>instance</b> is particular instantiation of a class object. <code>self</code> refers to the current instance. 
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize a dog object</span>
+<span class="n">george</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>From our example above:</p>
+<ul class="simple">
+<li><p>Dog is the Class we created</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">george</span></code> was an <em>instance</em> of that class</p></li>
+<li><p>self just refers to whatever the <em>current</em> instance is</p></li>
+</ul>
+<div class="section" id="clicker-question-2">
+<h3>Clicker Question #2<a class="headerlink" href="#clicker-question-2" title="Permalink to this headline">¶</a></h3>
+<p>How many instances of <code class="docutils literal notranslate"><span class="pre">Dog()</span></code> are created below and how many times does the <code class="docutils literal notranslate"><span class="pre">speak()</span></code> method execute?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pack_of_dogs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Dog</span><span class="p">(),</span> <span class="n">Dog</span><span class="p">(),</span> <span class="n">Dog</span><span class="p">(),</span> <span class="n">Dog</span><span class="p">()]</span>
+
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">doggie</span> <span class="ow">in</span> <span class="n">pack_of_dogs</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">doggie</span><span class="o">.</span><span class="n">speak</span><span class="p">()</span>
+        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Woof
+Woof
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) 2 instances, 2 method executions</p></li>
+<li><p>B) 2 instances, 4 method executions</p></li>
+<li><p>C) 4 instances, 2 method executions</p></li>
+<li><p>D) 4 instances, 4 method executions</p></li>
+<li><p>E) ¯\_(ツ)_/¯</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="instance-attributes">
+<h2>Instance Attributes<a class="headerlink" href="#instance-attributes" title="Permalink to this headline">¶</a></h2>
+<p>An instance attribute specific to the instance we’re on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize a group of dogs</span>
+<span class="n">pack_of_dogs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Dog</span><span class="p">(),</span> <span class="n">Dog</span><span class="p">(),</span> <span class="n">Dog</span><span class="p">(),</span> <span class="n">Dog</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">dog</span> <span class="ow">in</span> <span class="n">pack_of_dogs</span><span class="p">:</span>
+    <span class="n">dog</span><span class="o">.</span><span class="n">speak</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Woof
+Woof
+Woof
+Woof
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-3">
+<h3>Clicker Question #3<a class="headerlink" href="#clicker-question-3" title="Permalink to this headline">¶</a></h3>
+<p>Considering the output above, how many instances of dog are there?</p>
+<ul class="simple">
+<li><p>A) 0</p></li>
+<li><p>B) 1</p></li>
+<li><p>C) 2</p></li>
+<li><p>D) 3</p></li>
+<li><p>E) 4</p></li>
+</ul>
+<div class="alert alert-success">
+Instance attributes are attributes that we can make be different for each instance of a class. <code>__init__</code> is a special method used to define instance attributes. 
+</div></div>
+</div>
+<div class="section" id="example-class-dog-revisited">
+<h2>Example Class: Dog Revisited<a class="headerlink" href="#example-class-dog-revisited" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Two trailing underscores is used to indicate something Python recognizes and knows what to do every time it sees it.</p></li>
+<li><p>Here, we use <code class="docutils literal notranslate"><span class="pre">__init__</span></code> to execute the code within it every time you initialize an object.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">():</span>
+    
+    <span class="c1"># Class attributes for Dogs</span>
+    <span class="n">sound</span> <span class="o">=</span> <span class="s1">&#39;Woof&#39;</span>
+    
+    <span class="c1"># Initializer, allows us to specify instance-specific attributes</span>
+    <span class="c1"># leading and trailing double underscores indicates that this is special to Python</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sound</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize a dog</span>
+<span class="c1"># what goes in the parentheses is defined in the __init__</span>
+<span class="n">gary</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Gary&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check gary&#39;s attributes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gary</span><span class="o">.</span><span class="n">sound</span><span class="p">)</span>    <span class="c1"># This is an class attribute</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gary</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>     <span class="c1"># This is a instance attribute</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Woof
+Gary
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check gary&#39;s methods</span>
+<span class="n">gary</span><span class="o">.</span><span class="n">speak</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Woof
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-4">
+<h3>Clicker Question #4<a class="headerlink" href="#clicker-question-4" title="Permalink to this headline">¶</a></h3>
+<p>Edit the code we’ve been using for the Class <code class="docutils literal notranslate"><span class="pre">Dog</span></code> to include information about the breed of the Class Dog?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># EDIT CODE HERE</span>
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">():</span>
+    
+    <span class="c1"># Class attributes for Dogs</span>
+    <span class="n">sound</span> <span class="o">=</span> <span class="s1">&#39;Woof&#39;</span>
+    
+    <span class="c1"># Initializer, allows us to specificy instance specific attributes</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">breed</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>
+    
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sound</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## We&#39;ll execute here</span>
+<span class="n">lexi</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Lexi&#39;</span><span class="p">,</span> <span class="n">breed</span><span class="o">=</span><span class="s1">&#39;Italian Greyhound&#39;</span><span class="p">)</span>
+<span class="n">lexi</span><span class="o">.</span><span class="n">breed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Italian Greyhound&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) I did it!</p></li>
+<li><p>B) I think I did it!</p></li>
+<li><p>C) So lost. -_-</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-example-cat">
+<h2>Class example: Cat<a class="headerlink" href="#class-example-cat" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a class &#39;Cat&#39;</span>
+<span class="k">class</span> <span class="nc">Cat</span><span class="p">():</span>
+    
+    <span class="n">sound</span> <span class="o">=</span> <span class="s2">&quot;Meow&quot;</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sound</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="instances-examples">
+<h2>Instances Examples<a class="headerlink" href="#instances-examples" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define some instances of our objects</span>
+<span class="n">pets</span> <span class="o">=</span> <span class="p">[</span><span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Jaspurr&#39;</span><span class="p">),</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Barkley&#39;</span><span class="p">,</span> <span class="s1">&#39;Corgi&#39;</span><span class="p">),</span> 
+        <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Picatso&#39;</span><span class="p">),</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Ruffius&#39;</span><span class="p">,</span> <span class="s1">&#39;Italian Greyhound&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pet</span> <span class="ow">in</span> <span class="n">pets</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pet</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39; says:&#39;</span><span class="p">)</span>
+    <span class="n">pet</span><span class="o">.</span><span class="n">speak</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Jaspurr  says:
+Meow
+Barkley  says:
+Woof
+Picatso  says:
+Meow
+Ruffius  says:
+Woof
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-5">
+<h3>Clicker Question #5<a class="headerlink" href="#clicker-question-5" title="Permalink to this headline">¶</a></h3>
+<p>What will the following code snippet print out?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">():</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
+    
+    <span class="k">def</span> <span class="nf">check_score</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">65</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">email</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">(</span><span class="s1">&#39;Rob&#39;</span><span class="p">,</span> <span class="s1">&#39;rob@python.com&#39;</span><span class="p">,</span> <span class="mi">62</span><span class="p">)</span>
+<span class="n">student</span><span class="o">.</span><span class="n">check_score</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;rob@python.com&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) True</p></li>
+<li><p>B) ‘Rob’</p></li>
+<li><p>C) False</p></li>
+<li><p>D) ‘rob&#64;python.com’</p></li>
+<li><p>E) None</p></li>
+</ul>
+<p>UPDATE WORDING TO MAKE MORE CLEAR</p>
+</div>
+<div class="section" id="clicker-question-6">
+<h3>Clicker Question #6<a class="headerlink" href="#clicker-question-6" title="Permalink to this headline">¶</a></h3>
+<p>Which is the best description of objects, classes and instances?</p>
+<ul class="simple">
+<li><p>A) objects are defined by <code class="docutils literal notranslate"><span class="pre">instance</span></code>, with particular instantiations of them called classes.</p></li>
+<li><p>B) instances are defined by <code class="docutils literal notranslate"><span class="pre">class</span></code>, with particular instantiations of them called objects.</p></li>
+<li><p>C) classes are defined by <code class="docutils literal notranslate"><span class="pre">object</span></code>, with particular instantiations of them called instances.</p></li>
+<li><p>D) objects are defined by <code class="docutils literal notranslate"><span class="pre">class</span></code>, with particular instantiations of them called instances.</p></li>
+<li><p>E) None of this makes any sense.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>from datetime import date
+## see underlying code for date class
+## we know what even more of this means now!
+date??
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="class-inheritance">
+<h2>Class Inheritance<a class="headerlink" href="#class-inheritance" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+Objects can also be built from other objects, inheriting their properties and building off them.
+</div><p>If you have a hierarchical structure, this can be very helpful.</p>
+<p>For our <code class="docutils literal notranslate"><span class="pre">Dog()</span></code> and <code class="docutils literal notranslate"><span class="pre">Cat()</span></code> example, you may on some more general <code class="docutils literal notranslate"><span class="pre">Animal()</span></code> class.</p>
+<p>You would want <code class="docutils literal notranslate"><span class="pre">Animal()</span></code> to inherit all the ‘stuff’ from the other classes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Tool</span><span class="p">():</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>       
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_tool</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tool_type</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="k">def</span> <span class="nf">use_tool</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Using tool.&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Hammer</span><span class="p">(</span><span class="n">Tool</span><span class="p">):</span> <span class="c1">#inherit Tool class</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span> <span class="c1"># inherit initialization from Tool()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tool_type</span> <span class="o">=</span> <span class="s1">&#39;Hammer&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">why</span> <span class="o">=</span> <span class="s1">&#39;To hammer things.&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_tool</span> <span class="o">=</span> <span class="n">Tool</span><span class="p">()</span>
+<span class="n">my_hammer</span> <span class="o">=</span> <span class="n">Hammer</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_hammer</span><span class="o">.</span><span class="n">is_tool</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_hammer</span><span class="o">.</span><span class="n">why</span><span class="p">)</span>
+<span class="n">my_hammer</span><span class="o">.</span><span class="n">use_tool</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>True
+To hammer things.
+Using tool.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-7">
+<h3>Clicker Question #7<a class="headerlink" href="#clicker-question-7" title="Permalink to this headline">¶</a></h3>
+<p>Given the following set of classes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Brain</span><span class="p">():</span> 
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">folded</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">folded</span> <span class="o">=</span> <span class="n">folded</span>
+        
+    <span class="k">def</span> <span class="nf">print_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">folded_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">folded</span><span class="p">:</span>
+            <span class="n">folded_string</span> <span class="o">=</span> <span class="s1">&#39;not&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This brain is &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">+</span> <span class="s1">&#39; and is &#39;</span> <span class="o">+</span> <span class="n">folded_string</span> <span class="o">+</span> <span class="s1">&#39; folded.&#39;</span><span class="p">)</span>
+         
+<span class="k">class</span> <span class="nc">SheepBrain</span><span class="p">(</span><span class="n">Brain</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">folded</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">folded</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What will the following print out?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sheep</span> <span class="o">=</span> <span class="n">SheepBrain</span><span class="p">()</span>
+<span class="n">sheep</span><span class="o">.</span><span class="n">print_info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>This brain is medium and is not folded.
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) This brain is medium and folded.</p></li>
+<li><p>B) This brain is large and folded.</p></li>
+<li><p>C) This brain is medium and not folded.</p></li>
+<li><p>D) This brain is medium and False.</p></li>
+<li><p>E) ¯\_(ツ)_/¯</p></li>
+</ul>
+</div>
+<div class="section" id="clicker-question-8">
+<h3>Clicker Question #8<a class="headerlink" href="#clicker-question-8" title="Permalink to this headline">¶</a></h3>
+<p>Given the following set of classes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Brain</span><span class="p">():</span> 
+        
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">folded</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">folded</span> <span class="o">=</span> <span class="n">folded</span>
+        
+    <span class="k">def</span> <span class="nf">print_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">folded_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">folded</span><span class="p">:</span>
+            <span class="n">folded_string</span> <span class="o">=</span> <span class="s1">&#39;not&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This brain is &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">+</span> <span class="s1">&#39; and is &#39;</span> <span class="o">+</span> <span class="n">folded_string</span> <span class="o">+</span> <span class="s1">&#39; folded.&#39;</span><span class="p">)</span>
+        
+<span class="k">class</span> <span class="nc">SheepBrain</span><span class="p">(</span><span class="n">Brain</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">folded</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">folded</span><span class="p">)</span>
+        
+<span class="k">class</span> <span class="nc">HumanBrain</span><span class="p">(</span><span class="n">Brain</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;large&#39;</span><span class="p">,</span> <span class="n">folded</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">folded</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What will the following print out?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sheep</span> <span class="o">=</span> <span class="n">SheepBrain</span><span class="p">()</span>
+<span class="n">human</span> <span class="o">=</span> <span class="n">HumanBrain</span><span class="p">()</span>
+<span class="n">human</span><span class="o">.</span><span class="n">folded</span> <span class="ow">and</span> <span class="n">sheep</span><span class="o">.</span><span class="n">folded</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) True</p></li>
+<li><p>B) False</p></li>
+<li><p>C) None</p></li>
+<li><p>D) AssertionError</p></li>
+<li><p>E) ¯\_(ツ)_/¯</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># has access to Brain() methods</span>
+<span class="n">sheep</span><span class="o">.</span><span class="n">print_info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>This brain is medium and is not folded.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="classes-review">
+<h3>Classes Review<a class="headerlink" href="#classes-review" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span></code> creates a new class type</p>
+<ul>
+<li><p>names tend to use CapWords case</p></li>
+<li><p>can have attributes (including instance attributes) and methods</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">obj.attribute</span></code> accesses data stored in attribute</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">obj.method()</span></code> carries out code defined within method</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>instance attributes defined with <code class="docutils literal notranslate"><span class="pre">__init__</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> is a reserved method in Python</p></li>
+<li><p>This “binds the attributes with the given arguments”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code> refers to current instance</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>to create an object (instance) of a specified class type (<code class="docutils literal notranslate"><span class="pre">ClassType</span></code>):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">object_name</span> <span class="pre">=</span> <span class="pre">ClassType(input1,</span> <span class="pre">input2)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code> is not given an input when creating an object of a specified class</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="everything-in-python-is-an-object">
+<h2>Everything in Python is an Object!<a class="headerlink" href="#everything-in-python-is-an-object" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-variables-are-objects">
+<h3>Data variables are objects<a class="headerlink" href="#data-variables-are-objects" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="s1">&#39;word&#39;</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>True
+True
+True
+True
+True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions-are-objects">
+<h3>Functions are objects<a class="headerlink" href="#functions-are-objects" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="nb">sum</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="nb">max</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Custom function are also objects</span>
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;yay Python!&#39;</span><span class="p">)</span>
+    
+<span class="nb">isinstance</span><span class="p">(</span><span class="n">my_function</span><span class="p">,</span> <span class="nb">object</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="class-definitions-instances-are-objects">
+<h3>Class definitions &amp; instances are objects<a class="headerlink" href="#class-definitions-instances-are-objects" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="mi">13</span>
+
+<span class="n">my_instance</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">MyClass</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">my_instance</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>True
+True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="object-oriented-programming">
+<h2>Object-Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+<b>Object-oriented programming (OOP)</b> is a programming paradigm in which code is organized around objects. Python is an OOP programming langauge. 
+</div></div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="13-Objects.html" title="previous page">Objects</a>
+    <a class='right-next' id="next-link" href="15-Namespaces.html" title="next page">Namespaces</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Donoghue & Shannon Ellis<br/>
+        
+            &copy; Copyright 2020-.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
