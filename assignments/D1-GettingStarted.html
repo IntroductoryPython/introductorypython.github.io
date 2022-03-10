@@ -1,0 +1,1481 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1: Getting Started &#8212; Introductory Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="A2-Ciphers" href="D2-Ciphers.html" />
+    <link rel="prev" title="CL5: Command Line" href="../labs/CL5-CommandLine.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introductory Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/index.html">
+   Introductory Python
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Materials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/01-Tools.html">
+   Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/02-JupyterNotebooks.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/03-Variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/04-Operators.html">
+   Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/05-Conditionals.html">
+   Conditionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/06-DataTypes.html">
+   DataTypes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/07-Loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/08-Encodings.html">
+   Encodings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/09-FunctionsI.html">
+   FunctionsI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/10-Algorithms.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/11-FunctionsII.html">
+   FunctionsII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/12-Debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/13-Objects.html">
+   Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/14-Classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/15-Namespaces.html">
+   Namespaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/16-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/17-APIs.html">
+   The Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/18-OpenSource.html">
+   OpenSource
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/19-ScientificComputing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/20-Documentation.html">
+   Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/21-CodeStyle.html">
+   Code Style
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/22-CodeTesting.html">
+   Code Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/23-CodeProjects.html">
+   CodeProjects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/24-AdvancedPython.html">
+   AdvancedPython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/25-WrapUp.html">
+   WrapUp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/A1-Syntax.html">
+   A1-Syntax
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/A2-Examples.html">
+   A2-Examples
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL1-ProgrammingI.html">
+   ProgrammingI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL2-ProgrammingII.html">
+   ProgrammingII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL3-AlgorithmicThinking.html">
+   AlgorithmicThinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL4-Exploring.html">
+   Exploring
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL5-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   GettingStarted
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="D2-Ciphers.html">
+   Ciphers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="D3-Chatbots.html">
+   Chatbots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="D4-ArtificialAgents.html">
+   ArtificialAgents
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/ProjectIdeas.html">
+   Ideas
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/assignments/D1-GettingStarted.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/introductorypython/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/introductorypython//issues/new?title=Issue%20on%20page%20%2Fassignments/D1-GettingStarted.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/introductorypython//master?urlpath=tree/inpy/assignments/D1-GettingStarted.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-complete-assignments">
+   How to complete assignments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tips-tricks">
+   Tips &amp; Tricks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printing-variables">
+     Printing Variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#restarting-the-kernel">
+     Restarting the Kernel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-question">
+   Example Question
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   SETUP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-i-defining-variables">
+   Part I - Defining Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q1-create-variables-1-point">
+     Q1 - Create Variables (1 point)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-ii-operations">
+   Part II - Operations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q2-python-as-a-calculator-0-75-points">
+     Q2 - Python as a Calculator (0.75 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q3-string-manipulations-0-75-points">
+     Q3 - String Manipulations (0.75 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q4-boolean-comparisons-1-point">
+     Q4 - Boolean Comparisons (1 point)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q5-value-comparisons-1-point">
+     Q5 - Value Comparisons (1 point)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iii-conditionals">
+   Part III - Conditionals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q6-conditionals-with-booleans-1-point">
+     Q6 - Conditionals With Booleans (1 point)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q7-conditionals-with-comparisons-1-point">
+     Q7 - Conditionals With Comparisons (1 point)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q8-conditionals-with-multiple-options-1-point">
+     Q8 - Conditionals With Multiple Options (1 point)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iv-putting-it-all-together">
+   Part IV - Putting it all together
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q9-multiple-cases-experiment-example-1-point">
+     Q9 - Multiple Cases: Experiment Example (1 point)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q10-creating-a-calculator-1-5-points">
+     Q10 - Creating a Calculator (1.5 points)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-end">
+   The End!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Assignment 1: Getting Started</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-complete-assignments">
+   How to complete assignments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tips-tricks">
+   Tips &amp; Tricks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printing-variables">
+     Printing Variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#restarting-the-kernel">
+     Restarting the Kernel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-question">
+   Example Question
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   SETUP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-i-defining-variables">
+   Part I - Defining Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q1-create-variables-1-point">
+     Q1 - Create Variables (1 point)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-ii-operations">
+   Part II - Operations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q2-python-as-a-calculator-0-75-points">
+     Q2 - Python as a Calculator (0.75 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q3-string-manipulations-0-75-points">
+     Q3 - String Manipulations (0.75 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q4-boolean-comparisons-1-point">
+     Q4 - Boolean Comparisons (1 point)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q5-value-comparisons-1-point">
+     Q5 - Value Comparisons (1 point)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iii-conditionals">
+   Part III - Conditionals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q6-conditionals-with-booleans-1-point">
+     Q6 - Conditionals With Booleans (1 point)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q7-conditionals-with-comparisons-1-point">
+     Q7 - Conditionals With Comparisons (1 point)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q8-conditionals-with-multiple-options-1-point">
+     Q8 - Conditionals With Multiple Options (1 point)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-iv-putting-it-all-together">
+   Part IV - Putting it all together
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q9-multiple-cases-experiment-example-1-point">
+     Q9 - Multiple Cases: Experiment Example (1 point)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q10-creating-a-calculator-1-5-points">
+     Q10 - Creating a Calculator (1.5 points)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-end">
+   The End!
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-1-getting-started">
+<h1>Assignment 1: Getting Started<a class="headerlink" href="#assignment-1-getting-started" title="Permalink to this headline">¶</a></h1>
+<p>This assignment covers Variables, Operators &amp; Conditionals.</p>
+<p>This assignment is out of 10 points, worth 10% of your grade.</p>
+<p>This is a demo assignment that is available as part of the Introductory Python open materials.</p>
+<div class="alert alert-danger">
+If you are in the COGS18 course at UC San Diego, this is NOT a valid version of the assignment for the course.
+</div><div class="section" id="how-to-complete-assignments">
+<h2>How to complete assignments<a class="headerlink" href="#how-to-complete-assignments" title="Permalink to this headline">¶</a></h2>
+<p>Whenever you see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You need to replace this section with some code that answers the questions and meets the specified criteria. Make sure you remove the ‘raise’ line when you do this (or your notebook will raise an error, regardless of any other code, and thus fail the grading tests).</p>
+<p>You should write the answer to the questions in those cells (the ones with <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE</span></code>), but you can also add extra cells to explore / investigate things if you need / want to.</p>
+<p>Any cell with ‘assert’ statements in it is a test cell. You should not try to change or delete these cells. Note that there might be more than one assert that tests a particular question.</p>
+<p>If a test does fail, reading the error that is printed out should let you know which test failed, which may be useful for fixing it.</p>
+<p>Note that some cells, including the test cells, may be read only, which means they won’t let you edit them. If you cannot edit a cell - that is normal, and you shouldn’t need to edit that cell.</p>
+</div>
+<div class="section" id="tips-tricks">
+<h2>Tips &amp; Tricks<a class="headerlink" href="#tips-tricks" title="Permalink to this headline">¶</a></h2>
+<p>The following are a couple tips &amp; tricks that may help you if you get stuck on anything.</p>
+<div class="section" id="printing-variables">
+<h3>Printing Variables<a class="headerlink" href="#printing-variables" title="Permalink to this headline">¶</a></h3>
+<p>A reminder that you can (and should) print and check variables as you go.</p>
+<p>This allows you to check what values they hold, and fix things if anything unexpected happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a variable</span>
+<span class="n">math_result</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">4</span>
+
+<span class="c1"># Print out the value(s) of a variable.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="restarting-the-kernel">
+<h3>Restarting the Kernel<a class="headerlink" href="#restarting-the-kernel" title="Permalink to this headline">¶</a></h3>
+<p>A reminder that sometimes if you run cells out of order, you can end up over-writing things in your namespace.</p>
+<p>If things seem to go weird, a good first step is to restart the kernel, which you can do from the kernel menu above.</p>
+<p>Even if everything seems to be working, it’s a nice check to ‘Restart &amp; Run All’, to make sure everything runs properly in order.</p>
+</div>
+</div>
+<div class="section" id="example-question">
+<h2>Example Question<a class="headerlink" href="#example-question" title="Permalink to this headline">¶</a></h2>
+<p>Define a variable called <code class="docutils literal notranslate"><span class="pre">my_int</span></code> that stores the value 17.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="n">my_int</span> <span class="o">=</span> <span class="mi">17</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a test cell. It checks that the code you wrote does what it&#39;s supposed to</span>
+<span class="k">assert</span>  <span class="n">my_int</span>                     <span class="c1"># This tests that a variable exists</span>
+<span class="k">assert</span>  <span class="nb">isinstance</span><span class="p">(</span><span class="n">my_int</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>    <span class="c1"># This tests that a variable is of a particular type</span>
+<span class="k">assert</span>  <span class="n">my_int</span> <span class="o">==</span> <span class="mi">17</span>               <span class="c1"># This tests that a variable has a specified value</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="setup">
+<h2>SETUP<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>Run the following cell before you start working on the assignment.</p>
+<p>This is going to make a helper folder on your computer, for some of the grading and checking things in this assignment.</p>
+<p>You do not need to interact with this folder maunally at all - everything is automatic.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;A1Code&#39;</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;A1Code&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-i-defining-variables">
+<h2>Part I - Defining Variables<a class="headerlink" href="#part-i-defining-variables" title="Permalink to this headline">¶</a></h2>
+<p>First, we will start by defining some Python variables.</p>
+<div class="section" id="q1-create-variables-1-point">
+<h3>Q1 - Create Variables (1 point)<a class="headerlink" href="#q1-create-variables-1-point" title="Permalink to this headline">¶</a></h3>
+<p>Create the following variables:</p>
+<ul class="simple">
+<li><p>a variable called <code class="docutils literal notranslate"><span class="pre">number</span></code> that stores the value 23</p></li>
+<li><p>a variable called <code class="docutils literal notranslate"><span class="pre">decimal</span></code> that stores the value 12.5</p></li>
+<li><p>a variable called <code class="docutils literal notranslate"><span class="pre">word</span></code> that stores the value ‘cogs18’</p></li>
+<li><p>a variable called <code class="docutils literal notranslate"><span class="pre">truth</span></code> that stores the value True</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the variables</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q1</span>
+
+<span class="c1"># Check that variable `number` is an int, and has the correct value</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">23</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q1</span>
+
+<span class="c1"># Check that variable `decimal` is a float, and has the correct value</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">decimal</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">decimal</span> <span class="o">==</span> <span class="mf">12.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q1</span>
+
+<span class="c1"># Check that variable `words` is a string, and has the correct value</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">word</span> <span class="o">==</span> <span class="s2">&quot;cogs18&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q1</span>
+
+<span class="c1"># Check that variable `truth` is a boolean, and has the correct value</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">truth</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">truth</span> <span class="o">==</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-ii-operations">
+<h2>Part II - Operations<a class="headerlink" href="#part-ii-operations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q2-python-as-a-calculator-0-75-points">
+<h3>Q2 - Python as a Calculator (0.75 points)<a class="headerlink" href="#q2-python-as-a-calculator-0-75-points" title="Permalink to this headline">¶</a></h3>
+<p>Do the following calculations:</p>
+<ul class="simple">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">ans_1</span></code> as the result of int_1 multiplied by int_2</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">ans_2</span></code> as the result of float_1 divided by float_2, with int_2 then added</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">ans_3</span></code> as the result of the remainder of int_1 divided by int_2</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># These variables provided for you</span>
+<span class="n">int_1</span> <span class="o">=</span> <span class="mi">47</span>
+<span class="n">int_2</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="n">float_1</span> <span class="o">=</span> <span class="mf">47.5</span>
+<span class="n">float_2</span> <span class="o">=</span> <span class="mf">19.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q2  [Note: Includes Hidden Tests]</span>
+
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ans_1</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q2  [Note: Includes Hidden Tests]</span>
+
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ans_2</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q2  [Note: Includes Hidden Tests]</span>
+
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ans_3</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q3-string-manipulations-0-75-points">
+<h3>Q3 - String Manipulations (0.75 points)<a class="headerlink" href="#q3-string-manipulations-0-75-points" title="Permalink to this headline">¶</a></h3>
+<p>Using the strings provided, concatenate them together into the string <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">is</span> <span class="pre">fun!</span></code>.</p>
+<p>Save this result to a variable called <code class="docutils literal notranslate"><span class="pre">str_output</span></code>.</p>
+<p>Note: make sure to add spaces between words when concatenating together.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># These variables provided for you</span>
+<span class="n">str_1</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">str_2</span> <span class="o">=</span> <span class="s2">&quot;is&quot;</span>
+<span class="n">str_3</span> <span class="o">=</span> <span class="s2">&quot;fun!&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q3</span>
+
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">str_output</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">str_output</span> <span class="o">==</span> <span class="s2">&quot;Python is fun!&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q4-boolean-comparisons-1-point">
+<h3>Q4 - Boolean Comparisons (1 point)<a class="headerlink" href="#q4-boolean-comparisons-1-point" title="Permalink to this headline">¶</a></h3>
+<p>Using the variables provided, do the following boolean logical comparisons:</p>
+<ul class="simple">
+<li><p>Define <code class="docutils literal notranslate"><span class="pre">bool_comp_1</span></code> to be the logical <code class="docutils literal notranslate"><span class="pre">and</span></code> of <code class="docutils literal notranslate"><span class="pre">bool_1</span></code> and <code class="docutils literal notranslate"><span class="pre">bool_2</span></code></p></li>
+<li><p>Define <code class="docutils literal notranslate"><span class="pre">bool_comp_2</span></code> to be the logical <code class="docutils literal notranslate"><span class="pre">or</span></code> of  <code class="docutils literal notranslate"><span class="pre">bool_1</span></code> and <code class="docutils literal notranslate"><span class="pre">bool_2</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># These variables provided for you</span>
+<span class="n">bool_1</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">bool_2</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q4 [Note: Includes Hidden Tests]</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bool_comp_1</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q4 [Note: Includes Hidden Tests]</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bool_comp_2</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q5-value-comparisons-1-point">
+<h3>Q5 - Value Comparisons (1 point)<a class="headerlink" href="#q5-value-comparisons-1-point" title="Permalink to this headline">¶</a></h3>
+<p>Do the following value comparisons:</p>
+<ul class="simple">
+<li><p>Check if the value stored in <code class="docutils literal notranslate"><span class="pre">comp_val_1</span></code> is less than or equal to the value stored in <code class="docutils literal notranslate"><span class="pre">comp_val_2</span></code></p>
+<ul>
+<li><p>Store the result of this comparison to variable called <code class="docutils literal notranslate"><span class="pre">comp_1</span></code></p></li>
+</ul>
+</li>
+<li><p>Check if the value stored in <code class="docutils literal notranslate"><span class="pre">comp_val_3</span></code> is not equal to (is different from) the value stored in <code class="docutils literal notranslate"><span class="pre">comp_val_4</span></code></p>
+<ul>
+<li><p>Store the result of this comparison to variable called <code class="docutils literal notranslate"><span class="pre">comp_2</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># These variables provided for you</span>
+<span class="n">comp_val_1</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">comp_val_2</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="n">comp_val_3</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">comp_val_4</span> <span class="o">=</span> <span class="mi">22</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q5 [Note: Includes Hidden Tests]</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">comp_1</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q5 [Note: Includes Hidden Tests]</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">comp_2</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-iii-conditionals">
+<h2>Part III - Conditionals<a class="headerlink" href="#part-iii-conditionals" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q6-conditionals-with-booleans-1-point">
+<h3>Q6 - Conditionals With Booleans (1 point)<a class="headerlink" href="#q6-conditionals-with-booleans-1-point" title="Permalink to this headline">¶</a></h3>
+<p>Write a conditional that tests a boolean variable <code class="docutils literal notranslate"><span class="pre">status</span></code>, specifically:</p>
+<ul class="simple">
+<li><p>if <code class="docutils literal notranslate"><span class="pre">status</span></code> evaluates as <code class="docutils literal notranslate"><span class="pre">True</span></code>, set the variable <code class="docutils literal notranslate"><span class="pre">output</span></code> as the string “GOOD”</p></li>
+<li><p>else (meaning <code class="docutils literal notranslate"><span class="pre">status</span></code> must evaluate as <code class="docutils literal notranslate"><span class="pre">False</span></code>), set the variable <code class="docutils literal notranslate"><span class="pre">output</span></code> as the string “BAD”</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> A1Code/q6_code.py
+<span class="c1"># ^ You can ignore this line - it is used to help check your code</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q6</span>
+
+<span class="c1"># Set stats - check for True case</span>
+<span class="n">status</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># This line is a way to run &amp; re-run the code you wrote</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q6_code.py  
+<span class="k">assert</span> <span class="n">output</span> <span class="o">==</span> <span class="s2">&quot;GOOD&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q6</span>
+
+<span class="c1"># Set stats - check for False case</span>
+<span class="n">status</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># This line is a way to run &amp; re-run the code you wrote</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q6_code.py  
+<span class="k">assert</span> <span class="n">output</span> <span class="o">==</span> <span class="s2">&quot;BAD&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q7-conditionals-with-comparisons-1-point">
+<h3>Q7 - Conditionals With Comparisons (1 point)<a class="headerlink" href="#q7-conditionals-with-comparisons-1-point" title="Permalink to this headline">¶</a></h3>
+<p>Consider a case in which you are running an experiment, with multiple groups of subjects, including young subjects and old subjects.</p>
+<p>Based on the subjects age group, you want to do a different analysis - specifically if they are in the old group.</p>
+<p>Write a conditional with an <code class="docutils literal notranslate"><span class="pre">if</span></code> and an <code class="docutils literal notranslate"><span class="pre">else</span></code>:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> should check if the variable <code class="docutils literal notranslate"><span class="pre">subj_age</span></code> has the value <code class="docutils literal notranslate"><span class="pre">'old'</span></code> (a string).</p>
+<ul>
+<li><p>If so, it should set the variable <code class="docutils literal notranslate"><span class="pre">change_analysis</span></code> to the value <code class="docutils literal notranslate"><span class="pre">True</span></code> (a boolean)</p></li>
+</ul>
+</li>
+<li><p>Else, the variable <code class="docutils literal notranslate"><span class="pre">change_analysis</span></code> should be set to False (a boolean)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> A1Code/q7_code.py
+<span class="c1"># ^ You can ignore this line - it is used to help check your code</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q7</span>
+
+<span class="c1"># Set subj_age to old</span>
+<span class="n">subj_age</span> <span class="o">=</span> <span class="s1">&#39;old&#39;</span>
+
+<span class="c1"># This line is a way to run &amp; re-run the code you wrote</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q7_code.py  
+
+<span class="c1"># Check that code </span>
+<span class="k">assert</span> <span class="n">change_analysis</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">change_analysis</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q7</span>
+
+<span class="c1"># Change subj_age</span>
+<span class="n">subj_age</span> <span class="o">=</span> <span class="s1">&#39;young&#39;</span>
+
+<span class="c1"># Re-run code and make sure the conditional still works</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q7_code.py
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">change_analysis</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">change_analysis</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q8-conditionals-with-multiple-options-1-point">
+<h3>Q8 - Conditionals With Multiple Options (1 point)<a class="headerlink" href="#q8-conditionals-with-multiple-options-1-point" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes we may need to check multiple conditions, with many (more than two) possibilities.</p>
+<p>Create a conditional with the following outline:</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">check_1</span></code> and <code class="docutils literal notranslate"><span class="pre">check_2</span></code> variables are both True, it should set the value of a variable <code class="docutils literal notranslate"><span class="pre">outcome</span></code> to the string ‘BOTH’</p></li>
+<li><p>Elif <code class="docutils literal notranslate"><span class="pre">check_1</span></code> is True and <code class="docutils literal notranslate"><span class="pre">check_2</span></code> is False, it should set the value of a variable <code class="docutils literal notranslate"><span class="pre">outcome</span></code> to the string ‘ONE’</p></li>
+<li><p>Elif <code class="docutils literal notranslate"><span class="pre">check_1</span></code> is False and <code class="docutils literal notranslate"><span class="pre">check_2</span></code> is True, it should set the value of a variable <code class="docutils literal notranslate"><span class="pre">outcome</span></code> to the string ‘TWO’</p></li>
+<li><p>Else (meaning both must be False), it should set the value of a variable <code class="docutils literal notranslate"><span class="pre">outcome</span></code> to the string ‘NEITHER’</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> A1Code/q8_code.py
+<span class="c1"># ^ You can ignore this line - it is used to help check your code</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q8</span>
+
+<span class="c1"># Check &#39;BOTH&#39; case</span>
+<span class="n">check_1</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">check_2</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># This line is a way to run &amp; re-run the code you wrote</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q8_code.py
+<span class="k">assert</span> <span class="n">outcome</span> <span class="o">==</span> <span class="s1">&#39;BOTH&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q8</span>
+
+<span class="c1"># Check &#39;ONE&#39; case</span>
+<span class="n">check_1</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">check_2</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># This line is a way to run &amp; re-run the code you wrote</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q8_code.py
+<span class="k">assert</span> <span class="n">outcome</span> <span class="o">==</span> <span class="s1">&#39;ONE&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q8</span>
+
+<span class="c1"># Check &#39;TWO&#39; case</span>
+<span class="n">check_1</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">check_2</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># This line is a way to run &amp; re-run the code you wrote</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q8_code.py
+<span class="k">assert</span> <span class="n">outcome</span> <span class="o">==</span> <span class="s1">&#39;TWO&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q8</span>
+
+<span class="c1"># Check &#39;NEITHER&#39; case</span>
+<span class="n">check_1</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">check_2</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># This line is a way to run &amp; re-run the code you wrote</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q8_code.py
+<span class="k">assert</span> <span class="n">outcome</span> <span class="o">==</span> <span class="s1">&#39;NEITHER&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-iv-putting-it-all-together">
+<h2>Part IV - Putting it all together<a class="headerlink" href="#part-iv-putting-it-all-together" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q9-multiple-cases-experiment-example-1-point">
+<h3>Q9 - Multiple Cases: Experiment Example (1 point)<a class="headerlink" href="#q9-multiple-cases-experiment-example-1-point" title="Permalink to this headline">¶</a></h3>
+<p>Lets revisit the setup of Q7 - in which we wanted to set a variable to indicate if a subject in an experiment was in a particular group, and thus required different processing. In this question we will extend that premise, by writing a set of conditionals to mark an interaction between subject’s age and score.</p>
+<p>For example, it is common for behavioural performance to decrease with age. However, some subjects do not seem to show this behavioural deficit with age. Investigating such ‘super-ages’ could be useful for learning about the cognitive decline of aging.</p>
+<p>Write a conditional that does the following:</p>
+<ul class="simple">
+<li><p>If the variable <code class="docutils literal notranslate"><span class="pre">subj_age</span></code> has the value <code class="docutils literal notranslate"><span class="pre">old</span></code> and the variable <code class="docutils literal notranslate"><span class="pre">score</span></code> is greater than 25:</p>
+<ul>
+<li><p>set the variable <code class="docutils literal notranslate"><span class="pre">subj_status</span></code> to the string ‘Super Ager’</p></li>
+</ul>
+</li>
+<li><p>Elif the variable <code class="docutils literal notranslate"><span class="pre">subj_age</span></code> has the value <code class="docutils literal notranslate"><span class="pre">old</span></code> and the variable <code class="docutils literal notranslate"><span class="pre">score</span></code> is less than or equal to 25:</p>
+<ul>
+<li><p>set the variable <code class="docutils literal notranslate"><span class="pre">subj_status</span></code> to the string ‘Normal Ager’</p></li>
+</ul>
+</li>
+<li><p>Elif the variable <code class="docutils literal notranslate"><span class="pre">subj_age</span></code> has the value <code class="docutils literal notranslate"><span class="pre">young</span></code> and the variable <code class="docutils literal notranslate"><span class="pre">score</span></code> is greater than 25:</p>
+<ul>
+<li><p>set the variable <code class="docutils literal notranslate"><span class="pre">subj_status</span></code> to the string ‘Normal Youth’</p></li>
+</ul>
+</li>
+<li><p>Elif the variable <code class="docutils literal notranslate"><span class="pre">subj_age</span></code> has the value <code class="docutils literal notranslate"><span class="pre">young</span></code> and the variable <code class="docutils literal notranslate"><span class="pre">score</span></code> is less than or equal to 25:</p>
+<ul>
+<li><p>set the variable <code class="docutils literal notranslate"><span class="pre">subj_status</span></code> to the string ‘Bad Youth’</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> A1Code/q9_code.py
+<span class="c1"># ^ You can ignore this line - it is used to help check your code</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q9</span>
+
+<span class="n">subj_age</span> <span class="o">=</span> <span class="s1">&#39;old&#39;</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">28</span>
+
+<span class="c1"># This line is a way to run &amp; re-run the code you wrote</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q9_code.py
+<span class="k">assert</span> <span class="n">subj_status</span> <span class="o">==</span> <span class="s1">&#39;Super Ager&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q9</span>
+
+<span class="n">subj_age</span> <span class="o">=</span> <span class="s1">&#39;old&#39;</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">22</span>
+
+<span class="c1"># This line is a way to run &amp; re-run the code you wrote</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q9_code.py
+<span class="k">assert</span> <span class="n">subj_status</span> <span class="o">==</span> <span class="s1">&#39;Normal Ager&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q9</span>
+
+<span class="n">subj_age</span> <span class="o">=</span> <span class="s1">&#39;young&#39;</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">29</span>
+
+<span class="c1"># This line is a way to run &amp; re-run the code you wrote</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q9_code.py
+<span class="k">assert</span> <span class="n">subj_status</span> <span class="o">==</span> <span class="s1">&#39;Normal Youth&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q9</span>
+
+<span class="n">subj_age</span> <span class="o">=</span> <span class="s1">&#39;young&#39;</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">21</span>
+
+<span class="c1"># This line is a way to run &amp; re-run the code you wrote</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q9_code.py
+<span class="k">assert</span> <span class="n">subj_status</span> <span class="o">==</span> <span class="s1">&#39;Bad Youth&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q10-creating-a-calculator-1-5-points">
+<h3>Q10 - Creating a Calculator (1.5 points)<a class="headerlink" href="#q10-creating-a-calculator-1-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Finally we will write a flexible calculater program, that performs multiple operations (addition, subtraction, multiplication and division) on pairs of numbers. To do so, the code will use a string variable <code class="docutils literal notranslate"><span class="pre">operation</span></code> that indicates with operation to perform, and two numerical values, <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code>, upon which the operation is performed. The calculator will assign the output of it’s calculation to a variable called <code class="docutils literal notranslate"><span class="pre">answer</span></code>.</p>
+<p>To create this calculater, we will be using conditionals.</p>
+<p>In particular, create a calculator such that:</p>
+<ul class="simple">
+<li><p>if <code class="docutils literal notranslate"><span class="pre">operation</span></code> has the value ‘add’, then <code class="docutils literal notranslate"><span class="pre">answer</span></code> gets set as the sum of <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code></p></li>
+<li><p>elif <code class="docutils literal notranslate"><span class="pre">operation</span></code> has the value ‘subtract’, then <code class="docutils literal notranslate"><span class="pre">answer</span></code> gets set as the substraction of <code class="docutils literal notranslate"><span class="pre">num2</span></code> from <code class="docutils literal notranslate"><span class="pre">num2</span></code></p></li>
+<li><p>elif <code class="docutils literal notranslate"><span class="pre">operation</span></code> has the value ‘multiply’, then <code class="docutils literal notranslate"><span class="pre">answer</span></code> gets set as the multiplication of <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code></p></li>
+<li><p>elif <code class="docutils literal notranslate"><span class="pre">operation</span></code> has the value ‘divide’, then <code class="docutils literal notranslate"><span class="pre">answer</span></code> gets set as the division of <code class="docutils literal notranslate"><span class="pre">num1</span></code> by <code class="docutils literal notranslate"><span class="pre">num2</span></code></p></li>
+</ul>
+<p>For an example, with the following variables to start with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">operation</span> <span class="o">=</span> <span class="s1">&#39;multiply&#39;</span>
+<span class="n">num1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>We should expect our program to execute and set the variable <code class="docutils literal notranslate"><span class="pre">answer</span></code> to be <code class="docutils literal notranslate"><span class="pre">6</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> A1Code/q10_code.py
+
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set numbers for tests</span>
+<span class="n">num1</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q10</span>
+
+<span class="c1"># Test for sum</span>
+<span class="n">operation</span> <span class="o">=</span> <span class="s1">&#39;add&#39;</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q10_code.py
+<span class="k">assert</span> <span class="n">answer</span> <span class="o">==</span> <span class="mi">24</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q10</span>
+
+<span class="c1"># Test for subtract</span>
+<span class="n">operation</span> <span class="o">=</span> <span class="s1">&#39;subtract&#39;</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q10_code.py
+<span class="k">assert</span> <span class="n">answer</span> <span class="o">==</span> <span class="mi">18</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q10</span>
+
+<span class="c1"># Test for multiply</span>
+<span class="n">operation</span> <span class="o">=</span> <span class="s1">&#39;multiply&#39;</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q10_code.py
+<span class="k">assert</span> <span class="n">answer</span> <span class="o">==</span> <span class="mi">63</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q10</span>
+
+<span class="c1"># Test for divide</span>
+<span class="n">operation</span> <span class="o">=</span> <span class="s1">&#39;divide&#39;</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q10_code.py
+<span class="k">assert</span> <span class="n">answer</span> <span class="o">==</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TESTS FOR Q10</span>
+
+<span class="c1"># Test unrecognized operation</span>
+<span class="n">operation</span> <span class="o">=</span> <span class="s1">&#39;not a thing&#39;</span>
+<span class="o">%</span><span class="k">run</span> -i ./A1Code/q10_code.py
+<span class="k">assert</span> <span class="n">answer</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-end">
+<h2>The End!<a class="headerlink" href="#the-end" title="Permalink to this headline">¶</a></h2>
+<p>This is the end of the assignment!</p>
+<p>Have a look back over your answers, and also make sure to <code class="docutils literal notranslate"><span class="pre">Restart</span> <span class="pre">&amp;</span> <span class="pre">Run</span> <span class="pre">All</span></code> from the kernel menu to double check that everything is working properly. When you are ready to submit your assignment, validate and submit on DataHub!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./assignments"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../labs/CL5-CommandLine.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">CL5: Command Line</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="D2-Ciphers.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">A2-Ciphers</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Thomas Donoghue & Shannon Ellis<br/>
+    
+        &copy; Copyright 2020-.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

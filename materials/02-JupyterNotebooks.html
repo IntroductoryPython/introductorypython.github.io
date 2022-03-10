@@ -1,0 +1,969 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jupyter Notebooks &#8212; Introductory Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Variables" href="03-Variables.html" />
+    <link rel="prev" title="Tools" href="01-Tools.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introductory Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/index.html">
+   Introductory Python
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Materials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Tools.html">
+   Tools
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Operators.html">
+   Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Conditionals.html">
+   Conditionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-DataTypes.html">
+   DataTypes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Encodings.html">
+   Encodings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-FunctionsI.html">
+   FunctionsI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-Algorithms.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-FunctionsII.html">
+   FunctionsII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-Debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-Objects.html">
+   Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-Classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-Namespaces.html">
+   Namespaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-APIs.html">
+   The Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-OpenSource.html">
+   OpenSource
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-ScientificComputing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-Documentation.html">
+   Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-CodeStyle.html">
+   Code Style
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="22-CodeTesting.html">
+   Code Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-CodeProjects.html">
+   CodeProjects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-AdvancedPython.html">
+   AdvancedPython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25-WrapUp.html">
+   WrapUp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A1-Syntax.html">
+   A1-Syntax
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A2-Examples.html">
+   A2-Examples
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL1-ProgrammingI.html">
+   ProgrammingI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL2-ProgrammingII.html">
+   ProgrammingII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL3-AlgorithmicThinking.html">
+   AlgorithmicThinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL4-Exploring.html">
+   Exploring
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL5-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D1-GettingStarted.html">
+   GettingStarted
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D2-Ciphers.html">
+   Ciphers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D3-Chatbots.html">
+   Chatbots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D4-ArtificialAgents.html">
+   ArtificialAgents
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/ProjectIdeas.html">
+   Ideas
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/materials/02-JupyterNotebooks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/introductorypython/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/introductorypython//issues/new?title=Issue%20on%20page%20%2Fmaterials/02-JupyterNotebooks.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/introductorypython//master?urlpath=tree/inpy/materials/02-JupyterNotebooks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Jupyter Notebooks
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menu-options-shortcuts">
+     Menu Options &amp; Shortcuts
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cells">
+     Cells
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#markdown-cells">
+       Markdown Cells
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#clicker-question-2">
+         Clicker Question #2
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#markdown-headers">
+       Markdown Headers
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#headers-are-specified-with-a-pound-sign">
+   Headers are specified with a pound sign
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-more-pound-signs-the-smaller-the-header">
+     The more pound signs, the smaller the header
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#but-it-s-still-larger">
+       But it’s still larger
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-3">
+       Clicker Question #3
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-cells">
+       Code Cells
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#running-cells">
+       Running Cells
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coding-time">
+     Coding time
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-5">
+       Clicker Question #5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-documentation">
+     Accessing Documentation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autocomplete">
+     Autocomplete
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#web-browser">
+     Web Browser
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kernels">
+     Kernels
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Jupyter Notebooks</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Jupyter Notebooks
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menu-options-shortcuts">
+     Menu Options &amp; Shortcuts
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cells">
+     Cells
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#markdown-cells">
+       Markdown Cells
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#clicker-question-2">
+         Clicker Question #2
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#markdown-headers">
+       Markdown Headers
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#headers-are-specified-with-a-pound-sign">
+   Headers are specified with a pound sign
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-more-pound-signs-the-smaller-the-header">
+     The more pound signs, the smaller the header
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#but-it-s-still-larger">
+       But it’s still larger
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-3">
+       Clicker Question #3
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-cells">
+       Code Cells
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#running-cells">
+       Running Cells
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coding-time">
+     Coding time
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-5">
+       Clicker Question #5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-documentation">
+     Accessing Documentation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autocomplete">
+     Autocomplete
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#web-browser">
+     Web Browser
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kernels">
+     Kernels
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="jupyter-notebooks">
+<h1>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Markdown</p></li>
+<li><p>code cells</p></li>
+<li><p>kernel</p></li>
+</ul>
+<div class="alert alert-success">
+Jupyter notebooks are a way to combine executable code, code outputs, and text into one connected file.
+</div>
+<div class="alert alert-info">
+The official documentation from project Jupyter is available 
+<a href="https://jupyter-notebook.readthedocs.io/en/stable/" class="alert-link">here</a>
+and they also have some example notebooks 
+<a href="https://github.com/jupyter/notebook/tree/master/docs/source/examples/Notebook" class="alert-link">here</a>
+.
+</div><div class="section" id="menu-options-shortcuts">
+<h2>Menu Options &amp; Shortcuts<a class="headerlink" href="#menu-options-shortcuts" title="Permalink to this headline">¶</a></h2>
+<p>To get a quick tour of the Jupyter user-interface, click on the ‘Help’ menu, then click ‘User Interface Tour’.</p>
+<p>There are also a large number of useful keyboard shortcuts. Click on the ‘Help’ menu, and then ‘Keyboard Shortcuts’ to see a list.</p>
+</div>
+<div class="section" id="cells">
+<h2>Cells<a class="headerlink" href="#cells" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+The main organizational structure of the notebook are 'cells'.
+</div><p>Cells are an independent ‘unit’. When you click into a cell, you can ‘run’ it by clicking Shift + Enter, or by pressing the play (Run) button above.</p>
+<p>Cells come in different types for writing different things - mainly, text or code.</p>
+<div class="section" id="markdown-cells">
+<h3>Markdown Cells<a class="headerlink" href="#markdown-cells" title="Permalink to this headline">¶</a></h3>
+<p>Cells, can be markdown (text), like this one.</p>
+<p>A brief note about Markdown. It’s a way to specify all formatting within the text itself.</p>
+<p>For example, italicized text can be specified with an <em>underscore</em> or <em>single asterisks</em>.</p>
+<p>Bold text requires <strong>two underccores</strong> or <strong>two asterisks</strong>.</p>
+<div class="section" id="clicker-question-2">
+<h4>Clicker Question #2<a class="headerlink" href="#clicker-question-2" title="Permalink to this headline">¶</a></h4>
+<p><strong>What does three underscores around text accomplish?</strong></p>
+<ul class="simple">
+<li><p>A) bold</p></li>
+<li><p>B) italicize</p></li>
+<li><p>C) bold + italicize</p></li>
+<li><p>D) normal text</p></li>
+<li><p>E) I’m lost</p></li>
+</ul>
+<p><em><strong>you can write your markdown text here to determine the answer to the question</strong></em></p>
+</div>
+</div>
+<div class="section" id="markdown-headers">
+<h3>Markdown Headers<a class="headerlink" href="#markdown-headers" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="headers-are-specified-with-a-pound-sign">
+<h1>Headers are specified with a pound sign<a class="headerlink" href="#headers-are-specified-with-a-pound-sign" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-more-pound-signs-the-smaller-the-header">
+<h2>The more pound signs, the smaller the header<a class="headerlink" href="#the-more-pound-signs-the-smaller-the-header" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="but-it-s-still-larger">
+<h3>But it’s still larger<a class="headerlink" href="#but-it-s-still-larger" title="Permalink to this headline">¶</a></h3>
+<p>than just plain text.</p>
+<p>Lists are also possible:</p>
+<ul class="simple">
+<li><p>item 1</p></li>
+<li><p>item 2</p></li>
+<li><p>item 3</p></li>
+</ul>
+<ol class="simple">
+<li><p>numbered item</p></li>
+<li><p>item 2</p></li>
+<li><p>item 3</p></li>
+</ol>
+</div>
+<div class="section" id="clicker-question-3">
+<h3>Clicker Question #3<a class="headerlink" href="#clicker-question-3" title="Permalink to this headline">¶</a></h3>
+<p><strong>What would happen if I specified a numbered list but put the same number before each list item?</strong></p>
+<ul class="simple">
+<li><p>A) the list would have the same number before each item</p></li>
+<li><p>B) markdown would still format it with sequential numbers</p></li>
+<li><p>C) markdown wouldn’t know it was a list</p></li>
+<li><p>D) normal text with everything on a single line</p></li>
+<li><p>E) I’m lost</p></li>
+</ul>
+<p>test it out down here to see…</p>
+<ol class="simple">
+<li><p>list item</p></li>
+<li><p>list item</p></li>
+<li><p>list item</p></li>
+</ol>
+<p>* &lt;- escape character</p>
+</div>
+<div class="section" id="code-cells">
+<h3>Code Cells<a class="headerlink" href="#code-cells" title="Permalink to this headline">¶</a></h3>
+<p>Whenever you’re writing code, you’ll want to be sure the cell is set to be a code cell</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell can also be code.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cells can also have output, that gets printed out below the cell.</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you execute a cell with just a variable name in it, it will also get printed</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="running-cells">
+<h3>Running Cells<a class="headerlink" href="#running-cells" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The numbers in the square brackets to the left of a cell show which cells have been run, and in what order.</p>
+<ul>
+<li><p>An asterisk (*) means that the cell is currently running</p></li>
+<li><p>You do not need to run cells in order! This is useful for flexibly testing and developing code.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="coding-time">
+<h2>Coding time<a class="headerlink" href="#coding-time" title="Permalink to this headline">¶</a></h2>
+<p>Write code that outputs the value ‘6’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR CODE HERE</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-5">
+<h3>Clicker Question #5<a class="headerlink" href="#clicker-question-5" title="Permalink to this headline">¶</a></h3>
+<p><strong>Which of the following best describes you?</strong></p>
+<ul class="simple">
+<li><p>A) I completed the task.</p></li>
+<li><p>B) I tried but wasn’t able to complete the task.</p></li>
+<li><p>C) I am not sure where to start.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="accessing-documentation">
+<h2>Accessing Documentation<a class="headerlink" href="#accessing-documentation" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+Jupyter has useful shortcuts. Add a single '?' after a function or class get a window with the documentation, or a double '??' to pull up the source code. 
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For example, execute this cell to see the documentation for the &#39;abs&#39;</span>
+abs<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="autocomplete">
+<h2>Autocomplete<a class="headerlink" href="#autocomplete" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+Jupyter also has 
+<a href="https://en.wikipedia.org/wiki/Command-line_completion" class="alert-link">tab complete</a>
+capacities, which can autocomplete what you are typing, and/or be used to explore what code is available. (<i>Note</i>: Some of this functionality is limited on datahub.)
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Move your cursor to the end of the line, press tab, and a drop menu will appear showing all possible completions</span>
+<span class="n">ra</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-6-c2c498cb5d74&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Move your cursor to the end of the line, press tab, and a drop menu will appear showing all possible completions</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ra</span>
+
+<span class="ne">NameError</span>: name &#39;ra&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If there is only one option, tab-complete will auto-complete what you are typing</span>
+<span class="n">ran</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="web-browser">
+<h2>Web Browser<a class="headerlink" href="#web-browser" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+Jupyter notebooks display in a web browser. They are not hosted on the web, everything is happening locally. 
+</div><p>If you click on the url in the browser, you will notice it says ‘localhost’. This means it is connected to something locally, on your computer.</p>
+<p>That local connection is to the ‘kernel’.</p>
+</div>
+<div class="section" id="kernels">
+<h2>Kernels<a class="headerlink" href="#kernels" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+The <b>kernel</b> is the thing that executes your code. It is what connects the notebook (as you see it) with the part of your computer that runs code. 
+</div><p>Your kernel also stores your <strong>namespace</strong> - all the variables and code that you have declared (executed).</p>
+<p>It can be useful to clear and re-launch the kernel. You can do this from the ‘kernel’ drop down menu, at the top, optionally also clearing all ouputs. Note that this will erase any variables that are stored in memory.</p>
+<div class="alert alert-info">
+For more useful information, check out Jupyter Notebooks 
+<a href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/" class="alert-link">tips & tricks</a>
+, and more information on how 
+<a href="http://jupyter.readthedocs.io/en/latest/architecture/how_jupyter_ipython_work.html" class="alert-link">notebooks work</a>.
+</div></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./materials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="01-Tools.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Tools</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03-Variables.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Variables</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Thomas Donoghue & Shannon Ellis<br/>
+    
+        &copy; Copyright 2020-.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

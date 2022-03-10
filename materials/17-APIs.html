@@ -1,0 +1,1652 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Plan &#8212; Introductory Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Open Source" href="18-OpenSource.html" />
+    <link rel="prev" title="Command Line &amp; Scripts" href="16-CommandLine.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introductory Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/index.html">
+   Introductory Python
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Materials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Tools.html">
+   Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-JupyterNotebooks.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Operators.html">
+   Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Conditionals.html">
+   Conditionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-DataTypes.html">
+   DataTypes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Encodings.html">
+   Encodings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-FunctionsI.html">
+   FunctionsI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-Algorithms.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-FunctionsII.html">
+   FunctionsII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-Debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-Objects.html">
+   Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-Classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-Namespaces.html">
+   Namespaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   The Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-OpenSource.html">
+   OpenSource
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-ScientificComputing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-Documentation.html">
+   Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-CodeStyle.html">
+   Code Style
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="22-CodeTesting.html">
+   Code Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-CodeProjects.html">
+   CodeProjects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-AdvancedPython.html">
+   AdvancedPython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25-WrapUp.html">
+   WrapUp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A1-Syntax.html">
+   A1-Syntax
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A2-Examples.html">
+   A2-Examples
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL1-ProgrammingI.html">
+   ProgrammingI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL2-ProgrammingII.html">
+   ProgrammingII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL3-AlgorithmicThinking.html">
+   AlgorithmicThinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL4-Exploring.html">
+   Exploring
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL5-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D1-GettingStarted.html">
+   GettingStarted
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D2-Ciphers.html">
+   Ciphers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D3-Chatbots.html">
+   Chatbots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D4-ArtificialAgents.html">
+   ArtificialAgents
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/ProjectIdeas.html">
+   Ideas
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/materials/17-APIs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/introductorypython/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/introductorypython//issues/new?title=Issue%20on%20page%20%2Fmaterials/17-APIs.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/introductorypython//master?urlpath=tree/inpy/materials/17-APIs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   The Plan
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apis">
+   APIs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#application-programming-interface">
+     Application Programming Interface
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-apis">
+     Module APIs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-review-modules">
+     Quick Review: Modules
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#imports-from-as">
+       Imports:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         from
+        </span>
+       </code>
+       &amp;
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         as
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-custom-code">
+       Importing Custom Code
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Module APIs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-1">
+       Clicker Question #1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-2">
+       Clicker Question #2
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#function-with-fixed-names">
+       Function with Fixed Names
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-3">
+       Clicker Question #3
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-4">
+       Clicker Question #4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#names-matter">
+     Names Matter!
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-5">
+       Clicker Question #5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#web-apis">
+     Web APIs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#restful-api">
+       RESTful API
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eutils-api">
+     EUtils API
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eutils-search">
+       EUtils: Search
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eutils-fetch">
+       EUtils: Fetch
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requesting-web-pages-from-python">
+     Requesting Web Pages from Python
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eutils-search-through-python">
+       EUtils Search, through Python
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eutils-fetch-through-python">
+       EUtils Fetch, through Python
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#beautifulsoup-objects">
+       BeautifulSoup Objects
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#literature-scanner">
+     Literature Scanner
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lisc-words-data">
+       LISC: Words Data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#twitter-api">
+     Twitter API
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#software-versioning">
+     Software Versioning
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#versioning-schemes">
+       Versioning Schemes
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Plan</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   The Plan
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apis">
+   APIs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#application-programming-interface">
+     Application Programming Interface
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-apis">
+     Module APIs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-review-modules">
+     Quick Review: Modules
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#imports-from-as">
+       Imports:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         from
+        </span>
+       </code>
+       &amp;
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         as
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-custom-code">
+       Importing Custom Code
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Module APIs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-1">
+       Clicker Question #1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-2">
+       Clicker Question #2
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#function-with-fixed-names">
+       Function with Fixed Names
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-3">
+       Clicker Question #3
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-4">
+       Clicker Question #4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#names-matter">
+     Names Matter!
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-5">
+       Clicker Question #5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#web-apis">
+     Web APIs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#restful-api">
+       RESTful API
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eutils-api">
+     EUtils API
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eutils-search">
+       EUtils: Search
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eutils-fetch">
+       EUtils: Fetch
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requesting-web-pages-from-python">
+     Requesting Web Pages from Python
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eutils-search-through-python">
+       EUtils Search, through Python
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eutils-fetch-through-python">
+       EUtils Fetch, through Python
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#beautifulsoup-objects">
+       BeautifulSoup Objects
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#literature-scanner">
+     Literature Scanner
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lisc-words-data">
+       LISC: Words Data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#twitter-api">
+     Twitter API
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#software-versioning">
+     Software Versioning
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#versioning-schemes">
+       Versioning Schemes
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="the-plan">
+<h1>The Plan<a class="headerlink" href="#the-plan" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Tools: Scientific Computing + Open Source</p></li>
+<li><p>Improvement: Documentation, Code Style, Code Testing, Code Projects</p></li>
+<li><p>Last Bits: Advanced Python, Wrap Up</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="apis">
+<h1>APIs<a class="headerlink" href="#apis" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>modules</p>
+<ul>
+<li><p>review</p></li>
+<li><p>module APIs</p></li>
+</ul>
+</li>
+<li><p>RESTful APIs</p>
+<ul>
+<li><p>LISC</p></li>
+<li><p>Twitter API</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="application-programming-interface">
+<h2>Application Programming Interface<a class="headerlink" href="#application-programming-interface" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+An <b>API</b> is a programmatic interface to an application - a software to software interface, or way for programs to talk to other programs. 
+</div><p>If you are pointing and clicking on computer applications, that is <em>not</em> an API.</p>
+<p>If you are writing code to interact with software and get information, that <em>IS</em> an API.</p>
+</div>
+<div class="section" id="module-apis">
+<h2>Module APIs<a class="headerlink" href="#module-apis" title="Permalink to this headline">¶</a></h2>
+<p>Modules have an API. Every time you write or use a set of functions and/or classes, you are writing or using an API.</p>
+</div>
+<div class="section" id="quick-review-modules">
+<h2>Quick Review: Modules<a class="headerlink" href="#quick-review-modules" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+A <b>module</b> is a set of Python code with functions, classes, etc. available in it. A Python <b>package</b> is a directory of modules.
+</div><p>Modules are stored in Python files. We can import these files into our namespace, to gain access to the module within Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import &amp; use the math module</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="imports-from-as">
+<h3>Imports: <code class="docutils literal notranslate"><span class="pre">from</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">as</span></code><a class="headerlink" href="#imports-from-as" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a specific object from a module</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+
+<span class="c1"># use random.choice</span>
+<span class="n">magic_8_ball</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;As I see it, yes!&#39;</span><span class="p">,</span> <span class="s1">&#39;Most likely.&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;Ask again later.&#39;</span><span class="p">,</span> <span class="s1">&#39;Don</span><span class="se">\&#39;</span><span class="s1">t Count on it&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;Outlook not so good&#39;</span><span class="p">]</span>
+
+<span class="n">choice</span><span class="p">(</span><span class="n">magic_8_ball</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ask again later.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a specific object from a module using an alias</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span> <span class="k">as</span> <span class="n">ch</span>
+
+<span class="c1"># use shorter name </span>
+<span class="n">ch</span><span class="p">(</span><span class="n">magic_8_ball</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Most likely.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="importing-custom-code">
+<h3>Importing Custom Code<a class="headerlink" href="#importing-custom-code" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a class class from an external module</span>
+<span class="kn">from</span> <span class="nn">remote</span> <span class="kn">import</span> <span class="n">MyNumbers</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define an instance of our custom class</span>
+<span class="c1"># apply method</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">MyNumbers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="n">out</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># remember we only imported MyNumbers</span>
+choice<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Module APIs<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Modules have an API. Every time you write or use a set of functions and/or classes, you are writing or using an API.</p>
+<div class="section" id="clicker-question-1">
+<h3>Clicker Question #1<a class="headerlink" href="#clicker-question-1" title="Permalink to this headline">¶</a></h3>
+<p>What will the following code snippet print out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">c</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">a</span><span class="p">[:</span><span class="n">b</span><span class="p">]:</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span>
+    <span class="k">return</span> <span class="n">d</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) 10</p></li>
+<li><p>B) 20</p></li>
+<li><p>C) 30</p></li>
+<li><p>D) 40</p></li>
+<li><p>E) None</p></li>
+</ul>
+</div>
+<div class="section" id="clicker-question-2">
+<h3>Clicker Question #2<a class="headerlink" href="#clicker-question-2" title="Permalink to this headline">¶</a></h3>
+<p>How easy did you find interpreting this code?</p>
+<ul class="simple">
+<li><p>A) Easy</p></li>
+<li><p>B) Fairly Easy</p></li>
+<li><p>C) Neutral</p></li>
+<li><p>D) Somewaht Difficult</p></li>
+<li><p>E) Difficult</p></li>
+</ul>
+<p>Arguably, this function does <em>not</em> have a good API.</p>
+</div>
+<div class="section" id="function-with-fixed-names">
+<h3>Function with Fixed Names<a class="headerlink" href="#function-with-fixed-names" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="clicker-question-3">
+<h3>Clicker Question #3<a class="headerlink" href="#clicker-question-3" title="Permalink to this headline">¶</a></h3>
+<p>What will the following code snippet print out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_across_list</span><span class="p">(</span><span class="n">list_to_count</span><span class="p">,</span> <span class="n">end_index</span><span class="p">,</span> <span class="n">start_val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+
+    <span class="n">running_count</span> <span class="o">=</span> <span class="n">start_val</span>
+    
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_to_count</span><span class="p">[:</span><span class="n">end_index</span><span class="p">]:</span>
+        <span class="n">running_count</span> <span class="o">+=</span> <span class="n">element</span>
+    
+    <span class="k">return</span> <span class="n">running_count</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_across_list</span><span class="p">(</span><span class="n">end_index</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">list_to_count</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) 10</p></li>
+<li><p>B) 20</p></li>
+<li><p>C) 30</p></li>
+<li><p>D) 40</p></li>
+<li><p>E) None</p></li>
+</ul>
+</div>
+<div class="section" id="clicker-question-4">
+<h3>Clicker Question #4<a class="headerlink" href="#clicker-question-4" title="Permalink to this headline">¶</a></h3>
+<p>How easy did you find interpreting this code?</p>
+<ul class="simple">
+<li><p>A) Easy</p></li>
+<li><p>B) Fairly Easy</p></li>
+<li><p>C) Neutral</p></li>
+<li><p>D) Somewaht Difficult</p></li>
+<li><p>E) Difficult</p></li>
+</ul>
+<p>This is the same function, but has a better API.</p>
+</div>
+</div>
+<div class="section" id="names-matter">
+<h2>Names Matter!<a class="headerlink" href="#names-matter" title="Permalink to this headline">¶</a></h2>
+<p>When writing an API, you are designing the user facing code that a programmer (maybe you in the future) will use.</p>
+<p>When using an API, you are using the programmer-facing code that someone else wrote for the task.</p>
+<p>Taking time to have good names and clear documentation can <em>really help</em> a programmer interact with an API.</p>
+<div class="section" id="clicker-question-5">
+<h3>Clicker Question #5<a class="headerlink" href="#clicker-question-5" title="Permalink to this headline">¶</a></h3>
+<p>Improve the code below’s API:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">G</span><span class="p">():</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span> <span class="n">f</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">l</span> <span class="o">=</span> <span class="n">l</span>
+    
+    <span class="k">def</span> <span class="nf">ib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">b1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tyrion&#39;</span><span class="p">,</span> <span class="s1">&#39;Cersei&#39;</span><span class="p">,</span> <span class="s1">&#39;Jon&#39;</span><span class="p">,</span> <span class="s1">&#39;Arya&#39;</span><span class="p">]</span>
+        <span class="n">b2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bran&#39;</span><span class="p">,</span> <span class="s1">&#39;The Mountain&#39;</span><span class="p">,</span> <span class="s1">&#39;The Hound&#39;</span><span class="p">,</span> <span class="s1">&#39;Lord Varys&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Melisandre&#39;</span><span class="p">,</span> <span class="s1">&#39;Brienne of Tarth&#39;</span><span class="p">]</span>
+        <span class="n">b3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;King Joffrey&#39;</span><span class="p">,</span> <span class="s1">&#39;Ramsay&#39;</span><span class="p">,</span> <span class="s1">&#39;Little Finger&#39;</span><span class="p">]</span> 
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span> <span class="ow">is</span> <span class="s1">&#39;Arya&#39;</span><span class="p">:</span>
+            <span class="n">o</span> <span class="o">=</span> <span class="s1">&#39;Super BAMF!&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span> <span class="ow">in</span> <span class="n">b1</span><span class="p">:</span>
+            <span class="n">o</span> <span class="o">=</span> <span class="s1">&#39;Definitely a badass&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span> <span class="ow">in</span> <span class="n">b2</span><span class="p">:</span>
+            <span class="n">o</span> <span class="o">=</span> <span class="s1">&#39;We</span><span class="se">\&#39;</span><span class="s1">ve got ourselves a tier 2 badass!&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span> <span class="ow">in</span> <span class="n">b3</span><span class="p">:</span>
+            <span class="n">o</span> <span class="o">=</span> <span class="s1">&#39;Ew! Despised and reviled.&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">o</span> <span class="o">=</span> <span class="s1">&#39;meh. could be a badass?&#39;</span>
+        <span class="k">return</span> <span class="n">o</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="p">(</span><span class="s1">&#39;Ramsay&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ib</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ew! Despised and reviled.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) I made it all better!</p></li>
+<li><p>B) I made it slightly better!</p></li>
+<li><p>C) I think it’s fine as it is.</p></li>
+<li><p>D) Super lost</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="p">(</span><span class="s1">&#39;Ramsay&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ib</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ew! Despised and reviled.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># our improved answer</span>
+<span class="k">class</span> <span class="nc">GameOfThrones</span><span class="p">():</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    
+    <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">list_badass</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tyrion&#39;</span><span class="p">,</span> <span class="s1">&#39;Cersei&#39;</span><span class="p">,</span> <span class="s1">&#39;Jon&#39;</span><span class="p">,</span> <span class="s1">&#39;Arya&#39;</span><span class="p">]</span>
+        <span class="n">list_tier2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bran&#39;</span><span class="p">,</span> <span class="s1">&#39;The Mountain&#39;</span><span class="p">,</span> <span class="s1">&#39;The Hound&#39;</span><span class="p">,</span> <span class="s1">&#39;Lord Varys&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Melisandre&#39;</span><span class="p">,</span> <span class="s1">&#39;Brienne of Tarth&#39;</span><span class="p">]</span>
+        <span class="n">list_noway</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;King Joffrey&#39;</span><span class="p">,</span> <span class="s1">&#39;Ramsay&#39;</span><span class="p">,</span> <span class="s1">&#39;Little Finger&#39;</span><span class="p">]</span> 
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="s1">&#39;Arya&#39;</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;Super BAMF!&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">list_badass</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;Definitely a badass&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">list_tier2</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;We</span><span class="se">\&#39;</span><span class="s1">ve got ourselves a tier 2 badass!&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">list_noway</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;Ew! Despised and reviled.&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;meh. could be a badass?&#39;</span>
+      
+        <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">GameOfThrones</span><span class="p">(</span><span class="s1">&#39;The Mountain&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;We&#39;ve got ourselves a tier 2 badass!&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## example answer</span>
+<span class="k">class</span> <span class="nc">GameOfThrones</span><span class="p">():</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">last</span>
+
+    <span class="k">def</span> <span class="nf">is_badass</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">badass</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tyrion&#39;</span><span class="p">,</span> <span class="s1">&#39;Cersei&#39;</span><span class="p">,</span> <span class="s1">&#39;Jon&#39;</span><span class="p">,</span> <span class="s1">&#39;Arya&#39;</span><span class="p">]</span>
+        <span class="n">tier2_badass</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bran&#39;</span><span class="p">,</span> <span class="s1">&#39;The Mountain&#39;</span><span class="p">,</span> <span class="s1">&#39;The Hound&#39;</span><span class="p">,</span> <span class="s1">&#39;Lord Varys&#39;</span><span class="p">,</span> 
+                 <span class="s1">&#39;Melisandre&#39;</span><span class="p">,</span> <span class="s1">&#39;Brienne of Tarth&#39;</span><span class="p">]</span>
+        <span class="n">not_badass</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;King Joffrey&#39;</span><span class="p">,</span> <span class="s1">&#39;Ramsay&#39;</span><span class="p">,</span> <span class="s1">&#39;Little Finger&#39;</span><span class="p">]</span> 
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="ow">is</span> <span class="s1">&#39;Arya&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;Super BAMF!&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="ow">in</span> <span class="n">badass</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;Definitely a badass&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="ow">in</span> <span class="n">tier2_badass</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;We</span><span class="se">\&#39;</span><span class="s1">ve got ourselves a tier 2 badass!&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="ow">in</span> <span class="n">not_badass</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;Ew! Despised and reviled.&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;meh. could be a badass?&#39;</span>
+        <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">GameOfThrones</span><span class="p">(</span><span class="s1">&#39;Daenerys&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_badass</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;meh. could be a badass?&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="" src="../_images/GOT.png" /></p>
+</div>
+</div>
+<div class="section" id="web-apis">
+<h2>Web APIs<a class="headerlink" href="#web-apis" title="Permalink to this headline">¶</a></h2>
+<p>APIs are an interface to interact with an application, <em>designed for programmatic use</em> :</p>
+<ul class="simple">
+<li><p>They allow systematic, controlled access to (for example) an applications database and procedures</p></li>
+<li><p>They can be used to request data and/or to request that the the application perform some procedure</p></li>
+</ul>
+<div class="section" id="restful-api">
+<h3>RESTful API<a class="headerlink" href="#restful-api" title="Permalink to this headline">¶</a></h3>
+<p>(Representational State Transfer API)</p>
+<p>An approach to interact with web addresses</p>
+</div>
+</div>
+<div class="section" id="eutils-api">
+<h2>EUtils API<a class="headerlink" href="#eutils-api" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+EUtils is a web accessible API for the National Center for Biotechnology Information, and the databases they curate.
+</div><div class="section" id="eutils-search">
+<h3>EUtils: Search<a class="headerlink" href="#eutils-search" title="Permalink to this headline">¶</a></h3>
+<p>Search a database to get information we want it to return</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the base URL for the e-utils API</span>
+<span class="c1"># where you go to query information from this web address</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;http://eutils.ncbi.nlm.nih.gov/entrez/eutils/&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Build a URL like a Python function call…</p>
+<p>We’re just adding some additional ‘parameters’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the information we need for launching a search request</span>
+<span class="n">search</span> <span class="o">=</span> <span class="s1">&#39;esearch.fcgi?&#39;</span>
+<span class="n">term</span> <span class="o">=</span> <span class="s1">&#39;term=&#39;</span> <span class="o">+</span> <span class="s1">&#39;brain&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Interacting with APIs specifies that we follow the rules specified by the API from which we’re requesting information.</p>
+</div>
+<div class="section" id="eutils-fetch">
+<h3>EUtils: Fetch<a class="headerlink" href="#eutils-fetch" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the full search URL</span>
+<span class="n">search_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">search</span> <span class="o">+</span> <span class="n">term</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">search_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?term=brain
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the information we need for launching a fetch request</span>
+<span class="n">fetch</span> <span class="o">=</span> <span class="s1">&#39;efetch.fcgi?&#39;</span>
+<span class="n">db</span> <span class="o">=</span> <span class="s1">&#39;db=&#39;</span> <span class="o">+</span> <span class="s1">&#39;pubmed&#39;</span>
+<span class="n">retmode</span> <span class="o">=</span> <span class="s1">&#39;&amp;retmode=&#39;</span> <span class="o">+</span> <span class="s1">&#39;xml&#39;</span>
+<span class="n">pubmed_id</span> <span class="o">=</span> <span class="s1">&#39;&amp;id=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">30439964</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the full search URL</span>
+<span class="n">fetch_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">fetch</span> <span class="o">+</span> <span class="n">db</span> <span class="o">+</span> <span class="n">retmode</span> <span class="o">+</span> <span class="n">pubmed_id</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fetch_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;retmode=xml&amp;id=30439964
+</pre></div>
+</div>
+</div>
+</div>
+<p>But, our goal isn’t to see this information in a web browser. Web browsers are for humans. We want to use this information computationally…</p>
+</div>
+</div>
+<div class="section" id="requesting-web-pages-from-python">
+<h2>Requesting Web Pages from Python<a class="headerlink" href="#requesting-web-pages-from-python" title="Permalink to this headline">¶</a></h2>
+<p>To accomplish API interactions, we need to use HTTP requests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The requests module allows you to send URL requests from python</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># Beautiful Soup has functions to &#39;clean up&#39; returned web pages into human-friendlier formats</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="eutils-search-through-python">
+<h3>EUtils Search, through Python<a class="headerlink" href="#eutils-search-through-python" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">search_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?term=brain
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Request the search page, and parse</span>
+<span class="n">search_page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">search_url</span><span class="p">)</span>
+<span class="n">search_content</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">search_page</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;xml&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check out the content of the returned page</span>
+<span class="n">search_content</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE eSearchResult PUBLIC &quot;-//NLM//DTD esearch 20060628//EN&quot; &quot;https://eutils.ncbi.nlm.nih.gov/eutils/dtd/20060628/esearch.dtd&quot;&gt;
+&lt;eSearchResult&gt;&lt;Count&gt;1918610&lt;/Count&gt;&lt;RetMax&gt;20&lt;/RetMax&gt;&lt;RetStart&gt;0&lt;/RetStart&gt;&lt;IdList&gt;
+&lt;Id&gt;31739380&lt;/Id&gt;
+&lt;Id&gt;31739316&lt;/Id&gt;
+&lt;Id&gt;31739314&lt;/Id&gt;
+&lt;Id&gt;31739299&lt;/Id&gt;
+&lt;Id&gt;31739290&lt;/Id&gt;
+&lt;Id&gt;31739282&lt;/Id&gt;
+&lt;Id&gt;31739269&lt;/Id&gt;
+&lt;Id&gt;31739238&lt;/Id&gt;
+&lt;Id&gt;31739234&lt;/Id&gt;
+&lt;Id&gt;31739187&lt;/Id&gt;
+&lt;Id&gt;31739167&lt;/Id&gt;
+&lt;Id&gt;31739162&lt;/Id&gt;
+&lt;Id&gt;31739156&lt;/Id&gt;
+&lt;Id&gt;31739114&lt;/Id&gt;
+&lt;Id&gt;31739112&lt;/Id&gt;
+&lt;Id&gt;31739106&lt;/Id&gt;
+&lt;Id&gt;31739099&lt;/Id&gt;
+&lt;Id&gt;31739096&lt;/Id&gt;
+&lt;Id&gt;31739095&lt;/Id&gt;
+&lt;Id&gt;31739086&lt;/Id&gt;
+&lt;/IdList&gt;&lt;TranslationSet&gt;&lt;Translation&gt; &lt;From&gt;brain&lt;/From&gt; &lt;To&gt;&quot;brain&quot;[MeSH Terms] OR &quot;brain&quot;[All Fields]&lt;/To&gt; &lt;/Translation&gt;&lt;/TranslationSet&gt;&lt;TranslationStack&gt; &lt;TermSet&gt; &lt;Term&gt;&quot;brain&quot;[MeSH Terms]&lt;/Term&gt; &lt;Field&gt;MeSH Terms&lt;/Field&gt; &lt;Count&gt;1178507&lt;/Count&gt; &lt;Explode&gt;Y&lt;/Explode&gt; &lt;/TermSet&gt; &lt;TermSet&gt; &lt;Term&gt;&quot;brain&quot;[All Fields]&lt;/Term&gt; &lt;Field&gt;All Fields&lt;/Field&gt; &lt;Count&gt;1531532&lt;/Count&gt; &lt;Explode&gt;N&lt;/Explode&gt; &lt;/TermSet&gt; &lt;OP&gt;OR&lt;/OP&gt; &lt;OP&gt;GROUP&lt;/OP&gt; &lt;/TranslationStack&gt;&lt;QueryTranslation&gt;&quot;brain&quot;[MeSH Terms] OR &quot;brain&quot;[All Fields]&lt;/QueryTranslation&gt;&lt;/eSearchResult&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="eutils-fetch-through-python">
+<h3>EUtils Fetch, through Python<a class="headerlink" href="#eutils-fetch-through-python" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fetch_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;retmode=xml&amp;id=30439964
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Request the fetch page, and parse</span>
+<span class="n">fetch_page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">fetch_url</span><span class="p">)</span>
+<span class="n">fetch_content</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">fetch_page</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;lxml&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check out the content of the page</span>
+<span class="c1"># fetch_content</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="beautifulsoup-objects">
+<h3>BeautifulSoup Objects<a class="headerlink" href="#beautifulsoup-objects" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Our &#39;fetch_content&#39; variable is a custom BeautifulSoup object</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">fetch_content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bs4.BeautifulSoup
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can use some methods to access particular information</span>
+<span class="n">fetch_content</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2019&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="literature-scanner">
+<h2>Literature Scanner<a class="headerlink" href="#literature-scanner" title="Permalink to this headline">¶</a></h2>
+<p>But when making HTTP requests it can be difficult to figure out exactly what URL needs to be specified and how to get the contents back out.</p>
+<p>So, often in Python we’ll interact with an API indirectly. There are packages that will use methods and objects to make this easier on us.</p>
+<p><strong>LISC</strong> : Literature Scanner is a tool for automated meta-analyses of scientific literature (<a class="reference external" href="https://github.com/lisc-tools/lisc">https://github.com/lisc-tools/lisc</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uncomment and run to have the following </span>
+<span class="c1"># example work in your notebook</span>
+<span class="c1"># !pip install --user git+https://github.com/lisc-tools/lisc.git</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import LISC - Words</span>
+<span class="kn">from</span> <span class="nn">lisc</span> <span class="kn">import</span> <span class="n">Words</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize Words object &amp; set some search terms</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">Words</span><span class="p">()</span>
+<span class="n">words</span><span class="o">.</span><span class="n">add_terms</span><span class="p">([</span><span class="s1">&#39;brain&#39;</span><span class="p">])</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run words scrape</span>
+<span class="n">words</span><span class="o">.</span><span class="n">run_collection</span><span class="p">(</span><span class="n">retmax</span> <span class="o">=</span> <span class="s1">&#39;5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="lisc-words-data">
+<h3>LISC: Words Data<a class="headerlink" href="#lisc-words-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check out some information from our scraped data</span>
+<span class="k">for</span> <span class="n">art</span> <span class="ow">in</span> <span class="n">words</span><span class="p">[</span><span class="s1">&#39;brain&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">art</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Catalpol and Mannitol, Two Components of Rehmannia glutinosa, Exhibit Anticonvulsant Effects Probably via GABAA Receptor Regulation.
+Bedside Optic Nerve Ultrasonography for Diagnosing Increased Intracranial Pressure: A Systematic Review and Meta-analysis.
+Metal-containing Particulate Matter and Associated Reduced Olfactory Identification Ability in Children from an Area of High Atmospheric Exposure in Mexico City.
+Disturbed flow disrupts the blood-brain barrier in a 3D bifurcation model.
+Machine learning validation of EEG+tACS artefact removal.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="twitter-api">
+<h2>Twitter API<a class="headerlink" href="#twitter-api" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to use this on your computer</span>
+<span class="c1"># uncomment and run following line</span>
+<span class="c1"># !pip install tweepy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, follow the instructions <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-authenticate-a-python-application-with-twitter-using-tweepy-on-ubuntu-14-04">here</a> for authetication of tweepy with Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accessing Twitter API from Python</span>
+<span class="c1">#  Note: to run this, you will have to fill in stw.py with your OAuth credentials.</span>
+<span class="c1">#    You can do that here: https://apps.twitter.com/</span>
+
+<span class="c1"># Import tweepy to access API</span>
+<span class="kn">import</span> <span class="nn">tweepy</span>
+<span class="kn">from</span> <span class="nn">tweepy</span> <span class="kn">import</span> <span class="n">OAuthHandler</span>
+
+<span class="c1"># Import my API credentials</span>
+<span class="kn">from</span> <span class="nn">stw</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Twitter API requires Authentification with OAuth</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">OAuthHandler</span><span class="p">(</span><span class="n">CONSUMER_KEY</span><span class="p">,</span> <span class="n">CONSUMER_SECRET</span><span class="p">)</span>
+<span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="n">ACCESS_TOKEN</span><span class="p">,</span> <span class="n">ACCESS_TOKEN_SECRET</span><span class="p">)</span>
+
+<span class="c1"># # Create an API object to access Twitter</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">Cursor</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">home_timeline</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="c1"># Process a single status</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">status</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">status</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ben Marwick
+@kearneymw @harlyjaned Yes, well put! @cboettig Matthew Lincoln &amp;amp; I similarly wrote about why #rstats pkgs make sen… https://t.co/dh45iqwz2j 
+
+Nicholas Hunt-Walker
+RT @reydelhumo: ¿Tanta bronca le tienen a las mujeres que si hay un evento de programación exclusivo para ellas la gente te quiere *denunci… 
+
+Corey J. Miles
+Am I the only one who will see a page full of reviewer comments and start second guessing if I even want to publish this paper anymore? 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="software-versioning">
+<h2>Software Versioning<a class="headerlink" href="#software-versioning" title="Permalink to this headline">¶</a></h2>
+<p>When you make changes to the software you’ve released into the world, you have to change the version of that software to let people know changes have occurred.</p>
+<div class="section" id="versioning-schemes">
+<h3>Versioning Schemes<a class="headerlink" href="#versioning-schemes" title="Permalink to this headline">¶</a></h3>
+<p>The rules, if you’re new to this can be <a class="reference external" href="https://www.python.org/dev/peps/pep-0440/#version-scheme">dizzying</a>, so we’ll <a class="reference external" href="https://www.python.org/dev/peps/pep-0396/">simplify</a> for now:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;MAJOR&gt;.&lt;MINOR&gt;</span></code></p>
+<ul>
+<li><p>i.e. 1.3</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;MAJOR&gt;.&lt;MINOR&gt;.&lt;MAINTENANCE&gt;</span></code></p>
+<ul>
+<li><p>i.e. 1.3.1</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;MAJOR&gt;</span></code> - increase by 1 w/ incompatible API changes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;MINOR&gt;</span></code> - increase by 1 w/ added functionality in a backwards-compatible manner</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;MAINTENANCE&gt;</span></code> - (aka patch) inrease by 1 w/  backwards-compatible bug fixes.</p></li>
+</ul>
+<p>In Python package development… when <code class="docutils literal notranslate"><span class="pre">&lt;MAJOR&gt;</span></code> == 0, suggests a package in development</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># see version information</span>
+<span class="o">!</span>pip show lisc
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: lisc
+Version: 0.1.1
+Summary: Literature Scanner
+Home-page: https://github.com/lisc-tools/lisc
+Author: Thomas Donoghue
+Author-email: tdonoghue.research@gmail.com
+License: Apache License, 2.0
+Location: /Users/shannonellis/.local/lib/python3.6/site-packages
+Requires: beautifulsoup4, numpy, nltk, lxml, requests
+Required-by: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># see version information</span>
+<span class="kn">import</span> <span class="nn">lisc</span>
+<span class="n">lisc</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-f48bb67988f4&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># see version information</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">lisc</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">lisc</span><span class="o">.</span><span class="n">__version__</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;lisc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./materials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="16-CommandLine.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Command Line &amp; Scripts</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="18-OpenSource.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Open Source</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Thomas Donoghue & Shannon Ellis<br/>
+    
+        &copy; Copyright 2020-.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

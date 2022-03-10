@@ -1,0 +1,2140 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 3: Chatbots &#8212; Introductory Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment 4: Artificial Agents" href="D4-ArtificialAgents.html" />
+    <link rel="prev" title="A2-Ciphers" href="D2-Ciphers.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introductory Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/index.html">
+   Introductory Python
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Materials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/01-Tools.html">
+   Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/02-JupyterNotebooks.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/03-Variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/04-Operators.html">
+   Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/05-Conditionals.html">
+   Conditionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/06-DataTypes.html">
+   DataTypes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/07-Loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/08-Encodings.html">
+   Encodings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/09-FunctionsI.html">
+   FunctionsI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/10-Algorithms.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/11-FunctionsII.html">
+   FunctionsII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/12-Debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/13-Objects.html">
+   Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/14-Classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/15-Namespaces.html">
+   Namespaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/16-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/17-APIs.html">
+   The Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/18-OpenSource.html">
+   OpenSource
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/19-ScientificComputing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/20-Documentation.html">
+   Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/21-CodeStyle.html">
+   Code Style
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/22-CodeTesting.html">
+   Code Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/23-CodeProjects.html">
+   CodeProjects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/24-AdvancedPython.html">
+   AdvancedPython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/25-WrapUp.html">
+   WrapUp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/A1-Syntax.html">
+   A1-Syntax
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/A2-Examples.html">
+   A2-Examples
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL1-ProgrammingI.html">
+   ProgrammingI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL2-ProgrammingII.html">
+   ProgrammingII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL3-AlgorithmicThinking.html">
+   AlgorithmicThinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL4-Exploring.html">
+   Exploring
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL5-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="D1-GettingStarted.html">
+   GettingStarted
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="D2-Ciphers.html">
+   Ciphers
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chatbots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="D4-ArtificialAgents.html">
+   ArtificialAgents
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/ProjectIdeas.html">
+   Ideas
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/assignments/D3-Chatbots.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/introductorypython/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/introductorypython//issues/new?title=Issue%20on%20page%20%2Fassignments/D3-Chatbots.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/introductorypython//master?urlpath=tree/inpy/assignments/D3-Chatbots.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-tips">
+     Quick Tips
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-imports">
+     Code Imports
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zen-chatbot">
+     Zen Chatbot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-functions">
+   Part 1: Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-examples">
+     Function Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q1-find-max-value-0-5-points">
+     Q1 - Find Max Value  (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q2-square-everything-0-5-points">
+     Q2 - Square Everything  (0.5 points)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-refactoring-code-to-use-functions">
+   Part 2: Refactoring Code to Use Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q3-calculator-0-5-points">
+     Q3 - Calculator (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q4-extending-our-calculator-0-5-points">
+     Q4 - Extending our Calculator  (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-chaining-functions-together">
+     Example: Chaining Functions Together
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q5-using-our-calculator-0-5-points">
+     Q5 - Using Our Calculator  (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calling-functions-from-functions">
+     Calling Functions from Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q6-functions-for-even-positive-numbers-0-5-points">
+     Q6 - Functions for Even &amp; Positive Numbers (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q7-functions-using-functions-0-5-points">
+     Q7 - Functions Using Functions (0.5 points)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-algorithms">
+   Part 3: Algorithms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q8-algorithms-0-5-points">
+     Q8 - Algorithms (0.5 points)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4-chatbots">
+   Part 4:  Chatbots
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chatbot-functions">
+     Chatbot functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-chatbot-eliza">
+     Example Chatbot - Eliza
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-chatbot-iesha">
+     Example Chatbot - Iesha
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chatbots-words-rules">
+     Chatbots: Words &amp; Rules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q9-is-it-a-question-0-5-points">
+     Q9 - Is It a Question (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-string-punctuation">
+     Example: string.punctuation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q10-removing-punctuation-0-5-points">
+     Q10 - Removing punctuation (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q11-preparing-text-0-5-points">
+     Q11 - Preparing Text (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q12-echo-a-response-0-5-points">
+     Q12 - Echo a Response (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-random-choice">
+     Example: random.choice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q13-selector-0-5-points">
+     Q13 - Selector (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q14-string-concatenator-function-0-5-points">
+     Q14 - String Concatenator Function (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q15-list-to-string-0-5-points">
+     Q15 - List to String (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q16-end-chat-0-5-points">
+     Q16 - End Chat (0.5 points)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pulling-it-all-together">
+   Pulling it all Together
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#talking-to-our-chatbot">
+   Talking to our Chatbot
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extending-our-chatbot">
+     Extending Our Chatbot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-end">
+   The End!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Assignment 3: Chatbots</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-tips">
+     Quick Tips
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-imports">
+     Code Imports
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zen-chatbot">
+     Zen Chatbot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-functions">
+   Part 1: Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-examples">
+     Function Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q1-find-max-value-0-5-points">
+     Q1 - Find Max Value  (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q2-square-everything-0-5-points">
+     Q2 - Square Everything  (0.5 points)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-refactoring-code-to-use-functions">
+   Part 2: Refactoring Code to Use Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q3-calculator-0-5-points">
+     Q3 - Calculator (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q4-extending-our-calculator-0-5-points">
+     Q4 - Extending our Calculator  (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-chaining-functions-together">
+     Example: Chaining Functions Together
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q5-using-our-calculator-0-5-points">
+     Q5 - Using Our Calculator  (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calling-functions-from-functions">
+     Calling Functions from Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q6-functions-for-even-positive-numbers-0-5-points">
+     Q6 - Functions for Even &amp; Positive Numbers (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q7-functions-using-functions-0-5-points">
+     Q7 - Functions Using Functions (0.5 points)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-algorithms">
+   Part 3: Algorithms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q8-algorithms-0-5-points">
+     Q8 - Algorithms (0.5 points)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4-chatbots">
+   Part 4:  Chatbots
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chatbot-functions">
+     Chatbot functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-chatbot-eliza">
+     Example Chatbot - Eliza
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-chatbot-iesha">
+     Example Chatbot - Iesha
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chatbots-words-rules">
+     Chatbots: Words &amp; Rules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q9-is-it-a-question-0-5-points">
+     Q9 - Is It a Question (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-string-punctuation">
+     Example: string.punctuation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q10-removing-punctuation-0-5-points">
+     Q10 - Removing punctuation (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q11-preparing-text-0-5-points">
+     Q11 - Preparing Text (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q12-echo-a-response-0-5-points">
+     Q12 - Echo a Response (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-random-choice">
+     Example: random.choice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q13-selector-0-5-points">
+     Q13 - Selector (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q14-string-concatenator-function-0-5-points">
+     Q14 - String Concatenator Function (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q15-list-to-string-0-5-points">
+     Q15 - List to String (0.5 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q16-end-chat-0-5-points">
+     Q16 - End Chat (0.5 points)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pulling-it-all-together">
+   Pulling it all Together
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#talking-to-our-chatbot">
+   Talking to our Chatbot
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extending-our-chatbot">
+     Extending Our Chatbot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-end">
+   The End!
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-3-chatbots">
+<h1>Assignment 3: Chatbots<a class="headerlink" href="#assignment-3-chatbots" title="Permalink to this headline">¶</a></h1>
+<p>This is a demo assignment that is available as part of the Introductory Python open materials.</p>
+<div class="alert alert-danger">
+If you are in the COGS18 course at UC San Diego, this is NOT a valid version of the assignment for the course.
+</div><div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This assignment covers Functions &amp; Algorithms, and builds up to the application of Chatbots.</p>
+<p>This assignment is out of 8 points, worth 8% of your grade.</p>
+<p>Make sure your completed assignment passes all the asserts. This assignment also has hidden tests - which means that passing all the asserts you see does not guarantee that you have the correct answer! Make sure to double check and re-run your code to make sure it does what you expect.</p>
+<div class="section" id="quick-tips">
+<h3>Quick Tips<a class="headerlink" href="#quick-tips" title="Permalink to this headline">¶</a></h3>
+<p>Make sure you execute your code to define the functions you write, and then add a new cell to apply your function to different inputs, and check that you get the outputs you expect.</p>
+<p>If you’re not sure where to start, look at the code in the test cases (in the asserts) for examples for what kind of inputs and outputs the function you are writing should take, and what kind of behaviour it should have.</p>
+<p>Keep in mind that each question is mostly independent from every other - so if you get stuck on something, you can always move on to the next one, and come back to any that you have trouble with later.</p>
+</div>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="code-imports">
+<h3>Code Imports<a class="headerlink" href="#code-imports" title="Permalink to this headline">¶</a></h3>
+<p>You must run the following cell before proceeding with the assignment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup - run this cell before doing the next part of the assignment</span>
+<span class="c1">#   This imports some extra code, making it available for us to use later</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zen-chatbot">
+<h3>Zen Chatbot<a class="headerlink" href="#zen-chatbot" title="Permalink to this headline">¶</a></h3>
+<p>In this assignment, we will be working our way up to building a chatbot.</p>
+<p>To start with, we can have a quick chat with a zen chatbot, to see what these kinds of chatbots look like.</p>
+<p>Also, if you get stuck on anything, come back here, and talk to the Zen chatbot, to relax :)</p>
+<p>Note: in this, and other, chatbot lines, running this code will start an open-ended while loop, that will interupt your code flow, until you explicity quit out of the conversation. If you want to be able to run all your code (from kernel <code class="docutils literal notranslate"><span class="pre">restart</span> <span class="pre">&amp;</span> <span class="pre">run</span> <span class="pre">all</span></code>), then comment these lines back out when you are finished exploring them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment and run this cell to talk to a Zan Chatbot</span>
+<span class="c1">#nltk.chat.zen.demo()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-1-functions">
+<h2>Part 1: Functions<a class="headerlink" href="#part-1-functions" title="Permalink to this headline">¶</a></h2>
+<p>This part covers the basics of writing and using functions.</p>
+<div class="section" id="function-examples">
+<h3>Function Examples<a class="headerlink" href="#function-examples" title="Permalink to this headline">¶</a></h3>
+<p>The following are a couple examples of functions provided to you, so you can see their structure.</p>
+<p>You don’t need to do anything with these functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">basic_function</span><span class="p">(</span><span class="n">input_number</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Multiplies an input number by 2.&quot;&quot;&quot;</span>
+    
+    <span class="c1"># Multiple the input by 2</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">input_number</span> <span class="o">*</span> <span class="mi">2</span> 
+    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test using `basic_function`</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">basic_function</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">basic_function</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">more_complicated_function</span><span class="p">(</span><span class="n">input_string</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Counts how many letters are in a string.&quot;&quot;&quot;</span>
+
+    <span class="n">letter_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">input_string</span><span class="p">:</span>
+        
+        <span class="c1"># Uses the `isalpha` method to check if a character is from the alphabet</span>
+        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+            
+            <span class="c1"># `+= 1` is a shortcut for `val = val + 1`</span>
+            <span class="n">letter_count</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+    <span class="k">return</span> <span class="n">letter_count</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test using `more_complicated_function`</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">more_complicated_function</span><span class="p">(</span><span class="s1">&#39;ab45b&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q1-find-max-value-0-5-points">
+<h3>Q1 - Find Max Value  (0.5 points)<a class="headerlink" href="#q1-find-max-value-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">find_max</span></code>, that takes in a single parameter called <code class="docutils literal notranslate"><span class="pre">random_list</span></code>, which should be a list.</p>
+<p>This function will find the maximum (max) value of the input list, and return it.</p>
+<p>This function will assume the list is composed of only positive numbers.</p>
+<p>To find the max, within the function, use a variable called <code class="docutils literal notranslate"><span class="pre">list_max</span></code>, that you initialize to value 0.</p>
+<p>Then use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, to loop through <code class="docutils literal notranslate"><span class="pre">random_list</span></code>.</p>
+<p>Inside the list, use a conditional to check if the current value is larger than <code class="docutils literal notranslate"><span class="pre">list_max</span></code>, and if so, re-assign <code class="docutils literal notranslate"><span class="pre">list_max</span></code> to store this new value.</p>
+<p>After the loop, return <code class="docutils literal notranslate"><span class="pre">list_max</span></code>, which should now store the maximum value from within the input list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">find_max</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">find_max</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">]),</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">find_max</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">find_max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q2-square-everything-0-5-points">
+<h3>Q2 - Square Everything  (0.5 points)<a class="headerlink" href="#q2-square-everything-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">square_all</span></code> that takes an input called <code class="docutils literal notranslate"><span class="pre">collection</span></code> that you assume to be a list or tuple of numbers.</p>
+<p>This function should return a new <code class="docutils literal notranslate"><span class="pre">list</span></code>, which contains the square of each value in <code class="docutils literal notranslate"><span class="pre">collection</span></code>.</p>
+<p>To do so, inside the function, you will define a new list, use a loop to loop through the input list, use an operator to square the current value, and use the <code class="docutils literal notranslate"><span class="pre">append</span></code> method to add this to your output list. After the loop, return the output list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">square_all</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">square_all</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span> <span class="nb">list</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">square_all</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="o">==</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">square_all</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-2-refactoring-code-to-use-functions">
+<h2>Part 2: Refactoring Code to Use Functions<a class="headerlink" href="#part-2-refactoring-code-to-use-functions" title="Permalink to this headline">¶</a></h2>
+<p>‘Refactoring’ is the process of updating existing computer code, to keep the same outputs, but to have better internal organization and/or properties.</p>
+<p>We’ve written a lot of code in previous assignments. However, since we did not yet have functions at our disposal, a lot of that code is not very easy to re-use.</p>
+<p>In this section we will refactor some code - rewriting (and extending) some code from previous assignments as functions, to make it easier to re-use.</p>
+<div class="section" id="q3-calculator-0-5-points">
+<h3>Q3 - Calculator (0.5 points)<a class="headerlink" href="#q3-calculator-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start with the calculator code that we worked on in A1.</p>
+<p>Instead of using a conditional, like we did before, we will make a series of functions to do all the mathematical operations that we want to do.</p>
+<p>Define four functions, called <code class="docutils literal notranslate"><span class="pre">summation</span></code>, <code class="docutils literal notranslate"><span class="pre">subtraction</span></code>, <code class="docutils literal notranslate"><span class="pre">multiplication</span></code>, and <code class="docutils literal notranslate"><span class="pre">division</span></code>.</p>
+<p>Each of them will take two inputs <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code> (that could be <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code>), and use them as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">summation</span></code> will add <code class="docutils literal notranslate"><span class="pre">num1</span></code> to <code class="docutils literal notranslate"><span class="pre">num2</span></code> and return the result</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subtraction</span></code> will subtract <code class="docutils literal notranslate"><span class="pre">num2</span></code> from <code class="docutils literal notranslate"><span class="pre">num1</span></code> and return the result</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">multiplication</span></code> will multiply <code class="docutils literal notranslate"><span class="pre">num1</span></code> by <code class="docutils literal notranslate"><span class="pre">num2</span></code> and return the result</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">division</span></code> will divide <code class="docutils literal notranslate"><span class="pre">num1</span></code> by <code class="docutils literal notranslate"><span class="pre">num2</span></code> and return the result</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">summation</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">summation</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">summation</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">summation</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">subtraction</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">subtraction</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">summation</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">subtraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">multiplication</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">multiplication</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">multiplication</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">multiplication</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">division</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">division</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">division</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">division</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q4-extending-our-calculator-0-5-points">
+<h3>Q4 - Extending our Calculator  (0.5 points)<a class="headerlink" href="#q4-extending-our-calculator-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Let’s now add some more functions to our calculator:</p>
+<ul class="simple">
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">squared</span></code> that takes one parameter, called <code class="docutils literal notranslate"><span class="pre">num</span></code>, and returns the square of it.</p></li>
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">square_root</span></code> that takes one parameter, called <code class="docutils literal notranslate"><span class="pre">num</span></code>, and returns the square root of it.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="mi">25</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">square_root</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">square_root</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">square_root</span><span class="p">(</span><span class="mi">144</span><span class="p">)</span> <span class="o">==</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-chaining-functions-together">
+<h3>Example: Chaining Functions Together<a class="headerlink" href="#example-chaining-functions-together" title="Permalink to this headline">¶</a></h3>
+<p>The goal of using functions is partly to be able to re-use code segments.</p>
+<p>It’s also a way to able to flexibly apply and combine different functions together, to build up to more complex and interesting programs.</p>
+<p>The cell below shows a couple examples of using our calculator functions that we have now defined, in combination with each other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add the multiplication of 2 and 3 to the multiplication of 3 and 4</span>
+<span class="n">number1</span> <span class="o">=</span> <span class="n">multiplication</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">number2</span> <span class="o">=</span> <span class="n">multiplication</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">output1</span> <span class="o">=</span> <span class="n">summation</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Output1: </span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">output1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="c1"># Note that we can use the outputs of functions directly as inputs to other functions</span>
+<span class="c1">#   Therefore, the above construction is equivalent to the following:</span>
+<span class="n">output2</span> <span class="o">=</span> <span class="n">summation</span><span class="p">(</span><span class="n">multiplication</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">multiplication</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Output2: </span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">output2</span><span class="p">)</span>
+
+<span class="c1"># When we have something like above the functions that are inputs get evaluated first:</span>
+<span class="c1">#   So, first, `multiplication(2, 3)` evaluates as 6, and `multiplication(3, 4)` evaluales as 12</span>
+<span class="c1">#   This then reduces to calling `summation(6, 12)`, which returns our answer of 18</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q5-using-our-calculator-0-5-points">
+<h3>Q5 - Using Our Calculator  (0.5 points)<a class="headerlink" href="#q5-using-our-calculator-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Let’s now use our new calculator functions to do some calculations!</p>
+<ul class="simple">
+<li><p>Add the square of 3 to the square root of 9</p>
+<ul>
+<li><p>Save the result to a variable called <code class="docutils literal notranslate"><span class="pre">calc_a</span></code></p></li>
+</ul>
+</li>
+<li><p>Subtract the division of 12 by 3 from the the multiplication of 2 and 4</p>
+<ul>
+<li><p>Save the result to a variable called <code class="docutils literal notranslate"><span class="pre">calc_b</span></code></p></li>
+</ul>
+</li>
+<li><p>Multiply the square root of 16 to the sum of 7 and 9</p>
+<ul>
+<li><p>Save the result to a variable called <code class="docutils literal notranslate"><span class="pre">calc_c</span></code></p></li>
+</ul>
+</li>
+<li><p>Divide the square of 7 by the square root of 49</p>
+<ul>
+<li><p>Save the result to a variable called <code class="docutils literal notranslate"><span class="pre">calc_d</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">calc_a</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">calc_a</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">calc_b</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">calc_b</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">calc_c</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">calc_c</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">calc_d</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">calc_d</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calling-functions-from-functions">
+<h3>Calling Functions from Functions<a class="headerlink" href="#calling-functions-from-functions" title="Permalink to this headline">¶</a></h3>
+<p>In the example above, we were able to refactor our code into re-useable functions.</p>
+<p>We were then able to use these functions and chain them together to flexibly and extensibly do computation.</p>
+<p>Next we’ll dive into another aspect of writing good modular code: dividing complex tasks into independent functions and then using them together.</p>
+<p>In practice, this will look like writing lots of and small and specific functions to do simple tasks.</p>
+<p>We can then use these functions from within other functions build up to being able to do more complex tasks.</p>
+</div>
+<div class="section" id="q6-functions-for-even-positive-numbers-0-5-points">
+<h3>Q6 - Functions for Even &amp; Positive Numbers (0.5 points)<a class="headerlink" href="#q6-functions-for-even-positive-numbers-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Recall Q13 from A2, when we wanted to check a series of conditions across items in a list.</p>
+<p>We can consider that checking each of these conditions is really a separate task.</p>
+<p>When writing modular code, these separate tasks should therefore be organized as separate functions.</p>
+<p>For this question, write two functions, one called <code class="docutils literal notranslate"><span class="pre">is_even</span></code>, and the other called <code class="docutils literal notranslate"><span class="pre">is_positive</span></code>.</p>
+<p>Each function should take in a single parameter, a number called <code class="docutils literal notranslate"><span class="pre">value</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">is_even</span></code> will check if <code class="docutils literal notranslate"><span class="pre">value</span></code> is even, and return <code class="docutils literal notranslate"><span class="pre">True</span></code> if so, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_positive</span></code> will check if <code class="docutils literal notranslate"><span class="pre">value</span></code> is positive, and return <code class="docutils literal notranslate"><span class="pre">True</span></code> if so, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+<ul>
+<li><p>Note: for our purposes here, ‘positive’ numbers are all numbers greater than 0 (so 0 is not considered positive).</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">is_even</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">is_even</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="nb">bool</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">is_even</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">is_positive</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">is_positive</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="nb">bool</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">is_positive</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q7-functions-using-functions-0-5-points">
+<h3>Q7 - Functions Using Functions (0.5 points)<a class="headerlink" href="#q7-functions-using-functions-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>In this section, your are going to recreate a function called <code class="docutils literal notranslate"><span class="pre">make_new_list</span></code> which takes a list called <code class="docutils literal notranslate"><span class="pre">data_list</span></code> as its input.</p>
+<p>This function will use <code class="docutils literal notranslate"><span class="pre">is_positive</span></code> and <code class="docutils literal notranslate"><span class="pre">is_even</span></code> to mimic the task from A2-Q13.</p>
+<p>That is, this function will  check each value in <code class="docutils literal notranslate"><span class="pre">data_list</span></code> to see if they are even or odd and whether they are positive or negative.</p>
+<ul class="simple">
+<li><p>If they are both positive and even, encode this as the number 1</p></li>
+<li><p>If they are both negative and odd, encode this as the the number -1</p></li>
+<li><p>Otherwise, encode this as the number 0</p></li>
+<li><p>Store the result for each value into a list called <code class="docutils literal notranslate"><span class="pre">output</span></code> and return it.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">make_new_list</span><span class="p">)</span>
+
+<span class="n">data_list</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="o">-</span><span class="mi">101</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">79</span><span class="p">,</span> <span class="mi">96</span><span class="p">]</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">make_new_list</span><span class="p">(</span><span class="n">data_list</span><span class="p">),</span> <span class="nb">list</span><span class="p">)</span>
+<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">make_new_list</span><span class="p">(</span><span class="n">data_list</span><span class="p">))</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_list</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">make_new_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-3-algorithms">
+<h2>Part 3: Algorithms<a class="headerlink" href="#part-3-algorithms" title="Permalink to this headline">¶</a></h2>
+<p>This part covers working with algorithms.</p>
+<div class="section" id="q8-algorithms-0-5-points">
+<h3>Q8 - Algorithms (0.5 points)<a class="headerlink" href="#q8-algorithms-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>For each of the tasks below, indicate whether you think it is something that a human or a computer would be better at doing.</p>
+<p>Answer each question by setting each requested variable to the string either ‘human’ or ‘computer’.</p>
+<p>Set the variable to reflect the answer of which of them you think would be better at the task.</p>
+<ul class="simple">
+<li><p>a) Recognize whether a sentence is sarcastic and/or ironic.</p>
+<ul>
+<li><p>Answer in a variable called <code class="docutils literal notranslate"><span class="pre">algo_q_a</span></code></p></li>
+</ul>
+</li>
+<li><p>b) Reply to a question with information about a topic, replying with the exact wording from a wikipedia article.</p>
+<ul>
+<li><p>Answer in a variable called <code class="docutils literal notranslate"><span class="pre">algo_q_b</span></code></p></li>
+</ul>
+</li>
+<li><p>c) Keep answering messages for an arbitrarily long period of time, without demonstrating fatigue.</p>
+<ul>
+<li><p>Answer in a variable called <code class="docutils literal notranslate"><span class="pre">algo_q_c</span></code></p></li>
+</ul>
+</li>
+<li><p>d) Interpret the tone of what was said, to infer if someone is angry.</p>
+<ul>
+<li><p>Answer in a variable called <code class="docutils literal notranslate"><span class="pre">algo_q_d</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>For each, try to think through if and how you could write an algorithm to do this task - and if you could not, what about it is hard to formalize.</p>
+<p>We can use these questions to start to think through what might be easy and hard to program our chatbot to do.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">algo_q_a</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;human&#39;</span><span class="p">,</span> <span class="s1">&#39;computer&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">algo_q_b</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;human&#39;</span><span class="p">,</span> <span class="s1">&#39;computer&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">algo_q_c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;human&#39;</span><span class="p">,</span> <span class="s1">&#39;computer&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">algo_q_d</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;human&#39;</span><span class="p">,</span> <span class="s1">&#39;computer&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-4-chatbots">
+<h2>Part 4:  Chatbots<a class="headerlink" href="#part-4-chatbots" title="Permalink to this headline">¶</a></h2>
+<p>This part is an application of all the tools we have covered so far, to the problem of creating a chatbot.</p>
+<p>A chatbot is a piece of software that tries to have a conversation with a human.</p>
+<p>While today’s chatbots are powerful learners, traditional chatbots are much simpler.</p>
+<p>Traditional chatbots follow a “rule-based” approach that is defined for them (by you, the programmer), usually without any learning.</p>
+<p>These rules can be very simple or sometimes quite complex - but everything is pre-defined.</p>
+<p>These types of chatbots can handle simple conversations but do tend to fail at more complex ones.</p>
+<div class="section" id="chatbot-functions">
+<h3>Chatbot functions<a class="headerlink" href="#chatbot-functions" title="Permalink to this headline">¶</a></h3>
+<p>In order to make our chatbot, we will create a series of functions that our eventual chatbot will use together to try and chat with a user.</p>
+<p>At the end, we will test that these functions do indeed allow us to have simple conversations with our chatbot.</p>
+<p>Below are some more example chatbots to talk to. Remember to comment these lines back out if you want to be able to <code class="docutils literal notranslate"><span class="pre">Restart</span> <span class="pre">and</span> <span class="pre">Run</span> <span class="pre">All</span></code>.</p>
+</div>
+<div class="section" id="example-chatbot-eliza">
+<h3>Example Chatbot - Eliza<a class="headerlink" href="#example-chatbot-eliza" title="Permalink to this headline">¶</a></h3>
+<p>The following demo is from the Natural Language ToolKit (nltk), a Python package available through Anaconda.</p>
+<p>Uncomment the line below, and run the code to be able to have a chat with Eliza.</p>
+<p>More information on Eliza: <a class="reference external" href="https://en.wikipedia.org/wiki/ELIZA">https://en.wikipedia.org/wiki/ELIZA</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run a demo of a chatbot, with Eliza</span>
+<span class="c1">#nltk.chat.eliza.demo()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-chatbot-iesha">
+<h3>Example Chatbot - Iesha<a class="headerlink" href="#example-chatbot-iesha" title="Permalink to this headline">¶</a></h3>
+<p>The following is another demo chatbot from nltk, this one called Iesha.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run a demo of a chatbot, with Iesha</span>
+<span class="c1">#nltk.chat.iesha.demo()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you try the chatbot demos with Eliza and Iesha, see if you can notice any patterns that might help you figure out how they work.</p>
+<p>That is, can you guess at what kind of programming structures these programs might use?</p>
+</div>
+<div class="section" id="chatbots-words-rules">
+<h3>Chatbots: Words &amp; Rules<a class="headerlink" href="#chatbots-words-rules" title="Permalink to this headline">¶</a></h3>
+<p>So, how do these kinds of chatbots work? Most broadly, they combine two simple but powerful approaches:</p>
+<ul class="simple">
+<li><p>Rule Based Artificial Intelligence (GOFAI)</p></li>
+<li><p>Bag-Of-Word Language Models</p></li>
+</ul>
+<p><strong>Rule based AI</strong>, sometimes called ‘Good Old Fashion Artificial Intelligence’, or ‘GOFAI’, is an approach to making artificial agents that tries to write down a set of rules to follow to perform some task. In practice, this often looks like using a lot of conditionals: if <code class="docutils literal notranslate"><span class="pre">X</span></code> happens, do <code class="docutils literal notranslate"><span class="pre">Y</span></code>. If we can write down enough logical procedures (call them algorithms) to follow to complete some task, then we can create an artificially intelligent agent (for that task).</p>
+<p><strong>Bag-Of-Word language models</strong> are an approach to language that takes the simple approach of saying ‘lets try and figure out what someone is saying simply by checking and counting which words they use’. If someone says the word ‘dog’ three times in conversation, they are probably talking about dogs. This ignores many many things about language, and how it works, but is a good ‘first guess’ for what is being said.</p>
+<p>From our perspective, this means two things:</p>
+<ul class="simple">
+<li><p>We can broadly try to figure out the topic simply by checking which words are used</p></li>
+<li><p>We can choose a response based on a rule that defines what to do if and when we identify particular topics</p></li>
+</ul>
+<p>In code then, this looks like:</p>
+<ul class="simple">
+<li><p>taking input as strings of continuous text, and splitting this up into lists that contain all the words we see</p></li>
+<li><p>use conditionals (if/elif/else) that choose an output based on what words appear in those lists</p></li>
+</ul>
+<p>As we work through and create all the function in the next section to create our chatbot, try to think through how these functions relate to this approach.</p>
+</div>
+<div class="section" id="q9-is-it-a-question-0-5-points">
+<h3>Q9 - Is It a Question (0.5 points)<a class="headerlink" href="#q9-is-it-a-question-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>One thing we might want to know, given an input to a chatbot, is if the input is a question.</p>
+<p>We are going to use a very simple heuristic to check this: we will consider any input that has a question mark (‘?’) in it to be a question.</p>
+<p>To do so, write a function called <code class="docutils literal notranslate"><span class="pre">is_question</span></code>.</p>
+<p>This function should have the following inputs, outputs and internal procedures:</p>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input_string</span></code> - string</p></li>
+</ul>
+<p>Output(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">output</span></code> - boolean</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>if there is a ‘?’ in <code class="docutils literal notranslate"><span class="pre">input_string</span></code>, set <code class="docutils literal notranslate"><span class="pre">output</span></code> to True</p></li>
+<li><p>otherwise, set output to False.</p></li>
+<li><p>return output</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">is_question</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">is_question</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">),</span> <span class="nb">bool</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">is_question</span><span class="p">(</span><span class="s1">&#39;what?&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">is_question</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-string-punctuation">
+<h3>Example: string.punctuation<a class="headerlink" href="#example-string-punctuation" title="Permalink to this headline">¶</a></h3>
+<p>When working with strings, it can be useful to check what kind of things particular characters are.</p>
+<p>To do things like this, Python offers some collections of items, that we can check against.</p>
+<p>For example, we can ask if a particular character is a punctuation mark, by asking if it is in the collection of punctuation characters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print out list of punctuation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span> <span class="c1"># Print blank line</span>
+
+<span class="c1"># Check if a particular symol is a punctuation mark</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;@&#39;</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q10-removing-punctuation-0-5-points">
+<h3>Q10 - Removing punctuation (0.5 points)<a class="headerlink" href="#q10-removing-punctuation-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Once we know if an input is a question, we are going to get rid of all punctuation.</p>
+<p>To do so, write a function called <code class="docutils literal notranslate"><span class="pre">remove_punctuation</span></code>.</p>
+<p>This function should have the following inputs, outputs and internal procedures:</p>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input_string</span></code> - string</p></li>
+</ul>
+<p>Output(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">out_string</span></code> - string</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>define a new variable <code class="docutils literal notranslate"><span class="pre">out_string</span></code> as an empty string</p></li>
+<li><p>loop through each character in <code class="docutils literal notranslate"><span class="pre">input_string</span></code></p>
+<ul>
+<li><p>if this character is not in <code class="docutils literal notranslate"><span class="pre">string.punctuation</span></code></p>
+<ul>
+<li><p>then append the current character to <code class="docutils literal notranslate"><span class="pre">out_string</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>return <code class="docutils literal notranslate"><span class="pre">out_string</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">remove_punctuation</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">remove_punctuation</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">remove_punctuation</span><span class="p">(</span><span class="s2">&quot;Hey! It&#39;s Tom!&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Hey Its Tom&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">remove_punctuation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q11-preparing-text-0-5-points">
+<h3>Q11 - Preparing Text (0.5 points)<a class="headerlink" href="#q11-preparing-text-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Now we want a more general function to prepare the text inputs for processing.</p>
+<p>Inside this function, we will use some string methods as well as our new <code class="docutils literal notranslate"><span class="pre">remove_punctuation</span></code> function.</p>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">prepare_text</span></code>.</p>
+<p>This function should have the following inputs, outputs and internal procedures:</p>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input_string</span></code> - string</p></li>
+</ul>
+<p>Output(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">out_list</span></code> - list of string</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>make the string all lower case (use a string method called <code class="docutils literal notranslate"><span class="pre">lower</span></code>)</p>
+<ul>
+<li><p>note that you will have to assign the output to a variable. You can use a variable name like <code class="docutils literal notranslate"><span class="pre">temp_string</span></code></p></li>
+</ul>
+</li>
+<li><p>remove all punctuation from the string (use your new function <code class="docutils literal notranslate"><span class="pre">remove_punctuation</span></code>)</p>
+<ul>
+<li><p>this can also assign out to <code class="docutils literal notranslate"><span class="pre">temp_string</span></code></p></li>
+</ul>
+</li>
+<li><p>split the string into words (look for and use a string method called <code class="docutils literal notranslate"><span class="pre">split</span></code>)</p>
+<ul>
+<li><p>note that split will return a list of strings. Assign this as <code class="docutils literal notranslate"><span class="pre">out_list</span></code></p></li>
+</ul>
+</li>
+<li><p>return <code class="docutils literal notranslate"><span class="pre">out_list</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">prepare_text</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prepare_text</span><span class="p">(</span><span class="s1">&#39;One two three.&#39;</span><span class="p">),</span> <span class="nb">list</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">prepare_text</span><span class="p">(</span><span class="s1">&#39;Hi! Also, howdy.&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;also&#39;</span><span class="p">,</span> <span class="s1">&#39;howdy&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">prepare_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q12-echo-a-response-0-5-points">
+<h3>Q12 - Echo a Response (0.5 points)<a class="headerlink" href="#q12-echo-a-response-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>We will define a function that will return a string that has been repeated a specified number of times, with a given separator.</p>
+<p>We will also want to deal with the case where the input to this function may be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">respond_echo</span></code>.</p>
+<p>This function should have the following inputs, outputs and internal procedures:</p>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input_string</span></code> - string, or None</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">number_of_echoes</span></code> - integer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spacer</span></code> - string</p></li>
+</ul>
+<p>Output(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">echo_output</span></code> - string, or None</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>if <code class="docutils literal notranslate"><span class="pre">input_string</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<ul>
+<li><p>set a variable <code class="docutils literal notranslate"><span class="pre">echo_output</span></code> to be  <code class="docutils literal notranslate"><span class="pre">input_string</span></code>, repeated the number of times specified by <code class="docutils literal notranslate"><span class="pre">number_of_echoes</span></code>, joined by the  <code class="docutils literal notranslate"><span class="pre">spacer</span></code>.</p>
+<ul>
+<li><p>Hint: to do so, recall what “*” does to strings</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>otherwise (if <code class="docutils literal notranslate"><span class="pre">input_string</span></code> is None)</p>
+<ul>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">echo_output</span></code> to <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+</li>
+<li><p>return <code class="docutils literal notranslate"><span class="pre">echo_output</span></code></p></li>
+</ul>
+<p>Note that a simple version of this version will end up appending the spacer to the end of the list as well. For our purposes here, implement that simple version.</p>
+<p>So, for example, <code class="docutils literal notranslate"><span class="pre">respond_echo('bark',</span> <span class="pre">2,</span> <span class="pre">'-')</span></code> should return: ‘bark-bark-‘</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">respond_echo</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">respond_echo</span><span class="p">(</span><span class="s1">&#39;ha&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">),</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">respond_echo</span><span class="p">(</span><span class="s1">&#39;meow&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;~&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;meow~meow~meow~&#39;</span>
+<span class="k">assert</span> <span class="n">respond_echo</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">respond_echo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-random-choice">
+<h3>Example: random.choice<a class="headerlink" href="#example-random-choice" title="Permalink to this headline">¶</a></h3>
+<p>We want our chatbot to have some variation in it’s responses - not only anwering the same thing.</p>
+<p>So, we want to be able to choose an output from a list of options.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">random.choice</span></code> function to so.</p>
+<p>An example of using <code class="docutils literal notranslate"><span class="pre">random.choice</span></code> is offered below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Given a list of inputs, randomly choose and return one of them (re-run this to see different outputs)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;first option&#39;</span><span class="p">,</span> <span class="s1">&#39;second option&#39;</span><span class="p">,</span> <span class="s1">&#39;third option&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q13-selector-0-5-points">
+<h3>Q13 - Selector (0.5 points)<a class="headerlink" href="#q13-selector-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Next we will write a function that will help us select an output for the chatbot, based on the input it got.</p>
+<p>The overall goal of this function is to take a list of words that we got as input, a list of words to check for if they appear in the input, and a list of possible outputs to return if something from the list to check is in the input list.</p>
+<p>Define a function, called <code class="docutils literal notranslate"><span class="pre">selector</span></code>.</p>
+<p>This function should have the following inputs, outputs and internal procedures:</p>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input_list</span></code> - list of string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">check_list</span></code> - list of string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return_list</span></code> - list of string</p></li>
+</ul>
+<p>Output(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">output</span></code> - string, or None</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>Initialize <code class="docutils literal notranslate"><span class="pre">output</span></code> to <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p>Loop through each element in <code class="docutils literal notranslate"><span class="pre">input_list</span></code></p></li>
+<li><p>Use a conditional to check if the current element is in <code class="docutils literal notranslate"><span class="pre">check_list</span></code></p>
+<ul>
+<li><p>If it is, assign <code class="docutils literal notranslate"><span class="pre">output</span></code> as the returned value of calling the <code class="docutils literal notranslate"><span class="pre">random.choice</span></code> function on <code class="docutils literal notranslate"><span class="pre">return_list</span></code></p></li>
+<li><p>Also, break out of the loop</p></li>
+</ul>
+</li>
+<li><p>At the end of the function, return <code class="docutils literal notranslate"><span class="pre">output</span></code></p></li>
+</ul>
+<p>Note that if we don’t find any words from <code class="docutils literal notranslate"><span class="pre">input_list</span></code> that are in <code class="docutils literal notranslate"><span class="pre">check_list</span></code>, <code class="docutils literal notranslate"><span class="pre">output</span></code> will be returned as <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">selector</span><span class="p">([</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="s1">&#39;words&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;words&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;yes&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span>
+<span class="k">assert</span> <span class="n">selector</span><span class="p">([</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="s1">&#39;words&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;yes&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q14-string-concatenator-function-0-5-points">
+<h3>Q14 - String Concatenator Function (0.5 points)<a class="headerlink" href="#q14-string-concatenator-function-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Create a function that will concatenate two strings, combining them with a specified separator.</p>
+<p>To do so, write a function called <code class="docutils literal notranslate"><span class="pre">string_concatenator</span></code>.</p>
+<p>This function should have the following inputs, outputs and internal procedures:</p>
+<p>Input(s)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">string1</span></code> - string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">string2</span></code> - string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">separator</span></code> - string</p></li>
+</ul>
+<p>Output(s)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">output</span></code> - string, or None</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>concatenate <code class="docutils literal notranslate"><span class="pre">string1</span></code> to <code class="docutils literal notranslate"><span class="pre">string2</span></code> with <code class="docutils literal notranslate"><span class="pre">separator</span></code> in between them.</p></li>
+<li><p>return the result</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">string_concatenator</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string_concatenator</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">),</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">string_concatenator</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;hello world&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">string_concatenator</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q15-list-to-string-0-5-points">
+<h3>Q15 - List to String (0.5 points)<a class="headerlink" href="#q15-list-to-string-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Since we are often dealing with a list of strings, it would be useful to have a function to turn a list of strings back into one single concatenated string.</p>
+<p>This function will return a string that is each element of <code class="docutils literal notranslate"><span class="pre">input_list</span></code> concatenated together with each separated by the string <code class="docutils literal notranslate"><span class="pre">seperator</span></code>.</p>
+<p>For example, the following function call:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`list_to_string([&#39;This&#39;, &#39;is&#39;, &#39;fun&#39;], &#39; &#39;)`
+</pre></div>
+</div>
+<p>shoud return:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;This is fun&#39;
+</pre></div>
+</div>
+<p>To do this, write a function called <code class="docutils literal notranslate"><span class="pre">list_to_string</span></code>.</p>
+<p>This function should have the following inputs, outputs and internal procedures:</p>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input_list</span></code> - list of string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">separator</span></code> - string</p></li>
+</ul>
+<p>Output(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">output</span></code> - string</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>assign a variable called <code class="docutils literal notranslate"><span class="pre">output</span></code> to be the first (index 0) element from <code class="docutils literal notranslate"><span class="pre">input_list</span></code></p></li>
+<li><p>loop through the rest of <code class="docutils literal notranslate"><span class="pre">input_list</span></code>, looping from the 2nd element (index 1) through to the end of the list</p>
+<ul>
+<li><p>Within the loop, use <code class="docutils literal notranslate"><span class="pre">string_concatenator</span></code> to combine <code class="docutils literal notranslate"><span class="pre">output</span></code> with the current element, separated by <code class="docutils literal notranslate"><span class="pre">separator</span></code></p>
+<ul>
+<li><p>Assign the output of this to be the new value of <code class="docutils literal notranslate"><span class="pre">output</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>return <code class="docutils literal notranslate"><span class="pre">output</span></code>, which should now be a list of the elements of <code class="docutils literal notranslate"><span class="pre">input_list</span></code>, joined together into a a single string</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">list_to_string</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">list_to_string</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="s1">&#39;|&#39;</span><span class="p">),</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">list_to_string</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="s1">&#39;|&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;a|b&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">list_to_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q16-end-chat-0-5-points">
+<h3>Q16 - End Chat (0.5 points)<a class="headerlink" href="#q16-end-chat-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>The last thing we need is a way to end the chat with our chatbot.</p>
+<p>We will use the same convention that <code class="docutils literal notranslate"><span class="pre">nltk</span></code> uses - namely, that we will end the conversation if the word <code class="docutils literal notranslate"><span class="pre">quit</span></code> appears.</p>
+<p>To be able to do so, write a function called <code class="docutils literal notranslate"><span class="pre">end_chat</span></code></p>
+<p>This function should have the following inputs, outputs and internal procedures:</p>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input_list</span></code> - list</p></li>
+</ul>
+<p>Output(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">output</span></code> - boolean</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>This function should return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the string ‘quit’ is in <code class="docutils literal notranslate"><span class="pre">input_list</span></code>, and return <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">end_chat</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">end_chat</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]),</span> <span class="nb">bool</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">end_chat</span><span class="p">([</span><span class="s1">&#39;quit&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">end_chat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pulling-it-all-together">
+<h2>Pulling it all Together<a class="headerlink" href="#pulling-it-all-together" title="Permalink to this headline">¶</a></h2>
+<p>If everything has gone well with writing everything above, then we are ready to pull all these functions together to create our chatbot.</p>
+<p>The next few cells define a bunch of code, all provided for you. This code adds a couple more functions we can use and then defines some lists of inputs and outputs that our chatbot will know about. After that, there is a big function that pulls everything together and creates the procedure to use all of this code together as a chatbot.</p>
+<p>You don’t have to write anything in the cells below (or in the rest of the assignment).</p>
+<p>Do have a quick read through the code though, to see how our chatbot works, and to see how all the functions you just wrote are used to create the chatbot.</p>
+<p>If you need, revisit the information at the beginning of this section about the logic our chatbot uses.</p>
+<p>You don’t have to understand everything about what happens here, but try to have a first-pass look through it.</p>
+<p>We will build up to understanding and writing this kind of code that brings a lot of things together as we continue through the course.</p>
+<p>If the code seems intimidating, just scroll down to the bottom, and test out talking to our chatbot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># These are a couple more function, provided to you, to be used by our chatbot.</span>
+
+<span class="k">def</span> <span class="nf">is_in_list</span><span class="p">(</span><span class="n">list_one</span><span class="p">,</span> <span class="n">list_two</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Check if any element of list_one is in list_two.&quot;&quot;&quot;</span>
+    
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_one</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_two</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">def</span> <span class="nf">find_in_list</span><span class="p">(</span><span class="n">list_one</span><span class="p">,</span> <span class="n">list_two</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Find and return an element from list_one that is in list_two, or None otherwise.&quot;&quot;&quot;</span>
+    
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_one</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_two</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">element</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell defines a collection of input and output things our chatbot can say and respond to</span>
+
+<span class="n">GREETINGS_IN</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;hey&#39;</span><span class="p">,</span> <span class="s1">&#39;hola&#39;</span><span class="p">,</span> <span class="s1">&#39;welcome&#39;</span><span class="p">,</span> <span class="s1">&#39;bonjour&#39;</span><span class="p">,</span> <span class="s1">&#39;greetings&#39;</span><span class="p">]</span>
+<span class="n">GREETINGS_OUT</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello, it&#39;s nice to talk to you!&quot;</span><span class="p">,</span> <span class="s1">&#39;Nice to meet you!&#39;</span><span class="p">,</span>  <span class="s2">&quot;Hey - Let&#39;s chat!&quot;</span><span class="p">]</span>
+
+<span class="n">COMP_IN</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;computer&#39;</span><span class="p">,</span> <span class="s1">&#39;algorithm&#39;</span><span class="p">,</span> <span class="p">]</span>
+<span class="n">COMP_OUT</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Python is what I&#39;m made of.&quot;</span><span class="p">,</span> \
+            <span class="s2">&quot;Did you know I&#39;m made of code!?&quot;</span><span class="p">,</span> \
+            <span class="s2">&quot;Computers are so magical&quot;</span><span class="p">,</span> \
+            <span class="s2">&quot;Do you think I&#39;ll pass the Turing test?&quot;</span><span class="p">]</span>
+
+<span class="n">PEOPLE_IN</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;turing&#39;</span><span class="p">,</span> <span class="s1">&#39;hopper&#39;</span><span class="p">,</span> <span class="s1">&#39;neumann&#39;</span><span class="p">,</span> <span class="s1">&#39;lovelace&#39;</span><span class="p">]</span>
+<span class="n">PEOPLE_OUT</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;was awesome!&#39;</span><span class="p">,</span> <span class="s1">&#39;did so many important things!&#39;</span><span class="p">,</span> <span class="s1">&#39;is someone you should look up :).&#39;</span><span class="p">]</span>
+<span class="n">PEOPLE_NAMES</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;turing&#39;</span><span class="p">:</span> <span class="s1">&#39;Alan&#39;</span><span class="p">,</span> <span class="s1">&#39;hopper&#39;</span><span class="p">:</span> <span class="s1">&#39;Grace&#39;</span><span class="p">,</span> <span class="s1">&#39;neumann&#39;</span><span class="p">:</span> <span class="s1">&#39;John von&#39;</span><span class="p">,</span> <span class="s1">&#39;lovelace&#39;</span><span class="p">:</span> <span class="s1">&#39;Ada&#39;</span><span class="p">}</span>
+
+<span class="n">JOKES_IN</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;funny&#39;</span><span class="p">,</span> <span class="s1">&#39;hilarious&#39;</span><span class="p">,</span> <span class="s1">&#39;ha&#39;</span><span class="p">,</span> <span class="s1">&#39;haha&#39;</span><span class="p">,</span> <span class="s1">&#39;hahaha&#39;</span><span class="p">,</span> <span class="s1">&#39;lol&#39;</span><span class="p">]</span>
+<span class="n">JOKES_OUT</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ha&#39;</span><span class="p">,</span> <span class="s1">&#39;haha&#39;</span><span class="p">,</span> <span class="s1">&#39;lol&#39;</span><span class="p">]</span> 
+
+<span class="n">NONO_IN</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;matlab&#39;</span><span class="p">,</span> <span class="s1">&#39;java&#39;</span><span class="p">,</span> <span class="s1">&#39;C++&#39;</span><span class="p">]</span>
+<span class="n">NONO_OUT</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I&#39;m sorry, I don&#39;t want to talk about&quot;</span><span class="p">]</span>
+
+<span class="n">UNKNOWN</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Good.&#39;</span><span class="p">,</span> <span class="s1">&#39;Okay&#39;</span><span class="p">,</span> <span class="s1">&#39;Huh?&#39;</span><span class="p">,</span> <span class="s1">&#39;Yeah!&#39;</span><span class="p">,</span> <span class="s1">&#39;Thanks!&#39;</span><span class="p">]</span>
+
+<span class="n">QUESTION</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m too shy to answer questions. What do you want to talk about?&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">have_a_chat</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Main function to run our chatbot.&quot;&quot;&quot;</span>
+    
+    <span class="n">chat</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">while</span> <span class="n">chat</span><span class="p">:</span>
+
+        <span class="c1"># Get a message from the user</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;INPUT :</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">out_msg</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Check if the input is a question</span>
+        <span class="n">question</span> <span class="o">=</span> <span class="n">is_question</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># Prepare the input message</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">prepare_text</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># Check for an end msg </span>
+        <span class="k">if</span> <span class="n">end_chat</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+            <span class="n">out_msg</span> <span class="o">=</span> <span class="s1">&#39;Bye!&#39;</span>
+            <span class="n">chat</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Check for a selection of topics that we have defined to respond to</span>
+        <span class="c1">#   Here, we will check for a series of topics that we have designed to answer to</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">out_msg</span><span class="p">:</span>
+
+            <span class="c1"># Initialize to collect a list of possible outputs</span>
+            <span class="n">outs</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="c1"># Check if the input looks like a greeting, add a greeting output if so</span>
+            <span class="n">outs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">selector</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">GREETINGS_IN</span><span class="p">,</span> <span class="n">GREETINGS_OUT</span><span class="p">))</span>
+
+            <span class="c1"># Check if the input looks like a computer thing, add a computer output if so</span>
+            <span class="n">outs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">selector</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">COMP_IN</span><span class="p">,</span> <span class="n">COMP_OUT</span><span class="p">))</span>
+
+            <span class="c1"># Check if the input mentions a person that is specified, add a person output if so</span>
+            <span class="k">if</span> <span class="n">is_in_list</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">PEOPLE_IN</span><span class="p">):</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">find_in_list</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">PEOPLE_IN</span><span class="p">)</span>
+                <span class="n">outs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_to_string</span><span class="p">([</span><span class="n">PEOPLE_NAMES</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
+                                            <span class="n">selector</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">PEOPLE_IN</span><span class="p">,</span> <span class="n">PEOPLE_OUT</span><span class="p">)],</span> <span class="s1">&#39; &#39;</span><span class="p">))</span>
+
+            <span class="c1"># Check if the input looks like a joke, add a repeat joke output if so</span>
+            <span class="n">outs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">respond_echo</span><span class="p">(</span><span class="n">selector</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">JOKES_IN</span><span class="p">,</span> <span class="n">JOKES_OUT</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+
+            <span class="c1"># Check if the input has some words we don&#39;t want to talk about, say that, if so</span>
+            <span class="k">if</span> <span class="n">is_in_list</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">NONO_IN</span><span class="p">):</span>
+                <span class="n">outs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_to_string</span><span class="p">([</span><span class="n">selector</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">NONO_IN</span><span class="p">,</span> <span class="n">NONO_OUT</span><span class="p">),</span> <span class="n">find_in_list</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">NONO_IN</span><span class="p">)],</span> <span class="s1">&#39; &#39;</span><span class="p">))</span>
+
+            <span class="c1"># IF YOU WANTED TO ADD MORE TOPICS TO RESPOND TO, YOU COULD ADD THEM IN HERE</span>
+
+            <span class="c1"># We could have selected multiple outputs from the topic search above (if multiple return possible outputs)</span>
+            <span class="c1">#   We also might have appended None in some cases, meaning we don&#39;t have a reply</span>
+            <span class="c1">#   To deal with this, we are going to randomly select an output from the set of outputs that are not None</span>
+            <span class="n">options</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">outs</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">options</span><span class="p">:</span>
+                <span class="n">out_msg</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+
+        <span class="c1"># If we don&#39;t have an output yet, but the input was a question, return msg related to it being a question</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">out_msg</span> <span class="ow">and</span> <span class="n">question</span><span class="p">:</span>
+            <span class="n">out_msg</span> <span class="o">=</span> <span class="n">QUESTION</span>
+
+        <span class="c1"># Catch-all to say something if msg not caught &amp; processed so far</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">out_msg</span><span class="p">:</span>
+            <span class="n">out_msg</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">UNKNOWN</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OUTPUT:&#39;</span><span class="p">,</span> <span class="n">out_msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="talking-to-our-chatbot">
+<h2>Talking to our Chatbot<a class="headerlink" href="#talking-to-our-chatbot" title="Permalink to this headline">¶</a></h2>
+<p>To talk to our chatbot, uncomment and run the cell below.</p>
+<p>If anything seems to go weird, note that you can always interrupt the code from running with chat with kernel - interrupt from the menu.</p>
+<p>If this happens, it probably means there is some issue with one of the functions you wrote for the chatbot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Talk to our chatbot</span>
+<span class="n">have_a_chat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="extending-our-chatbot">
+<h3>Extending Our Chatbot<a class="headerlink" href="#extending-our-chatbot" title="Permalink to this headline">¶</a></h3>
+<p>You might notice that our chatbot, right now, is pretty limited in how many things it can respond to.</p>
+<p>To respond to more topics, we could re-use these same functions, adding more input &amp; output options for our chatbot to respond to, using the basic approaches and functionality we have defined here.</p>
+<p>If you are interested in this topic, extending this chatbot (or ones like it) will be one of your project options.</p>
+</div>
+</div>
+<div class="section" id="the-end">
+<h2>The End!<a class="headerlink" href="#the-end" title="Permalink to this headline">¶</a></h2>
+<p>After you’ve explored chatting to the chatbot, you are done!</p>
+<p>Have a look back over your answers, and also make sure to Restart &amp; Run All from the kernel menu to double check that everything is working properly.</p>
+<p>When you are ready to submit your assignment, upload it to TritonED under Assignment-3.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./assignments"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="D2-Ciphers.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">A2-Ciphers</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="D4-ArtificialAgents.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 4: Artificial Agents</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Thomas Donoghue & Shannon Ellis<br/>
+    
+        &copy; Copyright 2020-.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

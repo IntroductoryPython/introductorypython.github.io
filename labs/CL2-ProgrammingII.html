@@ -1,0 +1,1053 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CL2: Programming II &#8212; Introductory Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CL3: Algorithmic Thinking" href="CL3-AlgorithmicThinking.html" />
+    <link rel="prev" title="CL1: Programming I" href="CL1-ProgrammingI.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introductory Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/index.html">
+   Introductory Python
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Materials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/01-Tools.html">
+   Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/02-JupyterNotebooks.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/03-Variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/04-Operators.html">
+   Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/05-Conditionals.html">
+   Conditionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/06-DataTypes.html">
+   DataTypes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/07-Loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/08-Encodings.html">
+   Encodings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/09-FunctionsI.html">
+   FunctionsI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/10-Algorithms.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/11-FunctionsII.html">
+   FunctionsII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/12-Debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/13-Objects.html">
+   Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/14-Classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/15-Namespaces.html">
+   Namespaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/16-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/17-APIs.html">
+   The Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/18-OpenSource.html">
+   OpenSource
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/19-ScientificComputing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/20-Documentation.html">
+   Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/21-CodeStyle.html">
+   Code Style
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/22-CodeTesting.html">
+   Code Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/23-CodeProjects.html">
+   CodeProjects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/24-AdvancedPython.html">
+   AdvancedPython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/25-WrapUp.html">
+   WrapUp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/A1-Syntax.html">
+   A1-Syntax
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/A2-Examples.html">
+   A2-Examples
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="CL1-ProgrammingI.html">
+   ProgrammingI
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   ProgrammingII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CL3-AlgorithmicThinking.html">
+   AlgorithmicThinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CL4-Exploring.html">
+   Exploring
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CL5-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D1-GettingStarted.html">
+   GettingStarted
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D2-Ciphers.html">
+   Ciphers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D3-Chatbots.html">
+   Chatbots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D4-ArtificialAgents.html">
+   ArtificialAgents
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/ProjectIdeas.html">
+   Ideas
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/labs/CL2-ProgrammingII.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/introductorypython/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/introductorypython//issues/new?title=Issue%20on%20page%20%2Flabs/CL2-ProgrammingII.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/introductorypython//master?urlpath=tree/inpy/labs/CL2-ProgrammingII.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-collection-types">
+   Part 1: Collection types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collection-questions">
+     Collection Questions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#declaring-collections">
+       Declaring Collections
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexing">
+     Indexing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-conditionals">
+   Part 2: Conditionals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditional-questions">
+     Conditional Questions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#controlling-output-with-conditionals-i">
+       Controlling Output With Conditionals I
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#controlling-output-with-conditionals-ii">
+       Controlling Output With Conditionals II
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditional-challenges">
+     Conditional Challenges
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conditional-challenge-1">
+       Conditional Challenge #1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conditional-challenge-2">
+       Conditional Challenge #2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operator-explorations">
+     Operator Explorations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-loops">
+   Part 3: Loops
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loops-q1">
+     Loops Q1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#infinite-loops">
+     Infinite Loops
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-explorations">
+     Loop Explorations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-loop-challenge">
+     Nested Loop Challenge
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>CL2: Programming II</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-collection-types">
+   Part 1: Collection types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collection-questions">
+     Collection Questions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#declaring-collections">
+       Declaring Collections
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexing">
+     Indexing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-conditionals">
+   Part 2: Conditionals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditional-questions">
+     Conditional Questions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#controlling-output-with-conditionals-i">
+       Controlling Output With Conditionals I
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#controlling-output-with-conditionals-ii">
+       Controlling Output With Conditionals II
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditional-challenges">
+     Conditional Challenges
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conditional-challenge-1">
+       Conditional Challenge #1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conditional-challenge-2">
+       Conditional Challenge #2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operator-explorations">
+     Operator Explorations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-loops">
+   Part 3: Loops
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loops-q1">
+     Loops Q1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#infinite-loops">
+     Infinite Loops
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-explorations">
+     Loop Explorations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-loop-challenge">
+     Nested Loop Challenge
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="cl2-programming-ii">
+<h1>CL2: Programming II<a class="headerlink" href="#cl2-programming-ii" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the second coding lab!</p>
+<p>CodingLabs are also meant to be exploratory. There are broad questions in the notebook that you should explore, and try to answer - but you are also very much encouraged to explore other related ideas as you go!</p>
+<p>If you have a question about how something works / what something does - try it out, and see what happens!</p>
+<div class="section" id="part-1-collection-types">
+<h2>Part 1: Collection types<a class="headerlink" href="#part-1-collection-types" title="Permalink to this headline">¶</a></h2>
+<p>Collections are Python variable types than can store a ‘collection’ of items.</p>
+<div class="section" id="collection-questions">
+<h3>Collection Questions<a class="headerlink" href="#collection-questions" title="Permalink to this headline">¶</a></h3>
+<p>Create a list and a tuple. Fill them with with any values you want.</p>
+<p>Call them <code class="docutils literal notranslate"><span class="pre">my_list</span></code> and <code class="docutils literal notranslate"><span class="pre">my_tuple</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use the following cells to check the types of the variables you write are as expected</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="declaring-collections">
+<h4>Declaring Collections<a class="headerlink" href="#declaring-collections" title="Permalink to this headline">¶</a></h4>
+<p>Note that there can be more than one way to declare collections.</p>
+<p>As well as declaring them with ‘[]’ and ‘()’, we can use the list &amp; tuple constructors, as shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run me! - This creates another list &amp; tuple, using the list &amp; tuple constructors</span>
+<span class="n">some_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">some_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="s2">&quot;peanut&quot;</span><span class="p">,</span> <span class="s2">&quot;butter&quot;</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="s2">&quot;jelly&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;some_list&#39; contains: </span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">some_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;some_tuple&#39; contains: </span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">some_tuple</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compare the types of these variables to your equivalent variables to confirm.</p>
+<p>In the cell below, write in the type of the objects that you expect them to be, and make sure the asserts pass.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fill in `_WRITE_IN_TYPE_HERE` with the type you expect each variable to be</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">some_list</span><span class="p">,</span> <span class="n">_WRITE_IN_TYPE_HERE_</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">some_tuple</span><span class="p">,</span> <span class="n">_WRITE_IN_TYPE_HERE_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexing">
+<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h3>
+<p>Given the following list, do the following operations:</p>
+<ul class="simple">
+<li><p>Get the length of the list (assign this to a variable <code class="docutils literal notranslate"><span class="pre">lst_len</span></code>)</p></li>
+<li><p>Get the 1st element of the list (call the selection <code class="docutils literal notranslate"><span class="pre">ind1</span></code>)</p></li>
+<li><p>Get the last element of the list (call the selection <code class="docutils literal notranslate"><span class="pre">ind2</span></code>)</p></li>
+<li><p>Get the second to the fourth element of the list (call the selection <code class="docutils literal notranslate"><span class="pre">ind3</span></code>)</p></li>
+<li><p>Get from the fifth element, to the end of the list (call the selection <code class="docutils literal notranslate"><span class="pre">ind4</span></code>)</p></li>
+<li><p>Get every second element of the list, starting at the first element (call the selection <code class="docutils literal notranslate"><span class="pre">ind5</span></code>)</p></li>
+<li><p>Get every second element of the list, starting at the second element (call the selection <code class="docutils literal notranslate"><span class="pre">ind6</span></code>)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_lst</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;tomato&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="mf">5.5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-2-conditionals">
+<h2>Part 2: Conditionals<a class="headerlink" href="#part-2-conditionals" title="Permalink to this headline">¶</a></h2>
+<p>Conditionals a form of control flow for executing certain code if a specific condition is met.</p>
+<div class="section" id="conditional-questions">
+<h3>Conditional Questions<a class="headerlink" href="#conditional-questions" title="Permalink to this headline">¶</a></h3>
+<p>In this part, we will re-visit some questions about conditionals, and start combining them together with collections.</p>
+<p>Make sure you can use if/elif/else statements to control which code blocks are run.</p>
+<div class="section" id="controlling-output-with-conditionals-i">
+<h4>Controlling Output With Conditionals I<a class="headerlink" href="#controlling-output-with-conditionals-i" title="Permalink to this headline">¶</a></h4>
+<p>Using the code below, keep updating the variable value to make sure you can make the conditional return each of the possibilities.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ToDo: Update value to control what gets executed</span>
+<span class="n">value</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># This code provided</span>
+<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;small value&#39;</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;big value&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;false value&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="controlling-output-with-conditionals-ii">
+<h4>Controlling Output With Conditionals II<a class="headerlink" href="#controlling-output-with-conditionals-ii" title="Permalink to this headline">¶</a></h4>
+<p>In the cell below, first write something into each result assignment related to  for example, it could be “B1 is False &amp; B2 is True”).</p>
+<p>Then make sure you can change values of b1 &amp; b2 to make the program execute each option.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ToDo: Update b1 &amp; b2 to control what gets executed</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Next, try this out</span>
+<span class="k">if</span> <span class="n">b1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">b2</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">elif</span> <span class="ow">not</span> <span class="n">b1</span> <span class="ow">and</span> <span class="n">b2</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">elif</span> <span class="n">b1</span> <span class="ow">and</span> <span class="n">b2</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conditional-challenges">
+<h3>Conditional Challenges<a class="headerlink" href="#conditional-challenges" title="Permalink to this headline">¶</a></h3>
+<p>The following are more challenging questions relating to conditional statements. If they seem too tricky for now, just skip ahead to the next section.</p>
+<div class="section" id="conditional-challenge-1">
+<h4>Conditional Challenge #1<a class="headerlink" href="#conditional-challenge-1" title="Permalink to this headline">¶</a></h4>
+<p>Write a conditional that prints “Found it” if a given <code class="docutils literal notranslate"><span class="pre">val_2</span></code> is a multiple of 10, otherwise prints “Nope.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conditional-challenge-2">
+<h4>Conditional Challenge #2<a class="headerlink" href="#conditional-challenge-2" title="Permalink to this headline">¶</a></h4>
+<p>Input: assumes a variable <code class="docutils literal notranslate"><span class="pre">val_1</span></code>, that can be either a string or an integer</p>
+<p>Output: based on the conditions, this code block will assign a variable called <code class="docutils literal notranslate"><span class="pre">output</span></code> to be a boolean</p>
+<p>Use conditions to check whether <code class="docutils literal notranslate"><span class="pre">val_1</span></code> is a string or an integer object:</p>
+<ul class="simple">
+<li><p>If it is a string, check whether it’s length is greater then 8</p>
+<ul>
+<li><p>If so, set the value <code class="docutils literal notranslate"><span class="pre">output</span></code> to True</p></li>
+</ul>
+</li>
+<li><p>If it is an integer, compare whether it is less than 100</p>
+<ul>
+<li><p>If so, set the value <code class="docutils literal notranslate"><span class="pre">output</span></code> to True</p></li>
+</ul>
+</li>
+<li><p>Else, set output to False</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operator-explorations">
+<h3>Operator Explorations<a class="headerlink" href="#operator-explorations" title="Permalink to this headline">¶</a></h3>
+<p>For each of the following questions, start by writing out a guess of what you think it might do.</p>
+<p>Then, test out each one by writing out some code.</p>
+<p>Finally, once you have answered the question, using some code, add a comment in the markdown here with the answer.</p>
+<p>Questions:</p>
+<ul class="simple">
+<li><p>Can you include multiple conditions in an if statement?</p>
+<ul>
+<li><p>If think so, write an if statement that tests multiple conditions.</p></li>
+</ul>
+</li>
+<li><p>What happens if you put an if statement inside an if statement? When would such a statement run?</p>
+<ul>
+<li><p>To explore this, write an if statement that has an embedded if statement in it.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR EXPLORATIONS HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-3-loops">
+<h2>Part 3: Loops<a class="headerlink" href="#part-3-loops" title="Permalink to this headline">¶</a></h2>
+<p>We will now explore two ways to iterate over data in Python - <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops.</p>
+<p>Each type of loop performs its respective code block until certain conditions are met. Here, we will explore what those conditions are.</p>
+<p>Note: “iterate” means to perform an action repeatedly</p>
+<p>Note: Sometimes, we accidentally make loops that never end.</p>
+<ul class="simple">
+<li><p>If that happens, “break” the cell by selecting it and then pressing “ctrl+c”. Alternatively, press the “stop” button (square icon) in the Jupyter toolbar.</p></li>
+</ul>
+<div class="section" id="loops-q1">
+<h3>Loops Q1<a class="headerlink" href="#loops-q1" title="Permalink to this headline">¶</a></h3>
+<p>First, declare a variable called <code class="docutils literal notranslate"><span class="pre">counter</span></code> that has type int and value zero.</p>
+<p>Then write a while loop that runs 10 times and use ‘counter’ to track how many times the loop runs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check that (after the loop runs) that there is a variable called `counter` that has value 10</span>
+<span class="k">assert</span> <span class="n">counter</span> <span class="o">==</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="infinite-loops">
+<h3>Infinite Loops<a class="headerlink" href="#infinite-loops" title="Permalink to this headline">¶</a></h3>
+<p>The while loop below will run indefinitely unless someone puts a stop to it!</p>
+<p>Add your own code that causes the loop to exit when the <code class="docutils literal notranslate"><span class="pre">counter</span></code> variable reaches 10. You can use <code class="docutils literal notranslate"><span class="pre">break</span></code> to do this.</p>
+<p>Note: Sometimes, we accidentally make loops that never end - try that by running the cell below before adding</p>
+<p>If that happens, interrupt the cell by selecting it and then pressing “ctrl+c”. Alternatively, press the “stop” button (square icon) in the Jupyter toolbar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the value of &#39;counter&#39; = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">counter</span><span class="p">))</span>
+    <span class="n">counter</span> <span class="o">+=</span><span class="mi">1</span>
+    
+    <span class="c1">## YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loop-explorations">
+<h3>Loop Explorations<a class="headerlink" href="#loop-explorations" title="Permalink to this headline">¶</a></h3>
+<p>Now, explore using for and while loops and breaks.</p>
+<p>Here are some things to try, and questions to ask - each of which you should explore in code.</p>
+<ul class="simple">
+<li><p>What happens if you use ‘break’ all by itself?</p></li>
+<li><p>What are some different ways to loop through a list? tuple?</p></li>
+<li><p>Write these combinations:</p>
+<ul>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop with a <code class="docutils literal notranslate"><span class="pre">break</span></code>, a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop with a <code class="docutils literal notranslate"><span class="pre">continue</span></code></p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop with a <code class="docutils literal notranslate"><span class="pre">break</span></code>, a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop with a <code class="docutils literal notranslate"><span class="pre">continue</span></code></p></li>
+</ul>
+</li>
+<li><p>Write some loops that loop across lists:</p>
+<ul>
+<li><p>Write a loop that loops across, and prints out, all the elements of a list</p></li>
+<li><p>Write a loop that loops across, and prints out, every second element of a list</p></li>
+<li><p>Write a loop that loops across, and prints out, every element of a list in reverse order</p></li>
+<li><p>Write a loop that loops across, and prints out, the first half of a list</p></li>
+</ul>
+</li>
+<li><p>Write a loop with a conditional inside it.</p></li>
+<li><p>Can you have loops inside loops? If you think so, try and write a nested loop.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE EXPLORATIONS HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="nested-loop-challenge">
+<h3>Nested Loop Challenge<a class="headerlink" href="#nested-loop-challenge" title="Permalink to this headline">¶</a></h3>
+<p>Using nested loops, you will print out a pattern that looks like this:</p>
+<p>1 <br>
+1 2 <br>
+1 2 3 <br>
+1 2 3 4 <br>
+1 2 3 4 5 <br>
+1 2 3 4 5 6 <br>
+1 2 3 4 5 6 7</p>
+<p>Hints:</p>
+<ul class="simple">
+<li><p>You can do this with two while loops, one inside the other.</p></li>
+<li><p>You will have two indices counters, one for each loop.</p></li>
+<li><p>For the print statement, it will look something like <code class="docutils literal notranslate"><span class="pre">print(index_inner,</span> <span class="pre">end=&quot;</span> <span class="pre">&quot;)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you get the above pattern working, try manipulating the code to print out different patterns, and with different symbols.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./labs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="CL1-ProgrammingI.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">CL1: Programming I</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="CL3-AlgorithmicThinking.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CL3: Algorithmic Thinking</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Thomas Donoghue & Shannon Ellis<br/>
+    
+        &copy; Copyright 2020-.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

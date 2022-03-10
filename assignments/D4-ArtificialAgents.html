@@ -1,0 +1,2377 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 4: Artificial Agents &#8212; Introductory Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Guide" href="../projects/overview.html" />
+    <link rel="prev" title="Assignment 3: Chatbots" href="D3-Chatbots.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introductory Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/index.html">
+   Introductory Python
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Materials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/01-Tools.html">
+   Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/02-JupyterNotebooks.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/03-Variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/04-Operators.html">
+   Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/05-Conditionals.html">
+   Conditionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/06-DataTypes.html">
+   DataTypes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/07-Loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/08-Encodings.html">
+   Encodings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/09-FunctionsI.html">
+   FunctionsI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/10-Algorithms.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/11-FunctionsII.html">
+   FunctionsII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/12-Debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/13-Objects.html">
+   Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/14-Classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/15-Namespaces.html">
+   Namespaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/16-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/17-APIs.html">
+   The Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/18-OpenSource.html">
+   OpenSource
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/19-ScientificComputing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/20-Documentation.html">
+   Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/21-CodeStyle.html">
+   Code Style
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/22-CodeTesting.html">
+   Code Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/23-CodeProjects.html">
+   CodeProjects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/24-AdvancedPython.html">
+   AdvancedPython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/25-WrapUp.html">
+   WrapUp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/A1-Syntax.html">
+   A1-Syntax
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../materials/A2-Examples.html">
+   A2-Examples
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL1-ProgrammingI.html">
+   ProgrammingI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL2-ProgrammingII.html">
+   ProgrammingII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL3-AlgorithmicThinking.html">
+   AlgorithmicThinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL4-Exploring.html">
+   Exploring
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL5-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="D1-GettingStarted.html">
+   GettingStarted
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="D2-Ciphers.html">
+   Ciphers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="D3-Chatbots.html">
+   Chatbots
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   ArtificialAgents
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/ProjectIdeas.html">
+   Ideas
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/assignments/D4-ArtificialAgents.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/introductorypython/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/introductorypython//issues/new?title=Issue%20on%20page%20%2Fassignments/D4-ArtificialAgents.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/introductorypython//master?urlpath=tree/inpy/assignments/D4-ArtificialAgents.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-imports">
+     Code Imports
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-functions-methods-re-visited">
+   Part 1: Functions &amp; Methods (re-visited)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q1-string-methods-1-point">
+     Q1 - String Methods  (1 point)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-join">
+       a)
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         join
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-replace">
+       b)
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         replace
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c-replace-for-dropping-characters">
+       c)
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         replace
+        </span>
+       </code>
+       for dropping characters
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#d-clearing-all-punctuation-with-replace">
+       d) Clearing all punctuation with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         replace
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-functions-with-default-values">
+     Example: Functions with Default Values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q2-default-value-functions-0-5-points">
+     Q2 - Default Value Functions (0.5 points)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-sort-keys">
+       a) Sort Keys
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-list-powers">
+       b) List Powers
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-zip">
+     Example: Zip
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q3-functions-for-later-1-point">
+     Q3 - Functions for Later (1 point)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-add-lists">
+     a) Add Lists
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-check-bounds">
+       b)  Check Bounds
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-classes">
+   Part 2: Classes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q4-creating-a-class">
+     Q4 - Creating a Class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q5-car-inventory">
+     Q5 - Car Inventory
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-add-car">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         add_car
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-compare">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         compare
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-using-our-class">
+       b) Using our class
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-class-inheritance">
+     Example: Class Inheritance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q6-extending-our-class-through-inheritance-0-5-points">
+     Q6 - Extending our Class through Inheritance (0.5 points)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-artificial-agents">
+   Part 3: Artificial Agents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q7-bot-base-class">
+     Q7 - Bot Base Class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q8-wanderbot">
+     Q8 - WanderBot
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-wander">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         wander
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-move">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         move
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-random-probabilistic-choices">
+     Example: Random Probabilistic Choices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q9-explorebot">
+     Q9 - ExploreBot
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-biased-choice">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         biased_choice
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-explore">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         explore
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         move
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q10-teleportbot">
+     Q10 - TeleportBot
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-teleport">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         teleport
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         move
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-it-all-together">
+     Running it all together
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extending-our-agents">
+   Extending Our Agents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-end">
+   The End!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Assignment 4: Artificial Agents</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-imports">
+     Code Imports
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-functions-methods-re-visited">
+   Part 1: Functions &amp; Methods (re-visited)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q1-string-methods-1-point">
+     Q1 - String Methods  (1 point)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-join">
+       a)
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         join
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-replace">
+       b)
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         replace
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c-replace-for-dropping-characters">
+       c)
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         replace
+        </span>
+       </code>
+       for dropping characters
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#d-clearing-all-punctuation-with-replace">
+       d) Clearing all punctuation with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         replace
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-functions-with-default-values">
+     Example: Functions with Default Values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q2-default-value-functions-0-5-points">
+     Q2 - Default Value Functions (0.5 points)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-sort-keys">
+       a) Sort Keys
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-list-powers">
+       b) List Powers
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-zip">
+     Example: Zip
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q3-functions-for-later-1-point">
+     Q3 - Functions for Later (1 point)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-add-lists">
+     a) Add Lists
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-check-bounds">
+       b)  Check Bounds
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-classes">
+   Part 2: Classes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q4-creating-a-class">
+     Q4 - Creating a Class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q5-car-inventory">
+     Q5 - Car Inventory
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-add-car">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         add_car
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-compare">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         compare
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-using-our-class">
+       b) Using our class
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-class-inheritance">
+     Example: Class Inheritance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q6-extending-our-class-through-inheritance-0-5-points">
+     Q6 - Extending our Class through Inheritance (0.5 points)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-artificial-agents">
+   Part 3: Artificial Agents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q7-bot-base-class">
+     Q7 - Bot Base Class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q8-wanderbot">
+     Q8 - WanderBot
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-wander">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         wander
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-move">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         move
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-random-probabilistic-choices">
+     Example: Random Probabilistic Choices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q9-explorebot">
+     Q9 - ExploreBot
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-biased-choice">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         biased_choice
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-explore">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         explore
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         move
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q10-teleportbot">
+     Q10 - TeleportBot
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-teleport">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         teleport
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Method:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         move
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-it-all-together">
+     Running it all together
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extending-our-agents">
+   Extending Our Agents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-end">
+   The End!
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-4-artificial-agents">
+<h1>Assignment 4: Artificial Agents<a class="headerlink" href="#assignment-4-artificial-agents" title="Permalink to this headline">¶</a></h1>
+<p>This is a demo assignment that is available as part of the Introductory Python open materials.</p>
+<div class="alert alert-danger">
+If you are in the COGS18 course at UC San Diego, this is NOT a valid version of the assignment for the course.
+</div><div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This assignment covers Classes &amp; Objects, and builds up to the application of Artificial Agents.</p>
+<p>This assignment is out of 8 points, worth 8% of your grade.</p>
+<p>Make sure your completed assignment passes all the asserts. This assignment also has some hidden tests - which means that passing all the asserts you see does not guarantee that you have the correct answer! Make sure to double check and re-run your code to make sure it does what you expect.</p>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="code-imports">
+<h3>Code Imports<a class="headerlink" href="#code-imports" title="Permalink to this headline">¶</a></h3>
+<p>You must run the following cell before proceeding with the assignment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup - run this cell before doing the next part of the assignment</span>
+<span class="c1">#   This cell imports some extra code, making it available for us to use later</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">string</span>
+
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-1-functions-methods-re-visited">
+<h2>Part 1: Functions &amp; Methods (re-visited)<a class="headerlink" href="#part-1-functions-methods-re-visited" title="Permalink to this headline">¶</a></h2>
+<p>In this part, we will revisit and extend some work on using functions and methods.</p>
+<p>We will also write some functions that we will use later in the assignment for the ‘bots’ application.</p>
+<div class="section" id="q1-string-methods-1-point">
+<h3>Q1 - String Methods  (1 point)<a class="headerlink" href="#q1-string-methods-1-point" title="Permalink to this headline">¶</a></h3>
+<p>First, we will explore some of methods from the <code class="docutils literal notranslate"><span class="pre">str</span></code> class.</p>
+<div class="section" id="a-join">
+<h4>a) <code class="docutils literal notranslate"><span class="pre">join</span></code><a class="headerlink" href="#a-join" title="Permalink to this headline">¶</a></h4>
+<p>During the last assignment you made a function that echoed a string several times with a seperator between each repetition.</p>
+<p>Here we will achieve a similar goal through the use of the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method of the <code class="docutils literal notranslate"><span class="pre">str</span></code> class.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">join()</span></code> is called on a <code class="docutils literal notranslate"><span class="pre">str</span></code> object (let’s call it <code class="docutils literal notranslate"><span class="pre">seperator</span></code>) with a <code class="docutils literal notranslate"><span class="pre">list</span></code> as its argument, it joins the elements of the <code class="docutils literal notranslate"><span class="pre">list</span></code>, seperating each one by <code class="docutils literal notranslate"><span class="pre">seperator</span></code>.</p>
+<p>Below we define a a list <code class="docutils literal notranslate"><span class="pre">my_list</span></code>. Use the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method on the string you define as <code class="docutils literal notranslate"><span class="pre">seperator</span> <span class="pre">=</span> <span class="pre">'~'</span></code> to join the elements in <code class="docutils literal notranslate"><span class="pre">my_list</span></code> seperated by the <code class="docutils literal notranslate"><span class="pre">'~'</span></code> character.</p>
+<p>Save the output to a new variable called <code class="docutils literal notranslate"><span class="pre">joined_string</span></code>. The output should look as follows:</p>
+<p><code class="docutils literal notranslate"><span class="pre">'Python~is~so~much~fun'</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This variable provided for you</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;so&#39;</span><span class="p">,</span> <span class="s1">&#39;much&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">]</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">joined_string</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">joined_string</span> <span class="o">==</span> <span class="s1">&#39;Python~is~so~much~fun&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="b-replace">
+<h4>b) <code class="docutils literal notranslate"><span class="pre">replace</span></code><a class="headerlink" href="#b-replace" title="Permalink to this headline">¶</a></h4>
+<p>Now try to use the <code class="docutils literal notranslate"><span class="pre">replace</span></code> method to update the string <code class="docutils literal notranslate"><span class="pre">statement</span></code> such that it replaces <code class="docutils literal notranslate"><span class="pre">UCLA</span></code> to <code class="docutils literal notranslate"><span class="pre">UCSD</span></code>.</p>
+<p>If you are unsure how use <code class="docutils literal notranslate"><span class="pre">replace</span></code> you can run <code class="docutils literal notranslate"><span class="pre">str.replace?</span></code> to look at documentation.</p>
+<p>Note that using <code class="docutils literal notranslate"><span class="pre">replace</span></code> returns a new string that you need to assign to a variable if you want to keep a reference to it (<code class="docutils literal notranslate"><span class="pre">replace</span></code> is not ‘inplace’).</p>
+<p>For this question, overwrite <code class="docutils literal notranslate"><span class="pre">statement</span></code> as the assignment to the output of the <code class="docutils literal notranslate"><span class="pre">replace</span></code> call.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code provided for you</span>
+<span class="n">statement</span> <span class="o">=</span> <span class="s1">&#39;UCLA is the best UC in Southern California.&#39;</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">statement</span> <span class="o">==</span> <span class="s1">&#39;UCSD is the best UC in Southern California.&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="c-replace-for-dropping-characters">
+<h4>c) <code class="docutils literal notranslate"><span class="pre">replace</span></code> for dropping characters<a class="headerlink" href="#c-replace-for-dropping-characters" title="Permalink to this headline">¶</a></h4>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">replace</span></code> method to remove all the exclamation points in the string <code class="docutils literal notranslate"><span class="pre">excessive</span></code>.</p>
+<p>Assign the output of doing this to a variable called <code class="docutils literal notranslate"><span class="pre">fixed</span></code>.</p>
+<p>Hint: you can drop characters with <code class="docutils literal notranslate"><span class="pre">replace</span></code> by ‘replacing’ them with an empty string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This variable provided for you</span>
+<span class="n">excessive</span> <span class="o">=</span> <span class="s1">&#39;using!!! excessive!!! exclamation points!! is the best!!!!!!&#39;</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fixed</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">fixed</span> <span class="o">==</span> <span class="s1">&#39;using excessive exclamation points is the best&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="d-clearing-all-punctuation-with-replace">
+<h4>d) Clearing all punctuation with <code class="docutils literal notranslate"><span class="pre">replace</span></code><a class="headerlink" href="#d-clearing-all-punctuation-with-replace" title="Permalink to this headline">¶</a></h4>
+<p>Now we want to generalize what we did in ‘c)’ to remove all punctuation using the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> method.</p>
+<p>Write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to loop over every character in <code class="docutils literal notranslate"><span class="pre">string.punctuation</span></code>. Inside the loop, call <code class="docutils literal notranslate"><span class="pre">replace</span></code> on <code class="docutils literal notranslate"><span class="pre">too_much</span></code> with the current punctuation character to remove it, like we did in ‘c)’.</p>
+<p>To do this, inside the loop, re-assign <code class="docutils literal notranslate"><span class="pre">too_much</span></code> to be the ouput of calling <code class="docutils literal notranslate"><span class="pre">replace</span></code> on <code class="docutils literal notranslate"><span class="pre">too_much</span></code>, so that you are replacing <code class="docutils literal notranslate"><span class="pre">too_much</span></code> with it’s updated version every time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This variable provided for you</span>
+<span class="n">too_much</span> <span class="o">=</span> <span class="s1">&#39;I, think th@at!! punctuation... may?&gt;&gt; be the bes$$$t th!ing thats: ever! been! invented!!!!!!&#39;</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">too_much</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">too_much</span> <span class="o">==</span> <span class="s1">&#39;I think that punctuation may be the best thing thats ever been invented&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-functions-with-default-values">
+<h3>Example: Functions with Default Values<a class="headerlink" href="#example-functions-with-default-values" title="Permalink to this headline">¶</a></h3>
+<p>Note that functions can also have inputs with default values.</p>
+<p>This means you don’t necessarily need to provide an input with a specific value, since if you don’t provide it explicitly, it will take on the default value.</p>
+<p>The following is an example of a function with a default value, provided to you, so you can see what it looks like.</p>
+<p>You don’t need to do anything with this function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">default_function</span><span class="p">(</span><span class="n">input_number</span><span class="p">,</span> <span class="n">n_value</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Multiplies an input number n times. Default value for n=2</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    input_number : float</span>
+<span class="sd">        Number to be multiplied.</span>
+<span class="sd">    n_value : int, optional</span>
+<span class="sd">        Number of times to multiply input.</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    output : float</span>
+<span class="sd">        Result of the multiplication. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># Multiple the input n times</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">input_number</span> <span class="o">*</span> <span class="n">n_value</span>
+    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test using `default_function`</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">default_function</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">default_function</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function values can be also be defined by name</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">default_function</span><span class="p">(</span><span class="n">n_value</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_number</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">default_function</span><span class="p">(</span><span class="n">input_number</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q2-default-value-functions-0-5-points">
+<h3>Q2 - Default Value Functions (0.5 points)<a class="headerlink" href="#q2-default-value-functions-0-5-points" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="a-sort-keys">
+<h4>a) Sort Keys<a class="headerlink" href="#a-sort-keys" title="Permalink to this headline">¶</a></h4>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">sort_keys</span></code>, which will return a sorted version of the keys from an input dictionary.</p>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dictionary</span></code> : dictionary</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reverse</span></code> : boolean, default: False</p></li>
+</ul>
+<p>Output(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sorted_keys</span></code> : list</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>Get the keys from the input <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> using the <code class="docutils literal notranslate"><span class="pre">keys()</span></code> method (this will return a list of keys)</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">sorted</span></code> function to sort the list of keys. Pass in <code class="docutils literal notranslate"><span class="pre">reverse</span></code> to <code class="docutils literal notranslate"><span class="pre">sorted</span></code> to set whether to reverse the sort order</p></li>
+<li><p>Return the sorted list of dictionary keys</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">sort_keys</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sort_keys</span><span class="p">({</span><span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}),</span> <span class="nb">list</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">sort_keys</span><span class="p">({</span><span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">sort_keys</span><span class="p">({</span><span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">},</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">sort_keys</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="b-list-powers">
+<h4>b) List Powers<a class="headerlink" href="#b-list-powers" title="Permalink to this headline">¶</a></h4>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">list_powers</span></code>.</p>
+<p>This function will take a list, and return a new list where each element is exponentiated to a specified power.</p>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">collection</span></code> - collection of numbers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">power</span></code> - int, default value: 2</p></li>
+</ul>
+<p>Output(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">power_list</span></code> - list of numbers</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>Initialize an empty list to be filled and returned</p></li>
+<li><p>Loop through each element in the input <code class="docutils literal notranslate"><span class="pre">collection</span></code></p>
+<ul>
+<li><p>Take the value to the power specified in <code class="docutils literal notranslate"><span class="pre">power</span></code></p></li>
+<li><p>Append the result to the output list</p></li>
+</ul>
+</li>
+<li><p>Return the list of powers</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">list_powers</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">list_powers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span> <span class="nb">list</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">list_powers</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="o">==</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">list_powers</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">64</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">list_powers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-zip">
+<h3>Example: Zip<a class="headerlink" href="#example-zip" title="Permalink to this headline">¶</a></h3>
+<p>A reasonably common task in Python is to want to iterate across multiple collections items together.</p>
+<p>To do so, we have the function <code class="docutils literal notranslate"><span class="pre">zip</span></code>, which takes in collection types, and let’s you step across them together.</p>
+<p>This allows you to get, for example, the 0th item of each collection, and then the 1st item of each collection, etc.</p>
+<p>Below is an example of using <code class="docutils literal notranslate"><span class="pre">zip</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define some collection objects</span>
+<span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+
+<span class="c1"># Use zip, in a loop, to loop across both collections at the same time</span>
+<span class="k">for</span> <span class="n">it1</span><span class="p">,</span> <span class="n">it2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">it1</span><span class="p">,</span> <span class="n">it2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q3-functions-for-later-1-point">
+<h3>Q3 - Functions for Later (1 point)<a class="headerlink" href="#q3-functions-for-later-1-point" title="Permalink to this headline">¶</a></h3>
+<p>In this section we will write a set of functions that will be useful for us to use later, with our artificial agents.</p>
+</div>
+<div class="section" id="a-add-lists">
+<h3>a) Add Lists<a class="headerlink" href="#a-add-lists" title="Permalink to this headline">¶</a></h3>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">add_lists</span></code>.</p>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">list1</span></code> - list of numbers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list2</span></code> - list of numbers</p></li>
+</ul>
+<p>Output(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ouput</span></code> - list of numbers</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>Initialize a new list <code class="docutils literal notranslate"><span class="pre">output</span></code></p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">zip</span></code>, loop through elements of both <code class="docutils literal notranslate"><span class="pre">list1</span></code> and <code class="docutils literal notranslate"><span class="pre">list2</span></code></p>
+<ul>
+<li><p>In each iteration, append the sum of the elements to <code class="docutils literal notranslate"><span class="pre">output</span></code></p></li>
+</ul>
+</li>
+<li><p>Return <code class="docutils literal notranslate"><span class="pre">output</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">add_lists</span><span class="p">)</span>
+<span class="k">assert</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">add_lists</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">add_lists</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="b-check-bounds">
+<h4>b)  Check Bounds<a class="headerlink" href="#b-check-bounds" title="Permalink to this headline">¶</a></h4>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">check_bounds</span></code>.</p>
+<p>We will be using this function later in our bots. It checks whether a position, given as, for example [2, 3] is within the bounds of a grid of a particular size (say, a 4 x 4 square grid).</p>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">position</span></code> - list of int</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code> - int</p></li>
+</ul>
+<p>Output(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>Loop across each element in <code class="docutils literal notranslate"><span class="pre">position</span></code>.</p>
+<ul>
+<li><p>Check if the element is less than 0, or greater than or equal to <code class="docutils literal notranslate"><span class="pre">size</span></code></p>
+<ul>
+<li><p>If so, return <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Outside and after the loop, return <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+<p>Note that this means the function will return <code class="docutils literal notranslate"><span class="pre">False</span></code> if any element is outside the specified bounds.</p>
+<p>After checking all elements, if it hasn’t returned yet, it returns <code class="docutils literal notranslate"><span class="pre">True</span></code> to indicate all elements are indeed within the bounds.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">check_bounds</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">check_bounds</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">check_bounds</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">check_bounds</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">check_bounds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-2-classes">
+<h2>Part 2: Classes<a class="headerlink" href="#part-2-classes" title="Permalink to this headline">¶</a></h2>
+<p>In this section we will be working with classes - building several classes to solve a variety of problems.</p>
+<div class="section" id="q4-creating-a-class">
+<h3>Q4 - Creating a Class<a class="headerlink" href="#q4-creating-a-class" title="Permalink to this headline">¶</a></h3>
+<p>We can start with a class object to make a ‘schedule book’ for our course Office Hours.</p>
+<p>Create a class called <code class="docutils literal notranslate"><span class="pre">OfficeHours</span></code></p>
+<ul class="simple">
+<li><p>Class Attributes:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">course</span></code>, which has the value “COGS18”</p></li>
+</ul>
+</li>
+<li><p>Instance Attibutes:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> : string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">day</span></code> : string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> : string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">place</span></code> : string</p></li>
+<li><p>Note: all these attributes should be passed into the <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, and attached to the object in there.</p></li>
+</ul>
+</li>
+<li><p>Method</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">check()</span></code></p>
+<ul>
+<li><p>This method should print out information, to look something like:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tom's</span> <span class="pre">office</span> <span class="pre">hours</span> <span class="pre">are</span> <span class="pre">on</span> <span class="pre">Tuesday</span> <span class="pre">at</span> <span class="pre">12:30</span> <span class="pre">in</span> <span class="pre">CSB115.</span></code></p></li>
+<li><p>Note that this should use the instance attributes to print out <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">day</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">place</span></code> of the particular instance.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">OfficeHours</span>
+<span class="k">assert</span> <span class="n">OfficeHours</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;room&#39;</span><span class="p">)</span>
+
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Instructor&quot;</span>
+<span class="n">day</span> <span class="o">=</span> <span class="s2">&quot;Tuesday&quot;</span>
+<span class="n">time</span> <span class="o">=</span> <span class="s2">&quot;12:30&quot;</span>
+<span class="n">place</span> <span class="o">=</span> <span class="s2">&quot;CSB115&quot;</span>
+
+<span class="n">test_oh</span> <span class="o">=</span> <span class="n">OfficeHours</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">place</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">test_oh</span><span class="p">,</span> <span class="n">OfficeHours</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">test_oh</span><span class="o">.</span><span class="n">course</span> <span class="o">==</span> <span class="s2">&quot;COGS18&quot;</span>
+<span class="k">assert</span> <span class="n">test_oh</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span>
+<span class="k">assert</span> <span class="n">test_oh</span><span class="o">.</span><span class="n">day</span> <span class="o">==</span> <span class="n">day</span>
+<span class="k">assert</span> <span class="n">test_oh</span><span class="o">.</span><span class="n">time</span> <span class="o">==</span> <span class="n">time</span>
+<span class="k">assert</span> <span class="n">test_oh</span><span class="o">.</span><span class="n">place</span> <span class="o">==</span> <span class="n">place</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a list of some office hours:</p>
+<ul class="simple">
+<li><p>Tom - Monday &#64; 12:30 in SDSC 212e</p></li>
+<li><p>Rob - Wednesday &#64; 2:00 in CSB 114</p></li>
+<li><p>Daril - Tuesday &#64; 10:00 in CSB 115</p></li>
+<li><p>Paolo - Friday &#64; 1:00 in CSB 106</p></li>
+</ul>
+<p>Create a new instance of the OfficeHours class for each of the office hours listed above.</p>
+<p>Then store each of these instances together in a list called <code class="docutils literal notranslate"><span class="pre">all_office_hours</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">all_office_hours</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_office_hours</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">all_office_hours</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">OfficeHours</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">item</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Tom&#39;</span><span class="p">,</span> <span class="s1">&#39;Rob&#39;</span><span class="p">,</span> <span class="s1">&#39;Daril&#39;</span><span class="p">,</span> <span class="s1">&#39;Paolo&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now write a function called <code class="docutils literal notranslate"><span class="pre">check_all</span></code> that will take in a list of OfficeHour objects, and will call the <code class="docutils literal notranslate"><span class="pre">check</span></code> method on each one, using a loop to loop across each element in the input list.</p>
+<p>Call this function on your <code class="docutils literal notranslate"><span class="pre">all_office_hours</span></code> list to make sure that it works as expected.</p>
+<p>You should see that running this function prints out a string of information for each object, that looks like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Tom&#39;s office hours are on Monday at 12:30 in SDSC 212e.
+Rob&#39;s office hours are on Wednesday at 2:00 in CSB 114.
+Daril&#39;s office hours are on Tuesday at 10:00 in CSB 115.
+Paolo&#39;s office hours are on Friday at 1:00 in CSB 106.
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">callable</span><span class="p">(</span><span class="n">check_all</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q5-car-inventory">
+<h3>Q5 - Car Inventory<a class="headerlink" href="#q5-car-inventory" title="Permalink to this headline">¶</a></h3>
+<p>For this question you will create an object to store information on an inventory of cars.</p>
+<p>Create a class called <code class="docutils literal notranslate"><span class="pre">CarInventory</span></code></p>
+<ul class="simple">
+<li><p>Instance Attibutes:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_cars</span></code> : int</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cars</span></code> : list</p></li>
+</ul>
+</li>
+<li><p>Methods</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_car()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compare()</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Details:</p>
+<ul class="simple">
+<li><p>The constructor (<code class="docutils literal notranslate"><span class="pre">__init__</span></code>) should take no inputs, but set <code class="docutils literal notranslate"><span class="pre">n_cars</span></code> to 0, and <code class="docutils literal notranslate"><span class="pre">cars</span></code> to be <code class="docutils literal notranslate"><span class="pre">[]</span></code> (an empty list).</p></li>
+</ul>
+<div class="section" id="method-add-car">
+<h4>Method: <code class="docutils literal notranslate"><span class="pre">add_car</span></code><a class="headerlink" href="#method-add-car" title="Permalink to this headline">¶</a></h4>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">manufacturer</span></code> : string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model</span></code> : string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">year</span></code> : int</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mpg</span></code> : float</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>Create a dictionary from the values passed with the corresponding keys ‘manufacturer’, ‘model’, ‘year’ and ‘mpg’</p></li>
+<li><p>Append this dictionary to the <code class="docutils literal notranslate"><span class="pre">cars</span></code> attribute</p></li>
+<li><p>Increment the <code class="docutils literal notranslate"><span class="pre">n_cars</span></code> attribute by 1</p></li>
+</ul>
+</div>
+<div class="section" id="method-compare">
+<h4>Method: <code class="docutils literal notranslate"><span class="pre">compare</span></code><a class="headerlink" href="#method-compare" title="Permalink to this headline">¶</a></h4>
+<p>This method will compare all the cars on a specified <code class="docutils literal notranslate"><span class="pre">attribute</span></code> (‘year’, or ‘mpg’), and find the highest and lowest values. It will return either the highest of lowest value, depending on the setting in a parameter <code class="docutils literal notranslate"><span class="pre">direction</span></code>.</p>
+<p>Input(s):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">attribute</span></code> : string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">direction</span></code> : string, default: ‘highest’</p></li>
+</ul>
+<p>Procedure(s):</p>
+<ul class="simple">
+<li><p>Initialize a variable called <code class="docutils literal notranslate"><span class="pre">lowest</span></code> to be the 0th element of <code class="docutils literal notranslate"><span class="pre">cars</span></code>, and another variable <code class="docutils literal notranslate"><span class="pre">highest</span></code> to be the same</p></li>
+<li><p>Loop through each car in cars</p>
+<ul>
+<li><p>If the value of the attribute for the car is less than the car stored as <code class="docutils literal notranslate"><span class="pre">lowest</span></code>, replace <code class="docutils literal notranslate"><span class="pre">lowest</span></code> to be the current car</p></li>
+<li><p>Similarly, if the value of the attribute for the car is greater than the car stored as <code class="docutils literal notranslate"><span class="pre">highest</span></code>, replace <code class="docutils literal notranslate"><span class="pre">highest</span></code> to be the current car</p></li>
+</ul>
+</li>
+<li><p>After the loop, if the value of <code class="docutils literal notranslate"><span class="pre">direction</span></code> is ‘highest’, set a new variable <code class="docutils literal notranslate"><span class="pre">output</span></code> to be the variable <code class="docutils literal notranslate"><span class="pre">highest</span></code></p>
+<ul>
+<li><p>Else if the value of <code class="docutils literal notranslate"><span class="pre">direction</span></code> is ‘lowest’, set <code class="docutils literal notranslate"><span class="pre">output</span></code> to be <code class="docutils literal notranslate"><span class="pre">lowest</span></code></p></li>
+</ul>
+</li>
+<li><p>Return <code class="docutils literal notranslate"><span class="pre">output</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tests for the object</span>
+<span class="k">assert</span> <span class="n">CarInventory</span>
+<span class="n">test_car_inv</span> <span class="o">=</span> <span class="n">CarInventory</span><span class="p">()</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">test_car_inv</span><span class="p">,</span> <span class="n">CarInventory</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">test_car_inv</span><span class="o">.</span><span class="n">n_cars</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">test_car_inv</span><span class="o">.</span><span class="n">cars</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tests for add_car method</span>
+<span class="n">test_inv</span> <span class="o">=</span> <span class="n">CarInventory</span><span class="p">()</span>
+<span class="n">test_inv</span><span class="o">.</span><span class="n">add_car</span><span class="p">(</span><span class="s1">&#39;Toyota&#39;</span><span class="p">,</span> <span class="s1">&#39;Prius&#39;</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">test_inv</span><span class="o">.</span><span class="n">n_cars</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="k">assert</span> <span class="n">test_inv</span><span class="o">.</span><span class="n">cars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;manufacturer&#39;</span><span class="p">:</span> <span class="s1">&#39;Toyota&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;Prius&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2012</span><span class="p">,</span> <span class="s1">&#39;mpg&#39;</span><span class="p">:</span><span class="mi">36</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tests for compare method</span>
+<span class="n">test_inv</span> <span class="o">=</span> <span class="n">CarInventory</span><span class="p">()</span>
+<span class="n">test_inv</span><span class="o">.</span><span class="n">add_car</span><span class="p">(</span><span class="s1">&#39;Toyota&#39;</span><span class="p">,</span> <span class="s1">&#39;Prius&#39;</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>
+<span class="n">test_inv</span><span class="o">.</span><span class="n">add_car</span><span class="p">(</span><span class="s1">&#39;BMW&#39;</span><span class="p">,</span> <span class="s1">&#39;M3&#39;</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">test_inv</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="s1">&#39;mpg&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;manufacturer&#39;</span><span class="p">:</span> <span class="s1">&#39;Toyota&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;Prius&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2012</span><span class="p">,</span> <span class="s1">&#39;mpg&#39;</span><span class="p">:</span> <span class="mi">36</span><span class="p">}</span>
+<span class="k">assert</span> <span class="n">test_inv</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;lowest&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;manufacturer&#39;</span><span class="p">:</span> <span class="s1">&#39;Toyota&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;Prius&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2012</span><span class="p">,</span> <span class="s1">&#39;mpg&#39;</span><span class="p">:</span> <span class="mi">36</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="b-using-our-class">
+<h4>b) Using our class<a class="headerlink" href="#b-using-our-class" title="Permalink to this headline">¶</a></h4>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">inventory</span></code> instance created for you in the cell below, do the following:</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">compare</span></code> to get the car with the highest mpg, and get the manufacturer of that car from the returned car</p>
+<ul>
+<li><p>Store the answer in a variable called <code class="docutils literal notranslate"><span class="pre">highest_mpg</span></code></p></li>
+</ul>
+</li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">compare</span></code> to get the car with the lowest year, and get the model of that car from the returned car</p>
+<ul>
+<li><p>Store the answer in a variable called <code class="docutils literal notranslate"><span class="pre">oldest_car</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The following code provided for you</span>
+<span class="n">inventory</span> <span class="o">=</span> <span class="n">CarInventory</span><span class="p">()</span>
+<span class="n">inventory</span><span class="o">.</span><span class="n">add_car</span><span class="p">(</span><span class="s1">&#39;Ford&#39;</span><span class="p">,</span> <span class="s1">&#39;Mustang&#39;</span><span class="p">,</span> <span class="mi">2004</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">inventory</span><span class="o">.</span><span class="n">add_car</span><span class="p">(</span><span class="s1">&#39;Honda&#39;</span><span class="p">,</span> <span class="s1">&#39;Civic&#39;</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">inventory</span><span class="o">.</span><span class="n">add_car</span><span class="p">(</span><span class="s1">&#39;Toyota&#39;</span><span class="p">,</span> <span class="s1">&#39;Corrolla&#39;</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">inventory</span><span class="o">.</span><span class="n">add_car</span><span class="p">(</span><span class="s1">&#39;Tesla&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: Get the least efficient car (lowest mpg)</span>
+<span class="n">inventory</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="s1">&#39;lowest&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: Get the newest car (highest year), and extract it&#39;s mpg</span>
+<span class="n">inventory</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;highest&#39;</span><span class="p">)[</span><span class="s1">&#39;mpg&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">highest_mpg</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">highest_mpg</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Ford&#39;</span><span class="p">,</span> <span class="s1">&#39;Honda&#39;</span><span class="p">,</span> <span class="s1">&#39;Toyota&#39;</span><span class="p">,</span> <span class="s1">&#39;Tesla&#39;</span><span class="p">]</span>
+
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">oldest_car</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">oldest_car</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Mustang&#39;</span><span class="p">,</span> <span class="s1">&#39;Civic&#39;</span><span class="p">,</span> <span class="s1">&#39;Corrola&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">highest_mpg</span>
+<span class="k">assert</span> <span class="n">oldest_car</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-class-inheritance">
+<h3>Example: Class Inheritance<a class="headerlink" href="#example-class-inheritance" title="Permalink to this headline">¶</a></h3>
+<p>The following is an extra example of class inheritance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TritonCourse</span><span class="p">:</span>
+    
+    <span class="n">university</span> <span class="o">=</span> <span class="s2">&quot;UC San Diego&quot;</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">department</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        department: string</span>
+<span class="sd">        code: int</span>
+<span class="sd">        title: string</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+        <span class="bp">self</span><span class="o">.</span><span class="n">department</span> <span class="o">=</span> <span class="n">department</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="n">code</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+    
+    <span class="k">def</span> <span class="nf">print_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">department</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># By passing in `TritonCourse` to our new class, we create a derived class that inherits from `TritonCourse`</span>
+<span class="k">class</span> <span class="nc">TritonProgCourse</span><span class="p">(</span><span class="n">TritonCourse</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">department</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">language</span><span class="p">):</span>
+        
+        <span class="c1"># Call the initializer from the class we inherited from</span>
+        <span class="c1">#  `super` refers to the class that this class inherits from</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">department</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+        
+        <span class="c1"># Add a new instance attribute to our derived class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="n">language</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: create an instance from our derived class</span>
+<span class="n">cogs18</span> <span class="o">=</span> <span class="n">TritonProgCourse</span><span class="p">(</span><span class="s1">&#39;COGS&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;Introduction to Python&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note that our derived class inherits any class attributes &amp; methods from the inherited class</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cogs18</span><span class="o">.</span><span class="n">university</span><span class="p">)</span>
+<span class="n">cogs18</span><span class="o">.</span><span class="n">print_info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Our derived class also has any extra and unique attributes and/or methods that we add to it</span>
+<span class="n">cogs18</span><span class="o">.</span><span class="n">language</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can check that our course is both an instance of &#39;TritonCourse&#39;, and of &#39;TritonProgCourse&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">cogs18</span><span class="p">,</span> <span class="n">TritonCourse</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">cogs18</span><span class="p">,</span> <span class="n">TritonProgCourse</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q6-extending-our-class-through-inheritance-0-5-points">
+<h3>Q6 - Extending our Class through Inheritance (0.5 points)<a class="headerlink" href="#q6-extending-our-class-through-inheritance-0-5-points" title="Permalink to this headline">¶</a></h3>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">TritonCogsCourse</span></code> class that inherits from <code class="docutils literal notranslate"><span class="pre">TritonCourse</span></code>.</p>
+<p>You can model your answer to this based on how we made <code class="docutils literal notranslate"><span class="pre">TritonProgCourse</span></code> above.</p>
+<p><code class="docutils literal notranslate"><span class="pre">TritonCogsCourse</span></code> should inherit from <code class="docutils literal notranslate"><span class="pre">TritonCourse</span></code> and calls it’s super’s <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.</p>
+<p>In addition, in it’s own <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, it should take an extra parameter called <code class="docutils literal notranslate"><span class="pre">area</span></code>, which will store which area of Cognitive Science the class is related to.</p>
+<p><code class="docutils literal notranslate"><span class="pre">area</span></code> should have a default value of <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>Finally, add a method called <code class="docutils literal notranslate"><span class="pre">has_area</span></code> that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the instance has an area defined (is not None), and returns <code class="docutils literal notranslate"><span class="pre">False</span></code> if area is equal to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">TritonCogsCourse</span>
+<span class="n">test_class</span> <span class="o">=</span> <span class="n">TritonCogsCourse</span><span class="p">(</span><span class="s1">&#39;COGS&#39;</span><span class="p">,</span> <span class="s1">&#39;108&#39;</span><span class="p">,</span> <span class="s1">&#39;Data Science in Practice&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">test_class</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cogs108</span> <span class="o">=</span> <span class="n">TritonCogsCourse</span><span class="p">(</span><span class="s1">&#39;COGS&#39;</span><span class="p">,</span> <span class="s1">&#39;108&#39;</span><span class="p">,</span> <span class="s1">&#39;Data Science in Practice&#39;</span><span class="p">,</span> <span class="s1">&#39;Data Science&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">cogs108</span>
+<span class="k">assert</span> <span class="n">cogs108</span><span class="o">.</span><span class="n">area</span> <span class="o">==</span> <span class="s1">&#39;Data Science&#39;</span>
+<span class="k">assert</span> <span class="n">cogs108</span><span class="o">.</span><span class="n">has_area</span><span class="p">()</span> <span class="o">==</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-3-artificial-agents">
+<h2>Part 3: Artificial Agents<a class="headerlink" href="#part-3-artificial-agents" title="Permalink to this headline">¶</a></h2>
+<p>In this last part of the assignment, we will create some ‘Bots’ - little artificial agents that can move around a predefined space.</p>
+<p>They will be in the style of PacMan, or little exploration bots.</p>
+<p>Each of these bots will be able to explore a predefined world, which is a grid of ‘dots’ (locations).</p>
+<p>This grid has labelled locations that can be referenced by a list of integers, with [0, 0] being the top left most corner, and so on.</p>
+<p>Each bot will have a <code class="docutils literal notranslate"><span class="pre">move</span></code> method, which updates the bot’s position, thus moving it around the world.</p>
+<p>As you start building some bots, there will be a series of test cells that test out your bots on a ‘board’.</p>
+<p>Make sure these cells run to completion without errors - if the cells with <code class="docutils literal notranslate"><span class="pre">play_board</span></code> in them raise an error, there is something wrong with your bot.</p>
+<p>Note that some errors could come from the functions your wrote above that get used here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This function provided to you to run your bots on a grid world</span>
+<span class="c1">#   You don&#39;t have to do anything with this function</span>
+<span class="k">def</span> <span class="nf">play_board</span><span class="p">(</span><span class="n">bots</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">grid_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sleep_time</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Run a bot across a board.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    bots : Bot() type or list of Bot() type</span>
+<span class="sd">        One or more bots to be be played on the board</span>
+<span class="sd">    n_iter : int, optional</span>
+<span class="sd">        Number of turns to play on the board. default = 25</span>
+<span class="sd">    grid_size : int, optional</span>
+<span class="sd">        Board size. default = 5</span>
+<span class="sd">    sleep_time : float, optional</span>
+<span class="sd">        Amount of time to pause between turns. default = 0.3.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># If input is a single bot, put it in a list so that procedures work</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bots</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">bots</span> <span class="o">=</span> <span class="p">[</span><span class="n">bots</span><span class="p">]</span>
+    
+    <span class="c1"># Update each bot to know about the grid_size they are on</span>
+    <span class="k">for</span> <span class="n">bot</span> <span class="ow">in</span> <span class="n">bots</span><span class="p">:</span>
+        <span class="n">bot</span><span class="o">.</span><span class="n">grid_size</span> <span class="o">=</span> <span class="n">grid_size</span>
+
+    <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_iter</span><span class="p">):</span>
+
+        <span class="c1"># Create the grid</span>
+        <span class="n">grid_list</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;.&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">grid_size</span> <span class="k">for</span> <span class="n">ncols</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grid_size</span><span class="p">)]</span>
+        
+        <span class="c1"># Add bot(s) to the grid</span>
+        <span class="k">for</span> <span class="n">bot</span> <span class="ow">in</span> <span class="n">bots</span><span class="p">:</span>
+            <span class="n">grid_list</span><span class="p">[</span><span class="n">bot</span><span class="o">.</span><span class="n">position</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">bot</span><span class="o">.</span><span class="n">position</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">character</span>    
+
+        <span class="c1"># Clear the previous iteration, print the new grid (as a string), and wait</span>
+        <span class="n">clear_output</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="k">for</span> <span class="n">lst</span> <span class="ow">in</span> <span class="n">grid_list</span><span class="p">]))</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="n">sleep_time</span><span class="p">)</span>
+
+        <span class="c1"># Update bot position(s) for next turn</span>
+        <span class="k">for</span> <span class="n">bot</span> <span class="ow">in</span> <span class="n">bots</span><span class="p">:</span>
+            <span class="n">bot</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="q7-bot-base-class">
+<h3>Q7 - Bot Base Class<a class="headerlink" href="#q7-bot-base-class" title="Permalink to this headline">¶</a></h3>
+<p>Create a class called <code class="docutils literal notranslate"><span class="pre">Bot</span></code>. This will be our base class for all the bots that we make in this section.</p>
+<ul class="simple">
+<li><p>Instance Attibutes:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">character</span></code> - string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">position</span></code> - list of [int, int]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">moves</span></code> - list of list of [int, int]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grid_size</span></code> - <code class="docutils literal notranslate"><span class="pre">None</span></code> or int</p></li>
+</ul>
+</li>
+</ul>
+<p>Of these instance attributes, only <code class="docutils literal notranslate"><span class="pre">character</span></code> should be taken in as an input to <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, with a default value of 8982.</p>
+<p>Inside the init:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self.character</span></code> should be set as the <code class="docutils literal notranslate"><span class="pre">chr</span></code> of input <code class="docutils literal notranslate"><span class="pre">character</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.position</span></code> should be set to starting position <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.moves</span></code> should be set as the list of possible moves, which are <code class="docutils literal notranslate"><span class="pre">[[-1,</span> <span class="pre">0],</span> <span class="pre">[1,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">1],</span> <span class="pre">[0,</span> <span class="pre">-1]]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.grid_size</span></code> should be initialized as None</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">Bot</span><span class="p">()</span>
+
+<span class="n">bot</span> <span class="o">=</span> <span class="n">Bot</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">bot</span><span class="o">.</span><span class="n">position</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">bot</span><span class="o">.</span><span class="n">character</span> <span class="o">==</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">8982</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">bot</span><span class="o">.</span><span class="n">moves</span> <span class="o">==</span> <span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="k">assert</span> <span class="n">bot</span><span class="o">.</span><span class="n">grid_size</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q8-wanderbot">
+<h3>Q8 - WanderBot<a class="headerlink" href="#q8-wanderbot" title="Permalink to this headline">¶</a></h3>
+<p>Create a class called <code class="docutils literal notranslate"><span class="pre">WanderBot</span></code>, that inherits from <code class="docutils literal notranslate"><span class="pre">Bot</span></code>. <code class="docutils literal notranslate"><span class="pre">WanderBot</span></code> is a bot that will wander around randomly.</p>
+<ul class="simple">
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, it should simply call the init from <code class="docutils literal notranslate"><span class="pre">super</span></code> (and adds no extra instance attributes)</p></li>
+<li><p>Note that to do this, the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> should take a <code class="docutils literal notranslate"><span class="pre">character</span></code> input, with the same default (8982)</p>
+<ul>
+<li><p>This value will need to be passed into the super’s <code class="docutils literal notranslate"><span class="pre">__init__</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Add two methods to WanderBot:</p>
+<div class="section" id="method-wander">
+<h4>Method:  <code class="docutils literal notranslate"><span class="pre">wander</span></code><a class="headerlink" href="#method-wander" title="Permalink to this headline">¶</a></h4>
+<p>This method will choose a random move from the possibilities, making sure that move is valid on the current grid.</p>
+<p>Procedure:</p>
+<ul class="simple">
+<li><p>Initialize a boolean variable <code class="docutils literal notranslate"><span class="pre">has_new_pos</span></code> as <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>Use a while loop, with the condition <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">has_new_pos</span></code></p>
+<ul>
+<li><p>Set a variable <code class="docutils literal notranslate"><span class="pre">move</span></code> as the ouput of calling <code class="docutils literal notranslate"><span class="pre">random.choice</span></code> on <code class="docutils literal notranslate"><span class="pre">self.moves</span></code></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">move</span></code> to <code class="docutils literal notranslate"><span class="pre">self.position</span></code>, using <code class="docutils literal notranslate"><span class="pre">add_lists</span></code> (a function we created earlier), and assign the output to a new variable <code class="docutils literal notranslate"><span class="pre">new_pos</span></code></p></li>
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">check_bounds</span></code> on <code class="docutils literal notranslate"><span class="pre">new_pos</span></code>, also passing <code class="docutils literal notranslate"><span class="pre">self.grid_size</span></code> into <code class="docutils literal notranslate"><span class="pre">check_bounds</span></code></p>
+<ul>
+<li><p>Assign the output of <code class="docutils literal notranslate"><span class="pre">check_bounds</span></code> to <code class="docutils literal notranslate"><span class="pre">has_new_pos</span></code></p></li>
+<li><p>This will lead to exiting the loop when a valid new position has been assigned</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Return <code class="docutils literal notranslate"><span class="pre">new_pos</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="method-move">
+<h4>Method: <code class="docutils literal notranslate"><span class="pre">move</span></code><a class="headerlink" href="#method-move" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>No inputs (other than <code class="docutils literal notranslate"><span class="pre">self</span></code>) or outputs, just sets <code class="docutils literal notranslate"><span class="pre">self.position</span></code> to be the output of calling <code class="docutils literal notranslate"><span class="pre">self.wander()</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">WanderBot</span>
+<span class="n">wbot</span> <span class="o">=</span> <span class="n">WanderBot</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">wbot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wbot</span> <span class="o">=</span> <span class="n">WanderBot</span><span class="p">()</span>
+<span class="n">wbot</span><span class="o">.</span><span class="n">grid_size</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">assert</span> <span class="n">wbot</span><span class="o">.</span><span class="n">wander</span><span class="p">()</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">wbot</span><span class="o">.</span><span class="n">wander</span><span class="p">(),</span> <span class="nb">list</span><span class="p">)</span>
+<span class="n">wbot</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">wbot</span><span class="o">.</span><span class="n">position</span> <span class="o">!=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test out our WanderBot</span>
+<span class="c1">#   You should see a &#39;bot&#39; that steps around different positions randomly</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">WanderBot</span><span class="p">()</span>
+<span class="n">play_board</span><span class="p">(</span><span class="n">bot</span><span class="p">,</span> <span class="n">grid_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test out running a group of WanderBots</span>
+<span class="n">bots</span> <span class="o">=</span> <span class="p">[</span><span class="n">WanderBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1175</span><span class="p">),</span> <span class="n">WanderBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1175</span><span class="p">),</span> <span class="n">WanderBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1175</span><span class="p">)]</span>
+<span class="n">play_board</span><span class="p">(</span><span class="n">bots</span><span class="p">,</span> <span class="n">grid_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-random-probabilistic-choices">
+<h3>Example: Random Probabilistic Choices<a class="headerlink" href="#example-random-probabilistic-choices" title="Permalink to this headline">¶</a></h3>
+<p>For our next bot, we want to be able to make random choice, but with a specified probability.</p>
+<p>We will use a quick trick to do so:</p>
+<ul class="simple">
+<li><p>from the <code class="docutils literal notranslate"><span class="pre">random</span></code> module, we can use the <code class="docutils literal notranslate"><span class="pre">random()</span></code> function to uniformly sample a decimal between 0 and 1</p></li>
+<li><p>by checking if that random sample is below some value <code class="docutils literal notranslate"><span class="pre">prob</span></code>, we will (on average) make that choice <code class="docutils literal notranslate"><span class="pre">prob</span></code> % of the time</p></li>
+</ul>
+<p>An example of this idea is shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print out a random decimal value between 0 - 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a random probabilistic choice with a specified probability</span>
+<span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.75</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This will print out 75</span><span class="si">% o</span><span class="s1">f the time&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q9-explorebot">
+<h3>Q9 - ExploreBot<a class="headerlink" href="#q9-explorebot" title="Permalink to this headline">¶</a></h3>
+<p>Create a class called <code class="docutils literal notranslate"><span class="pre">ExploreBot</span></code>, that inherits from <code class="docutils literal notranslate"><span class="pre">Bot</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ExploreBot</span></code> is a bot that will explore more systematically, generally continuing in the same direction on consecutive steps.</p>
+<ul class="simple">
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, it should call the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> from <code class="docutils literal notranslate"><span class="pre">super</span></code></p></li>
+<li><p>Note that to do this, the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> should take a <code class="docutils literal notranslate"><span class="pre">character</span></code> input, with the same default (8982)</p>
+<ul>
+<li><p>This value will need to be passed into the super’s <code class="docutils literal notranslate"><span class="pre">__init__</span></code></p></li>
+</ul>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> should take an extra input, <code class="docutils literal notranslate"><span class="pre">move_prob</span></code> with default value of 0.75</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">move_prob</span></code> as an instance attribute, and also add a new instance attribute <code class="docutils literal notranslate"><span class="pre">last_move</span></code>, that’s initialized as <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+<p>Add three methods to ExploreBot:</p>
+<div class="section" id="method-biased-choice">
+<h4>Method:  <code class="docutils literal notranslate"><span class="pre">biased_choice</span></code><a class="headerlink" href="#method-biased-choice" title="Permalink to this headline">¶</a></h4>
+<p>This method will chose a new move, but be biased to chose the same move as was taken on the previous step.</p>
+<p>Procedure:</p>
+<ul class="simple">
+<li><p>Initialize a variable called <code class="docutils literal notranslate"><span class="pre">move</span></code> as <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">self.last_move</span></code> is not equal to <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<ul>
+<li><p>Using the random probability procedure described above, if <code class="docutils literal notranslate"><span class="pre">random.random()</span></code> is less that <code class="docutils literal notranslate"><span class="pre">self.move_prob</span></code></p>
+<ul>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">move</span></code> to be <code class="docutils literal notranslate"><span class="pre">self.last_move</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">move</span></code> is still None, set <code class="docutils literal notranslate"><span class="pre">move</span></code> to be a random choice of <code class="docutils literal notranslate"><span class="pre">self.moves</span></code></p></li>
+<li><p>return <code class="docutils literal notranslate"><span class="pre">move</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="method-explore">
+<h4>Method:  <code class="docutils literal notranslate"><span class="pre">explore</span></code><a class="headerlink" href="#method-explore" title="Permalink to this headline">¶</a></h4>
+<p>Explore should be the same as the <code class="docutils literal notranslate"><span class="pre">wander()</span></code> method in <code class="docutils literal notranslate"><span class="pre">WanderBot</span></code>, with two differences:</p>
+<ul class="simple">
+<li><p>Inside the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, <code class="docutils literal notranslate"><span class="pre">move</span></code> should be the return of <code class="docutils literal notranslate"><span class="pre">self.biased_choice()</span></code> (instead of <code class="docutils literal notranslate"><span class="pre">wander()</span></code>)</p></li>
+<li><p>At the end of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop (inside the loop), set <code class="docutils literal notranslate"><span class="pre">self.last_move</span></code> to <code class="docutils literal notranslate"><span class="pre">move</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h4>Method: <code class="docutils literal notranslate"><span class="pre">move</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>No inputs (other than <code class="docutils literal notranslate"><span class="pre">self</span></code>) or outputs, just sets <code class="docutils literal notranslate"><span class="pre">self.position</span></code> to be the output of calling <code class="docutils literal notranslate"><span class="pre">explore()</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">ExploreBot</span>
+<span class="n">ebot</span> <span class="o">=</span> <span class="n">ExploreBot</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">ebot</span>
+<span class="k">assert</span> <span class="n">ebot</span><span class="o">.</span><span class="n">last_move</span> <span class="o">==</span> <span class="kc">None</span>
+<span class="k">assert</span> <span class="n">ebot</span><span class="o">.</span><span class="n">move_prob</span> <span class="o">==</span> <span class="mf">0.75</span>
+<span class="k">assert</span> <span class="n">ExploreBot</span><span class="p">(</span><span class="n">move_prob</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">ExploreBot</span>
+
+<span class="n">ebot</span> <span class="o">=</span> <span class="n">ExploreBot</span><span class="p">()</span>
+<span class="n">ebot</span><span class="o">.</span><span class="n">grid_size</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">assert</span> <span class="n">ebot</span><span class="o">.</span><span class="n">explore</span><span class="p">()</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ebot</span><span class="o">.</span><span class="n">explore</span><span class="p">(),</span> <span class="nb">list</span><span class="p">)</span>
+<span class="n">ebot</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">ebot</span><span class="o">.</span><span class="n">position</span> <span class="o">!=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test out our ExploreBot</span>
+<span class="c1">#   You should see a &#39;bot&#39; that steps around different positions, often moving in the same direction</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">ExploreBot</span><span class="p">()</span>
+<span class="n">play_board</span><span class="p">(</span><span class="n">bot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test out running a group of WanderBots &amp; ExploreBots</span>
+<span class="n">bots</span> <span class="o">=</span> <span class="p">[</span><span class="n">WanderBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1175</span><span class="p">),</span> <span class="n">WanderBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1175</span><span class="p">),</span> 
+        <span class="n">ExploreBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1127</span><span class="p">),</span> <span class="n">ExploreBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1127</span><span class="p">)]</span>
+<span class="n">play_board</span><span class="p">(</span><span class="n">bots</span><span class="p">,</span> <span class="n">grid_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q10-teleportbot">
+<h3>Q10 - TeleportBot<a class="headerlink" href="#q10-teleportbot" title="Permalink to this headline">¶</a></h3>
+<p>Create a class called <code class="docutils literal notranslate"><span class="pre">TeleportBot</span></code>, that inherits from <code class="docutils literal notranslate"><span class="pre">WanderBot</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">TeleportBot</span></code> is a modified version of <code class="docutils literal notranslate"><span class="pre">WanderBot</span></code>, that will generally wander around randomly, but sometimes teleport to a brand new location.</p>
+<ul class="simple">
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, it should call the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> from <code class="docutils literal notranslate"><span class="pre">super</span></code></p></li>
+<li><p>Note that to do this, the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> should take a <code class="docutils literal notranslate"><span class="pre">character</span></code> input, with the same default (8982)</p>
+<ul>
+<li><p>This value will need to be passed into the super’s <code class="docutils literal notranslate"><span class="pre">__init__</span></code></p></li>
+</ul>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> should take an extra input, <code class="docutils literal notranslate"><span class="pre">tele_prob</span></code> with default value of 0.2</p>
+<ul>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">tele_prob</span></code> as an instance attribute</p></li>
+</ul>
+</li>
+</ul>
+<p>Add two methods to <code class="docutils literal notranslate"><span class="pre">TeleportBot</span></code>:</p>
+<div class="section" id="method-teleport">
+<h4>Method: <code class="docutils literal notranslate"><span class="pre">teleport</span></code><a class="headerlink" href="#method-teleport" title="Permalink to this headline">¶</a></h4>
+<p>This method will chose a totally random location anywhere on the map, ‘teleporting’ there.</p>
+<p>To do so, it needs to return a list of two random numbers that define a location of the map (for the current grid size).</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">random.choice</span></code> with <code class="docutils literal notranslate"><span class="pre">range</span></code> and <code class="docutils literal notranslate"><span class="pre">self.grid_size</span></code> to create a list of two randomly chosen numbers within the grid size.</p>
+<p>Note - this will entail using each of these three things twice - one for each number.</p>
+<p>Return this list.</p>
+</div>
+<div class="section" id="id2">
+<h4>Method: <code class="docutils literal notranslate"><span class="pre">move</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>No inputs (other than <code class="docutils literal notranslate"><span class="pre">self</span></code>) or outputs</p></li>
+<li><p>Using the random probability procedure from before, use an <code class="docutils literal notranslate"><span class="pre">if</span></code> with <code class="docutils literal notranslate"><span class="pre">random.random()</span> <span class="pre">&lt;</span> <span class="pre">self.tele_prob</span></code>.</p>
+<ul>
+<li><p>Inside the <code class="docutils literal notranslate"><span class="pre">if</span></code>, set <code class="docutils literal notranslate"><span class="pre">self.position</span></code> to the ouput of <code class="docutils literal notranslate"><span class="pre">self.teleport()</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code>, set <code class="docutils literal notranslate"><span class="pre">self.position</span></code> as the ouput of <code class="docutils literal notranslate"><span class="pre">self.wander()</span></code></p>
+<ul>
+<li><p>Note that this bot inherits <code class="docutils literal notranslate"><span class="pre">wander()</span></code> from it’s super (<code class="docutils literal notranslate"><span class="pre">WanderBot</span></code>)</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">TeleportBot</span>
+<span class="n">tbot</span> <span class="o">=</span> <span class="n">TeleportBot</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">tbot</span>
+<span class="k">assert</span> <span class="n">tbot</span><span class="o">.</span><span class="n">tele_prob</span> <span class="o">==</span> <span class="mf">0.2</span>
+<span class="k">assert</span> <span class="n">TeleportBot</span><span class="p">(</span><span class="n">tele_prob</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">TeleportBot</span>
+
+<span class="n">tbot</span> <span class="o">=</span> <span class="n">TeleportBot</span><span class="p">()</span>
+<span class="n">tbot</span><span class="o">.</span><span class="n">grid_size</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">assert</span> <span class="n">tbot</span><span class="o">.</span><span class="n">teleport</span><span class="p">()</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tbot</span><span class="o">.</span><span class="n">teleport</span><span class="p">(),</span> <span class="nb">list</span><span class="p">)</span>
+<span class="n">tbot</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">tbot</span><span class="o">.</span><span class="n">position</span> <span class="o">!=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test out our TeleportBot</span>
+<span class="c1">#   You should see a &#39;bot&#39; that steps around randomly, sometimes teleporting to a new location</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">TeleportBot</span><span class="p">()</span>
+<span class="n">play_board</span><span class="p">(</span><span class="n">bot</span><span class="p">,</span> <span class="n">grid_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="running-it-all-together">
+<h3>Running it all together<a class="headerlink" href="#running-it-all-together" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a group of bots</span>
+<span class="n">bots</span> <span class="o">=</span> <span class="p">[</span><span class="n">WanderBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1078</span><span class="p">),</span> <span class="n">WanderBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1078</span><span class="p">),</span> <span class="n">WanderBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1078</span><span class="p">),</span>
+        <span class="n">ExploreBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1127</span><span class="p">),</span> <span class="n">ExploreBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1127</span><span class="p">),</span> <span class="n">ExploreBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1127</span><span class="p">),</span>
+        <span class="n">TeleportBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1279</span><span class="p">),</span> <span class="n">TeleportBot</span><span class="p">(</span><span class="n">character</span><span class="o">=</span><span class="mi">1279</span><span class="p">)]</span>
+
+<span class="c1"># Play the board with our bot list</span>
+<span class="n">play_board</span><span class="p">(</span><span class="n">bots</span><span class="p">,</span> <span class="n">grid_size</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="extending-our-agents">
+<h2>Extending Our Agents<a class="headerlink" href="#extending-our-agents" title="Permalink to this headline">¶</a></h2>
+<p>So far, we have some ‘artificial agents’ that can explore a world, with different strategies to do so.</p>
+<p>Note that if you want to explore using these bots some more, you can add a new cell, defining a list of bots (changing some inputs to them, if you want to), and use the <code class="docutils literal notranslate"><span class="pre">play_board</span></code> function to run a ‘board’ (also changing some inputs to <code class="docutils literal notranslate"><span class="pre">play_board</span></code>, if you want to).</p>
+<p>From here, we could think about ways we could make these agents interact with each other, and/or respond more directly the environment.</p>
+<p>More broadly - there is any number of ways we could build in more ‘cognitive’ behaviour, given this starting point.</p>
+<p>If you are interested in this topic, extending these kinds of ‘artificial agents’ (or ones like them) is one of your project options.</p>
+</div>
+<div class="section" id="the-end">
+<h2>The End!<a class="headerlink" href="#the-end" title="Permalink to this headline">¶</a></h2>
+<p>After you’ve explored running the bots, you are done!</p>
+<p>Have a look back over your answers, and also make sure to Restart &amp; Run All from the kernel menu to double check that everything is working properly.</p>
+<p>When you are ready to submit your assignment, upload it to TritonED under Assignment-4.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./assignments"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="D3-Chatbots.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Assignment 3: Chatbots</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../projects/overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Guide</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Thomas Donoghue & Shannon Ellis<br/>
+    
+        &copy; Copyright 2020-.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

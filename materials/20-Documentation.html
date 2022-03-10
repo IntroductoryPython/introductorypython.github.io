@@ -1,0 +1,1163 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation &#8212; Introductory Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Code Style" href="21-CodeStyle.html" />
+    <link rel="prev" title="Scientific Computing" href="19-ScientificComputing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introductory Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/index.html">
+   Introductory Python
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Materials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Tools.html">
+   Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-JupyterNotebooks.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Operators.html">
+   Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Conditionals.html">
+   Conditionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-DataTypes.html">
+   DataTypes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Encodings.html">
+   Encodings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-FunctionsI.html">
+   FunctionsI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-Algorithms.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-FunctionsII.html">
+   FunctionsII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-Debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-Objects.html">
+   Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-Classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-Namespaces.html">
+   Namespaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-APIs.html">
+   The Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-OpenSource.html">
+   OpenSource
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-ScientificComputing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-CodeStyle.html">
+   Code Style
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="22-CodeTesting.html">
+   Code Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-CodeProjects.html">
+   CodeProjects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-AdvancedPython.html">
+   AdvancedPython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25-WrapUp.html">
+   WrapUp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A1-Syntax.html">
+   A1-Syntax
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A2-Examples.html">
+   A2-Examples
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL1-ProgrammingI.html">
+   ProgrammingI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL2-ProgrammingII.html">
+   ProgrammingII
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL3-AlgorithmicThinking.html">
+   AlgorithmicThinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL4-Exploring.html">
+   Exploring
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/CL5-CommandLine.html">
+   CommandLine
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D1-GettingStarted.html">
+   GettingStarted
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D2-Ciphers.html">
+   Ciphers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D3-Chatbots.html">
+   Chatbots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/D4-ArtificialAgents.html">
+   ArtificialAgents
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/ProjectIdeas.html">
+   Ideas
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/materials/20-Documentation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/introductorypython/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/introductorypython//issues/new?title=Issue%20on%20page%20%2Fmaterials/20-Documentation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/introductorypython//master?urlpath=tree/inpy/materials/20-Documentation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-readability">
+   Code Readability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-readable-code">
+     Writing Readable Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-structure">
+     Good Structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-naming">
+     Good Naming
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-comments-documentation">
+     Code comments &amp; Documentation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-1">
+       Clicker Question #1
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-documentation">
+   Code Documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-comments-vs-documentation">
+   Code Comments vs. Documentation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comments">
+     Comments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inline-comments">
+   Inline Comments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bad-comments">
+     Bad Comments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-comments">
+     Good Comments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docstrings">
+   Docstrings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy-style-docs">
+     Numpy style docs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-docstring">
+     Example Docstring
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#docstrings-are-available-through-the-code">
+     Docstrings are available through the code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#doc">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       __doc__
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-2">
+       Clicker Question #2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#projects-documentation">
+     Projects &amp; Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation-for-a-software-project">
+   Documentation for a Software Project
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation-sites">
+   Documentation Sites
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-function-documentation">
+     Example: Function Documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-package-documentation">
+     Example: Package Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Documentation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-readability">
+   Code Readability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-readable-code">
+     Writing Readable Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-structure">
+     Good Structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-naming">
+     Good Naming
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-comments-documentation">
+     Code comments &amp; Documentation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-1">
+       Clicker Question #1
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-documentation">
+   Code Documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-comments-vs-documentation">
+   Code Comments vs. Documentation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comments">
+     Comments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inline-comments">
+   Inline Comments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bad-comments">
+     Bad Comments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-comments">
+     Good Comments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docstrings">
+   Docstrings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy-style-docs">
+     Numpy style docs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-docstring">
+     Example Docstring
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#docstrings-are-available-through-the-code">
+     Docstrings are available through the code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#doc">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       __doc__
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-2">
+       Clicker Question #2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#projects-documentation">
+     Projects &amp; Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation-for-a-software-project">
+   Documentation for a Software Project
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation-sites">
+   Documentation Sites
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-function-documentation">
+     Example: Function Documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-package-documentation">
+     Example: Package Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>readability</p></li>
+<li><p>comments</p></li>
+<li><p>documentation</p></li>
+</ul>
+<div class="section" id="code-readability">
+<h2>Code Readability<a class="headerlink" href="#code-readability" title="Permalink to this headline">¶</a></h2>
+<p>“Code is more often read than written” - Guido van Rossum</p>
+<p>So: code should be written to be readable by humans.</p>
+<p>Note: one of those humans is future you.</p>
+<div class="section" id="writing-readable-code">
+<h3>Writing Readable Code<a class="headerlink" href="#writing-readable-code" title="Permalink to this headline">¶</a></h3>
+<p>So how do we write good code for humans?</p>
+<ul class="simple">
+<li><p>Use good structure</p></li>
+<li><p>Use good naming</p></li>
+<li><p>Use code comments and include documentation</p></li>
+</ul>
+</div>
+<div class="section" id="good-structure">
+<h3>Good Structure<a class="headerlink" href="#good-structure" title="Permalink to this headline">¶</a></h3>
+<p>If you design your program using separate functions for each task, avoid copying + pasting (functions and loops instead), and consider structure beforehand, you’ll be set up for success</p>
+</div>
+<div class="section" id="good-naming">
+<h3>Good Naming<a class="headerlink" href="#good-naming" title="Permalink to this headline">¶</a></h3>
+<p>Clear names are for humans. The computer doesn’t care, but you and others reading your code do.</p>
+</div>
+<div class="section" id="code-comments-documentation">
+<h3>Code comments &amp; Documentation<a class="headerlink" href="#code-comments-documentation" title="Permalink to this headline">¶</a></h3>
+<p>Helpful comments and documentation take your code to the next level. The final piece in the trifecta of readable code!</p>
+<p>Good code has good documentation - but code documentation should <em>not</em> be used to try and fix unclear names, or bad structure.</p>
+<p>Rather, comments should add any additional context and information that helps explain what the code is, how it works, and why it works that way.</p>
+<p>These will all be components of your final project grade.</p>
+<div class="section" id="clicker-question-1">
+<h4>Clicker Question #1<a class="headerlink" href="#clicker-question-1" title="Permalink to this headline">¶</a></h4>
+<p>What does the following code do?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ff</span><span class="p">(</span><span class="n">jj</span><span class="p">):</span>
+    <span class="n">oo</span> <span class="o">=</span> <span class="nb">list</span><span class="p">();</span> <span class="n">jj</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span> 
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">jj</span><span class="p">:</span> <span class="n">oo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">ii</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">oo</span><span class="p">)</span>
+<span class="n">ff</span><span class="p">(</span><span class="s1">&#39;Hello World.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) Returns unicode code points, as a list</p></li>
+<li><p>B) Encodes a string as a cypher, returning a string of alphabetical characters</p></li>
+<li><p>C) Returns unicode code points, as a string</p></li>
+<li><p>D) Encodes inputs alphabetical characters, returned as a list</p></li>
+<li><p>E) This code will fail</p></li>
+</ul>
+<p>Improvement Considerations:</p>
+<ul class="simple">
+<li><p>Structural considerations: indentations &amp; spacing</p></li>
+<li><p>Improved naming: functions &amp; variables</p></li>
+<li><p>Add Comments within code</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s improve...</span>
+<span class="k">def</span> <span class="nf">return_unicode</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="n">input_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">input_list</span><span class="p">)</span>
+      
+    <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">:</span> 
+        <span class="n">string</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">character</span><span class="p">)))</span>
+        
+    <span class="n">output_string</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">output_string</span>
+
+<span class="n">return_unicode</span><span class="p">(</span><span class="s1">&#39;Hello World.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;72+101+108+108+111+32+87+111+114+108+100+46&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) Returns unicode code points, as a list</p></li>
+<li><p>B) Encodes a string as a cypher, returning a string of alphabetical characters</p></li>
+<li><p>C) Returns unicode code points, as a string</p></li>
+<li><p>D) Encodes inputs alphabetical characters, returned as a list</p></li>
+<li><p>E) This code will fail</p></li>
+</ul>
+<p>Improvement Considerations:</p>
+<ul class="simple">
+<li><p>Structural considerations: indentations &amp; spacing</p></li>
+<li><p>Improved naming: functions &amp; variables</p></li>
+<li><p>Add Comments within code</p></li>
+<li><p><strong>Proper Documentation!</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s fix this code!</span>
+<span class="k">def</span> <span class="nf">convert_to_unicode</span><span class="p">(</span><span class="n">input_string</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts an input string into a string containing the unicode code points.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    input_string : string</span>
+<span class="sd">        String to convert to code points</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    output_string : string</span>
+<span class="sd">        String containing the code points for the input string.</span>
+<span class="sd">    &quot;&quot;&quot;</span> 
+    
+    <span class="n">output</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="c1"># Converting a string to a list, to split up the characters of the string</span>
+    <span class="n">input_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">input_string</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">:</span>   
+        <span class="n">temp</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+    <span class="n">output_string</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">output_string</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="code-documentation">
+<h2>Code Documentation<a class="headerlink" href="#code-documentation" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+Code documentation is text that accompanies and/or is embedded within a software project, that explains what the code is and how to use it. 
+</div><p>Stuff written for humans in human language to help the humans.</p>
+</div>
+<div class="section" id="code-comments-vs-documentation">
+<h2>Code Comments vs. Documentation<a class="headerlink" href="#code-comments-vs-documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<p>Comments are string literals written directly in the code, typically directed at developers - people reading and potentially writing the code.</p>
+</div>
+<div class="section" id="id1">
+<h3>Documentation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Documentation are descriptions and guides written for code users.</p>
+</div>
+</div>
+<div class="section" id="inline-comments">
+<h2>Inline Comments<a class="headerlink" href="#inline-comments" title="Permalink to this headline">¶</a></h2>
+<p>Code comments should use <code class="docutils literal notranslate"><span class="pre">#</span></code>, and be written at the same indentation level of the code it describes.</p>
+<p>How to use comments:</p>
+<ul class="simple">
+<li><p>Generally:</p>
+<ul>
+<li><p>focus on the <em>how</em> and <em>why</em>, over literal ‘what is the code’</p></li>
+<li><p>explain any context needed to understand the task at hand</p></li>
+<li><p>give a broad overview of what approach you are taking to perform the task</p></li>
+<li><p>if you’re using any unusual approaches, explain what they are, and why you’re using them</p></li>
+</ul>
+</li>
+<li><p>Comments need to be maintained - make sure to keep them up to date</p></li>
+</ul>
+<div class="section" id="bad-comments">
+<h3>Bad Comments<a class="headerlink" href="#bad-comments" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a loop that iterates over elements in a list</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_of_elements</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="good-comments">
+<h3>Good Comments<a class="headerlink" href="#good-comments" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Because of X, we will use approach Y to do Z</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_of_elements</span><span class="p">:</span>
+    <span class="c1"># comment for code block</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="docstrings">
+<h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+<b>Docstrings</b> are in-code text that describe modules, classes and functions. They describe the operation of the code.
+</div><div class="section" id="numpy-style-docs">
+<h3>Numpy style docs<a class="headerlink" href="#numpy-style-docs" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">Numpy style docs</a> are a particular specification for docstrings.</p>
+</div>
+<div class="section" id="example-docstring">
+<h3>Example Docstring<a class="headerlink" href="#example-docstring" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add two numbers together. </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    num1 : int or float</span>
+<span class="sd">        The first number, to be added. </span>
+<span class="sd">    num2 : int or float</span>
+<span class="sd">        The second number, to be added.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    answer : float</span>
+<span class="sd">        The result of the addition. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+    
+    <span class="k">return</span> <span class="n">answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Docstrings</p>
+<ul class="simple">
+<li><p>multi-line string that describes what’s going on</p></li>
+<li><p>starts and ends with triple quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code></p></li>
+<li><p>one sentence overview at the top - the task/goal of function</p></li>
+<li><p><strong>Parameters</strong> : description of function arguments, keywords &amp; respective types</p></li>
+<li><p><strong>Returns</strong> : explanation of returned values and their types</p></li>
+</ul>
+<p><strong>Docstrings</strong> are available to you <em>outside</em> of the source code.</p>
+</div>
+<div class="section" id="docstrings-are-available-through-the-code">
+<h3>Docstrings are available through the code<a class="headerlink" href="#docstrings-are-available-through-the-code" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>add<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The `help` function prints out the `docstring` </span>
+<span class="c1"># of an object (module, function, class)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function add in module __main__:
+
+add(num1, num2)
+    Add two numbers together. 
+    
+    Parameters
+    ----------
+    num1 : int or float
+        The first number, to be added. 
+    num2 : int or float
+        The second number, to be added.
+    
+    Returns
+    -------
+    answer : float
+        The result of the addition.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="doc">
+<h3><code class="docutils literal notranslate"><span class="pre">__doc__</span></code><a class="headerlink" href="#doc" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Docstrings get stored as the `__doc__` attribute</span>
+<span class="c1"># can also be accessed from there</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Add two numbers together. 
+    
+    Parameters
+    ----------
+    num1 : int or float
+        The first number, to be added. 
+    num2 : int or float
+        The second number, to be added.
+    
+    Returns
+    -------
+    answer : float
+        The result of the addition. 
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-2">
+<h4>Clicker Question #2<a class="headerlink" href="#clicker-question-2" title="Permalink to this headline">¶</a></h4>
+<p>What should be included in a docstring?</p>
+<ol class="simple">
+<li><p>Input arguments and their types</p></li>
+<li><p>A brief overview sentence about the code</p></li>
+<li><p>A copy of the <code class="docutils literal notranslate"><span class="pre">def</span></code> line</p></li>
+<li><p>Returned variables and their types</p></li>
+<li><p>A step by step description of the procedure used in the code</p></li>
+</ol>
+<ul class="simple">
+<li><p>A) 1, 4</p></li>
+<li><p>B) 2, 3, 5</p></li>
+<li><p>C) 3, 5</p></li>
+<li><p>D) 1, 2, 4</p></li>
+<li><p>E) 1, 2, 3, 4, 5</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="projects-documentation">
+<h3>Projects &amp; Documentation<a class="headerlink" href="#projects-documentation" title="Permalink to this headline">¶</a></h3>
+<p><strong>Do <em>all</em> of my functions need <code class="docutils literal notranslate"><span class="pre">numpy</span></code> documentation?</strong></p>
+<ol class="simple">
+<li><p>Your original code definitely needs <code class="docutils literal notranslate"><span class="pre">numpy</span></code> docstrings</p></li>
+<li><p>It’s best if all your main functions have docstrings</p>
+<ul class="simple">
+<li><p>If you include functions from an assignment, document them</p></li>
+<li><p>If you write a teeny tiny function to accomplish a sumer small task, no need to document</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="documentation-for-a-software-project">
+<h2>Documentation for a Software Project<a class="headerlink" href="#documentation-for-a-software-project" title="Permalink to this headline">¶</a></h2>
+<p>Documentation Files:</p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">README</span></code> is a file that provides an overview of the project to potential users and developers</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file specifies the license under which the code is available (the terms of use)</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">API</span> <span class="pre">Reference</span></code> is a collection of the docstrings, listing public interfaces, parameters and return values</p></li>
+<li><p>Tutorials and/or Examples show examples and tutorials for using the codebase</p></li>
+</ul>
+</div>
+<div class="section" id="documentation-sites">
+<h2>Documentation Sites<a class="headerlink" href="#documentation-sites" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+Documentation sites are a host of a package's documentation, for code users. 
+</div><div class="section" id="example-function-documentation">
+<h3>Example: Function Documentation<a class="headerlink" href="#example-function-documentation" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> :
+<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html">https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html</a></p>
+</div>
+<div class="section" id="example-package-documentation">
+<h3>Example: Package Documentation<a class="headerlink" href="#example-package-documentation" title="Permalink to this headline">¶</a></h3>
+<p><strong>scikit learn</strong> (<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>) : <a class="reference external" href="https://scikit-learn.org/stable/index.html">https://scikit-learn.org/stable/index.html</a></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./materials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="19-ScientificComputing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Scientific Computing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="21-CodeStyle.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Code Style</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Thomas Donoghue & Shannon Ellis<br/>
+    
+        &copy; Copyright 2020-.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
